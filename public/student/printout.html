@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Printout</title>
+
+	<!-- Required Meta Tags Always Come First -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+	<!-- CSS Customization -->
+
+	<link rel="stylesheet" href="../assets/css/master.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	<script type="text/javascript" src="../assets/js/token.js"></script>
+	<script type="text/javascript" src="../assets/js/studentdash.js"></script>
+	<script type="text/javascript" src="../assets/js/url.js"></script>
+	<script type="text/javascript" src="../assets/js/paymsg.js"></script>
+	<script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+	<script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+
+</head>
+<body  onload="getSession();getPaymentStatus();myFunction()">
+
+	<!-- <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div> -->
+
+    <div id="main-wrapper" style="display:;">
+
+        <header class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a style="margin-left:70px;" class="navbar-brand" href="index.html">
+              <span>
+             <a href="/../index.html"><img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-lg-0">
+                  <!-- ============================================================== -->
+                  <!-- Profile -->
+                  <!-- ============================================================== -->
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="dashboard.html" style="color:#FF8500;">Overview</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Attendance</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#455a64;" class="fa fa-user-cog"></i> </a>
+                      <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                          <ul class="dropdown-user">
+                            <li><a href="admissionform.html" style="color:#FF8500;"><i class="fas fa-user-edit"></i> Admission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+		<div class="page-wrapper" style="margin-left:0px;background:#fff">
+
+				<form class="" id="myForm" name="myForm">
+					<input type="hidden" id="txnid">
+
+				<!-- ============================================================== -->
+				<!-- Container fluid  -->
+				<!-- ============================================================== -->
+        <div class="" style="background:#f2f2f4;margin-top:px;">
+          <h2 style="text-align:center;font-weight:600;padding:10px;">Page Preview</h2>
+        </div>
+				<div class="container-fluid" style="">
+
+						<!-- Row -->
+						<div class="row">
+								<!-- Column -->
+                <div class="col-md-12">
+                  <fieldset>
+                    <div class="container" style="margin-top: 10px">
+                      <ul class="progressbar">
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;">Fill Form</a></li>
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;color:#67757c" href="trainningfeepay.html">Pay Fee</li></a>
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;color:#67757c;" href="enrollmentno.html">Get Enrollment No</li></a>
+                        <li style="font-weight:600;" class="active"><a style="font-size:16px;font-weight:600;color:green;">Printout</a></li>
+                      </ul>
+                    </div>
+                  </fieldset>
+                </div>
+
+								<div class="col-md-2"></div>
+								<div class="col-md-8" style="margin-top:20px;" id="printablediv">
+										<div class="card">
+
+												<!-- Tab panes -->
+												<div class="tab-content">
+
+														<!--second tab-->
+														<div class="" role="tabpanel">
+																<div class="card-body">
+																	<center style="margin-top:25px;margin-bottom: 25px;">
+                                    <!-- <img style="margin-bottom:5px;" width="150" height="auto" src="../assets/img/icons/mecbot.png" alt=""> -->
+                                    <h4 style="color:#000;text-align:center; font-size:25px;margin-top:-5px; font-weight:600;">MechatronRobotics</h4>
+                                    <p style="color:#000;text-align:center; font-size:19px;margin-top:-5px; font-weight:600;">ROBOTICS FOR SCHOOL & COLLEGE STUDENTS</p>
+                                    <hr>
+																	</center>
+                                  <center>
+                                    <h3 style="color:#000;text-align:center; font-size:22px; font-weight:600;">Admission Form</h3>
+                                  </center><br><br>
+                                    <div class="row">
+																			<div class="form-group col-md-12 printoutimg" style="margin-top:-20px;">
+																					<center>
+																						<div class="col-md-12">
+																								<img src="../assets/img/png/user3.png" id="imgupld" class="" width="150" height="170" style="border:2px solid #ececec;" />
+																						</div>
+																					</Center>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Student Name</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="sname" class="form-control"  name="fname" disabled="">
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																				<label class="col-md-12" style="font-size:19px;font-weight:500;">D.O.B</label>
+																				<div class="col-md-12">
+																						<input style="font-size:18px;background:#fff;" type="text" id="dob" class="form-control"  name="fname" disabled="">
+																				</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Hobbies</label>
+																					<div class="col-md-12">
+
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Robotics" id="rbt"> Robotics</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Sports" id="sprts"> Sports</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Dance" id="dnc"> Dance</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Music" id="msc"> Music</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Crafts" id="cft"> Crafts</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Drawing" id="dwg"> Drawing</label>
+																						<label style="font-size:18px;background:#fff;" class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Others" id="oth"> Others</label>
+
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Father's Name</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="fname" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Mother's Name</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="mname" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Father's Occupation / Mother's Occupation</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="occp" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Flat / HouseNo / Floor / Building</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="add1" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Street</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="add2" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Landmark</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="add3" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">City</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="city" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">State</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="state" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Country</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="country" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Zip</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="zip" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Name Of School/ College</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="school" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Standard</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="std" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Level</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="lvl" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Center</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="center" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Class Type</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="class" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Date Of Admission</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="doa" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Fee Status</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="status" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Amount</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="amount" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Registration Id</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="registration_id" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Date Of Payment</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="dop" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Transiction id</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="txd" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Payment For</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="payfor" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+																			<div class="form-group col-md-12">
+																					<label class="col-md-12" style="font-size:19px;font-weight:500;">Merchant Name</label>
+																					<div class="col-md-12">
+																							<input style="font-size:18px;background:#fff;" type="text" id="mn" class="form-control"  name="fname" disabled="" value="" >
+																					</div>
+																			</div>
+                                    </div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2"></div>
+												<div class="col-md-12">
+													<center>
+														<button type="button" class="btn btn-primary" name="button" style="cursor:pointer;" onclick="javascript:printDiv('printablediv')">
+															<a href="" style="color:#fff;font-weight:600;">Print</a>
+														</button>
+													</center>
+												</div>
+											</div>
+
+				</div>
+			</form>
+
+		</div>
+		<footer class="footer" style="text-align:center;">
+				Copyright © Mechatron Robotics 2018. All Rights Reserved.
+		</footer>
+	</div>
+
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<script src="../assets/js/jquery.min.1.js"></script>
+	<script src="../assets/js/bootstrap.min.1.js"></script>
+	<script src="../assets/js/custom.min.js"></script>
+
+</body>
+</html>

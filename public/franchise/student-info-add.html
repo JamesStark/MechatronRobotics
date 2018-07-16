@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Franchise Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+    <script type="text/javascript" src="../assets/js/studentinfoadd.js"></script>
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <!-- <div class="">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div> -->
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                      <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Baburao Patil</h4>
+                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="student-details.html">Student Details</a></li>
+                                <li><a href="#">Fee Details</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+              <div class="row" style="background: #fff;">
+
+                <div class="col-md-12" style="padding-top:20px;">
+                    <div class="container" id="" style="border:1px solid #ececec;">
+                      <form class="form-material"  id="signup" enctype="multipart/form-data" onsubmit="return false" >
+                        <div class="row" >
+
+                          <div class="col-md-12" style="padding:20px;">
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Basic Details</h5>
+                            <hr>
+                            <div id="msgsignup" style="font-weight: bold"></div>
+                            <div id="invalid_email_error_message" style="font-weight: bold"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Signup As</label>
+                                <div class="col-md-12">
+                                    <input  type="text" class="form-control" value="student" name="user_type" title="" placeholder="student" readonly autocomplete="off"/>
+                                    <!-- <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div> -->
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Full Name</label>
+                                <div class="col-md-12">
+                                    <input  type="text" id="form_fname"  class="form-control"  name="full_name" title="only alphbates and space is required (use only one space between two word)" placeholder="Robert Downey" autocomplete="off"/>
+                                    <div class="error_form col-md-6" id="fname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Email</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="email" id="form_email" class="form-control"  placeholder="robert@gmail.com" autocomplete="off"/>
+                                    <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Contact no</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="contact_no" id="form_contact" class="form-control"  placeholder="9983976512" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <div class="error_form col-xs-12" id="incrct_contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Password</label>
+                                <div class="col-md-12">
+                                    <input  type="password" id="form_password"  class="form-control"  name="password" title="only alphbates and space is required (use only one space between two word)" placeholder="password" autocomplete="off"/>
+                                    <div class="error_form col-md-12" id="password_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Confirm Password</label>
+                                <div class="col-md-12">
+                                    <input type="password" name="form_cpassword" id="form_cpassword" class="form-control"  placeholder="confirm password" autocomplete="off"/>
+                                    <div class="error_form col-md-12" id="retype_password_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="spinner" style="display:none;height: 150px;">
+                            <center>
+                              <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                              <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                          </div>
+                          <center>
+                            <button type="button" id="submit_button" class="btn btn-primary" ; style="margin-top: 50px;margin-bottom: 10px;">Next</button>
+                          </center>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+
+                    <div id="changepwd" class="modal fade" role="dialog">
+
+                      <div class="modal-dialog modal-md ">
+                        <form id="">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Change Password</h2>
+                              <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter Old Password</label> -->
+                                  <form id="changepasswordform">
+                                    <div class="col-xs-12" id="passwordedit"></div>
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                    </div>
+                                  <div class="col-md-12">
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <div class="col-xs-12" id="passwordmsg"></div>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <div class="col-xs-12" id="npasswordmsg"></div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Confirm New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <div class="col-xs-12" id="cnpasswordmsg"></div>
+                                  </div>
+                              </div>
+                            </form>
+                              <div class="spinner" style="display:none;height: 150px;">
+                               <center>
+                                 <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                                 <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                               </center>
+                             </div>
+                             <div class="form-group" style="" id="updatepwd">
+                                 <center>
+                                   <div class="col-md-8">
+                                       <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="submit" id="updatepwd" onclick="updatePassword()" class="form-control btn btn-primary"  name="updatepwd" >Update Password</button>
+                                   </div>
+                                 </center>
+                             </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> Copyright © Mechatron Robotics 2018. All Rights Reserved. </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+</body>
+
+</html>

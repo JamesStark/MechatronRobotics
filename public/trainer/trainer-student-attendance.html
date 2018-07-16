@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Student Details</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+    <script type="text/javascript" src="../assets/js/studentdetailsfortrainer.js"></script>
+     <script type="text/javascript" src="../assets/js/trainer-student-attendance.js"></script>
+    <!--  <script type="text/javascript" src="../assets/js/traningdetailsform.js"></script> -->
+    <!--  <script type="text/javascript" src="../assets/js/franchisedashboard.js"></script> -->
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+     <script type="text/javascript" src="../assets/js/traningdetailsform.js"></script>
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getViewProfile()">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                     <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Baburao Patil</h4>
+                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="col-xs-12" id=" " style="font-weight: bold"></div>
+                <div class="col-md-12" style="padding-top:40px;">
+                  <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div>
+                  <center><a style="display:none;" id="continue" href="traningfeepay.html">Click here to continue...</a></center>
+                  </div>
+
+
+
+
+
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu" id="name"></span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" id="performance" aria-expanded="false" onclick="verifyTrainerperformance()"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="waves-effect waves-dark" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                          <ul aria-expanded="false" class="collapse">
+                              <li><a href="#" onclick="verifyTrainerstudent()" id="students">Student Details</a></li>
+                             <!--  <li><a href="#" onclick="verifyTrainer()" id="fee">Fee Details</a></li> -->
+                          </ul>
+                        </li>
+                        <li> <a  class="waves-effect waves-dark" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+              <div class="col-md-5 align-self-center">
+                  <h3 class="text-themecolor">Attendance</h3>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <!-- <h4 class="card-title">Data Table</h4> -->
+                                <!-- <h6 class="card-subtitle">Data table example</h6> -->
+                                <div class="table-responsive m-t-40">
+                                  <table id="studentst" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);margin:-15px;">
+                                            <th style="background:#468ADE;color:#fff;">Attendance</th>
+                                        </tr>
+                                    </thead>
+
+                                      <thead>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                              <th>Date:</th>
+                                              <th>
+                                                <input style="font-weight:600;" type="date" id="datePicker" class="form-control" name="date">
+                                              </th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr style="font-size:16px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                               <th>Student ID</th>
+                                              <th>Student Name</th>
+                                               <th>Attendance</th>
+                                              <th>Time in</th>
+                                              <th>Time out</th>
+                                              <th>Duration</th>
+                                              <th>Topics Covered</th>
+                                          </tr>
+                                      </tbody>
+                                       <tbody>
+                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> Copyright © Mechatron Robotics 2018. All Rights Reserved. </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+document.getElementById('datePicker').valueAsDate = new Date();
+</script>
+
+</body>
+
+</html>

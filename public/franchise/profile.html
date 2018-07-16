@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Franchise Profile</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getSession()">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                      <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                      <div class="dw-user-box">
+                                        <div class="u-img">
+                                          <img src="../assets/img/png/user.png" alt="user">
+                                        </div>
+                                        <div class="u-text">
+                                          </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="student-details.html">Student Details</a></li>
+                                <li><a href="#">Fee Details</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+          <form id="franchiseform" enctype="multipart/form-data" class=" form-material" onsubmit="return false">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">Franchise Profile</h3>
+                </div>
+            </div>
+
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+                              <a href="#">
+                                <i class="fa fa-edit" id="editfprofile1" style="float: right;color: #000; font-size: 18px;" onclick="$('#updatefranchisebtn1').show()"></i>
+                              </a>
+                                <center class="m-t-30"> <img src="../assets/img/png/user.png"  id="imgprofile" class="img-circle" width="150" height="150" style="border:1px solid #ececec;cursor:pointer" data-toggle="modal" data-target="#editprofilephoto"/>
+                                  <input style="text-align:center; font-weight:bold; color:#000"  type="text" id="sname" class="form-control card-title m-t-10"  name="sname" disabled="" >
+                                  <h6 class="card-subtitle">Franchise</h6>
+                                </center>
+                            </div>
+                            <div>
+                              <div class="col-xs-12" id="franchiseedit" style="font-weight: bold"></div>
+                              <hr>
+                              </div>
+                            <div class="card-body"> <small class="text-muted">Email address </small>
+                              <small class="text-muted" style="color:#000; font-size:15px;">Email address </small>
+                              <input style="font-size: 15px; margin-top:0px;"  type="email" id="semail" class="form-control card-title m-t-10"  name="semail" disabled="" >
+                              <small class="text-muted p-t-20 db" style="color:#000; font-size:15px;">Phone</small>
+                              <input style="font-size: 15px; margin-top:0px;"  type="text" id="scontact" class="form-control card-title m-t-10"  name="scontact" disabled="" >
+                              <small class="text-muted p-t-20 db" style="color:#000; font-size:15px;">Center</small>
+                              <input style="font-size: 15px; margin-top:0px;"  type="text" id="center" class="form-control card-title m-t-10"  name="center" disabled="" >
+                            </div><br><br>
+                            <div class="form-group" style="display:none;" id="updatefranchisebtn1">
+                              <center>
+                                <div class="spinner" style="display:none;height: 150px;">
+                                    <center><img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                                   <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                                </div>
+                                <div class="col-md-8">
+                                    <button style="border-radius: 5px;border: 1px solid #999;background: #FF8500; color: #fff; font-weight: bold;" type="button" id="franchiseupdatebt" class="form-control btn btn-primary"  name="updatebtn" onclick="updateFranchiseDetails()" >Update User Detail</button>
+                                </div>
+                              </center>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs profile-tab" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Other Details</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+
+                                <!--second tab-->
+                                <div class="tab-pane active" id="profile" role="tabpanel">
+                                    <div class="card-body">
+                                      <h4 class="font-medium m-t-30">Other Details</h4>
+                                      <hr>
+                                      <div class="card-body">
+                                          <form class=" form-material">
+                                              <div class="form-group">
+                                                  <label class="col-md-12">Owner Name</label>
+                                                  <div class="col-md-12">
+                                                      <input type="text" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">Total Employes</label>
+                                                  <div class="col-md-12">
+                                                      <input type="text" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">Start Date</label>
+                                                  <div class="col-md-12">
+                                                      <input type="email" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">Renewal Date</label>
+                                                  <div class="col-md-12">
+                                                      <input type="email" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">No of Centers</label>
+                                                  <div class="col-md-12">
+                                                      <input type="email" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">Type of Franchise</label>
+                                                  <div class="col-md-12">
+                                                      <input type="email" value="" class="form-control" readonly>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="example-email" class="col-md-12">Agreement</label>
+                                                  <div class="col-md-12">
+                                                      <a href="" style="font-weight:bold;">click to view</a>
+                                                  </div>
+                                              </div>
+                                          </form>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="settings" role="tabpanel">
+                                    <div class="card-body">
+                                      <div class="card-body">
+                                          <h4 class="font-medium m-t-30"><i class="fa fa-cog" area-hidden="true"></i> Settings </h4>
+                                          <hr>
+                                          <div class="form-group">
+                                              <label class="col-md-12"><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change
+                                              </a></label>
+                                              <label class="col-md-12"><a href=""><i class="fa fa-question-circle"></i> Help</a></label>
+                                              <label class="col-md-12"><a href=""><i class="fa fa-power-off"></i> Logout</a></label>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Edit Profile Modal -->
+                    <div class="modal fade" id="editprofilephoto" role="dialog">
+
+                      <div class="modal-dialog modal-lg">
+                        <form id="profile" class="form-material">
+                        <!-- Modal content-->
+                        <div class="modal-content" style="border-radius:0px;">
+
+                          <div class="modal-header" style="padding:10px">
+                            <h4 class="modal-title" style="font-weight:600;margin-top:7px">Profile Photo</h4>
+                            <button type="button" class="close" data-dismiss="modal" style="font-size: 40px;outline:none;">&times;</button>
+                          </div>
+                          <div class="col-xs-12" id="profileup" style="font-weight: bold"></div>
+                          <div class="modal-body">
+                            <div class="row">
+
+                              <div class="col-lg-4"></div>
+                               <div class="col-lg-5">
+                                 <img src="../assets/img/png/user2.png" id="imgupld" class="img-circle" width="150" height="150" style="border:1px solid #ececec;cursor:pointer" data-toggle="modal" data-target="#editprofilephoto" />
+                               </div>
+                               <div class="col-lg-3"></div>
+                            </div>
+                            <div class="form-group" id="imgupload">
+                                <label class="col-md-12">Change Profile Pic</label>
+                                <div class="col-md-12">
+                                    <input type="file" id="simg" accept="image/png,image/jpg,image/jpeg" multiple="" onchange="readURL(this);" class="form-control" name="img">
+                                </div>
+                            </div>
+                          </div>
+                           <div class="spinner" style="display:none;height: 150px;">
+                             <center>
+                               <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                               <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                             </center>
+                           </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" onclick="updateProfilePic()">Apply</button>
+                          </div>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                Copyright © Mechatron Robotics 2018. All Rights Reserved.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+          </form>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/franchise.js"></script>
+    <script src="../assets/js/token.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/studentdash.js"></script>
+    <script src="../assets/js/url.js"></script>
+    <script type="text/javascript">
+    function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+			$('#imgupld')
+				.attr('src', e.target.result)
+				.width(150)
+				.height(150);
+		};
+
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+</script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+</body>
+
+</html>

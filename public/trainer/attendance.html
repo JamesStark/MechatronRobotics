@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Attendance</title>
+    <!-- Bootstrap Core CSS -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+    <script type="text/javascript" src="../assets/js/studentdash.js"></script>
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+    <!--<script type="text/javascript" src="../assets/js/admission.js"></script>-->
+    <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+    <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getSession();myFunction()">
+
+  <!-- <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div> -->
+
+    <div id="main-wrapper" style="display:;">
+
+        <header class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a style="margin-left:70px;" class="navbar-brand" href="index.html">
+              <span>
+               <a href="/../index.html">  <img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-lg-0">
+                  <!-- ============================================================== -->
+                  <!-- Profile -->
+                  <!-- ============================================================== -->
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="dashboard.html" style="color:#455a64;">Overview</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="attendance.html" style="color:#FF8500;">Attendance</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#455a64;" class="fa fa-user-cog"></i> </a>
+                      <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                          <ul class="dropdown-user">
+                            <li><a href="admissionform.html"><i class="fas fa-user-edit"></i> Admission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <div class="page-wrapper" style="margin-left:0px;">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+                <!-- Row -->
+                <div class="row">
+
+                  <div class="col-12">
+                      <div class="card">
+                          <div class="card-body">
+                              <div class="table-responsive m-t-40">
+                                  <table id="myTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);margin:-15px;">
+                                            <th style="background:#468ADE;color:#fff;">Attendance</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </tbody>
+                                      <thead>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                              <th>Date:</th>
+                                              <th>
+                                                <input type="date" id="datePicker" class="form-control" name="" value="">
+                                              </th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr style="font-size:16px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                          </tr>
+                                      </tbody>
+                                      <thead>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                              <th>Student ID</th>
+                                              <th>Student Name</th>
+                                              <th>Attendance</th>
+                                              <th>Time in</th>
+                                              <th>Time out</th>
+                                              <th>Duration</th>
+                                              <th>Topics Covered</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                              <th>
+                                                <input type="text" placeholder="13" class="form-control" name="" value="">
+                                              </th>
+                                              <th>
+                                                <input type="text" placeholder="Aakash" class="form-control" name="" value="">
+                                              </th>
+                                              <th>
+                                                <form class="">
+                                                  <input type="radio" name="" class="form-control" value="">
+                                                  <label for="" style="font-weight:600;">Present</label>
+                                                  <input type="radio" name="" class="form-control" value="">
+                                                  <label for="" style="font-weight:600;">Absent</label>
+                                                </form>
+                                              </th>
+                                              <th>
+                                                <input type="time" name="" class="form-control" value="">
+                                              </th>
+                                              <th>
+                                                <input type="time" name="" class="form-control" value="">
+                                              </th>
+                                              <th>
+                                                <input type="text" name="" class="form-control" placeholder="2 hours" value="">
+                                              </th>
+                                              <th>
+                                                <input type="text" name="" class="form-control" placeholder="textarea..." value="" rows="2">
+                                              </th>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+
+                    </div>
+
+                    <div id="changepwd" class="modal fade" role="dialog">
+
+                      <div class="modal-dialog modal-md ">
+                        <form id="">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Change Password</h2>
+                              <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter Old Password</label> -->
+                                  <form id="changepasswordform">
+                                    <div class="col-xs-12" id="passwordedit"></div>
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                    </div>
+                                  <div class="col-md-12">
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <div class="col-xs-12" id="passwordmsg"></div>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <div class="col-xs-12" id="npasswordmsg"></div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Confirm New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <div class="col-xs-12" id="cnpasswordmsg"></div>
+                                  </div>
+                              </div>
+                            </form>
+                              <div class="spinner" style="display:none;height: 150px;">
+                               <center>
+                                 <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                                 <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                               </center>
+                             </div>
+                             <div class="form-group" style="" id="updatepwd">
+                                 <center>
+                                   <div class="col-md-8">
+                                       <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="submit" id="updatepwd" onclick="updatePassword()" class="form-control btn btn-primary"  name="updatepwd" >Update Password</button>
+                                   </div>
+                                 </center>
+                             </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                Copyright © Mechatron Robotics 2018. All Rights Reserved.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/codeverify.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+
+<script type="text/javascript">
+document.getElementById('datePicker').valueAsDate = new Date();
+</script>
+
+</body>
+
+</html>

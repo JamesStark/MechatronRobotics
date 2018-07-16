@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Student-Attendance</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                     <a href="/../index.html">  <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Baburao Patil</h4>
+                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="student-details.html">Student Details</a></li>
+                                <li><a href="#">Fee Details</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">Student Attendence</h3>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive m-t-40">
+                                    <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr style="font-size:14px;">
+                                                <th>Name</th>
+                                                <th>Age</th>
+                                                <th>Date<br>of Admission</th>
+                                                <th>Level</th>
+                                                <th>Current Month <br>Attendance </th>
+                                                <th>View</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size:14px;">
+                                          <tr>
+                                            <th>Pawandeep</th>
+                                            <th>10</th>
+                                            <th>10/02/2017</th>
+                                            <th>Level 1</th>
+                                            <th>80%</th>
+                                            <th>
+                                              <a href="attendance-detail.html">view attendence</a>
+                                            </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Ritesh</th>
+                                            <th>20</th>
+                                            <th>11/02/2017</th>
+                                            <th>Level 4</th>
+                                            <th>84%</th>
+                                            <th>
+                                              <a href="#">view attendence</a>
+                                            </th>
+                                          </tr>
+                                          <tr>
+                                            <th>salman</th>
+                                            <th>10</th>
+                                            <th>10/02/2017</th>
+                                            <th>Level 3</th>
+                                            <th>78%</th>
+                                            <th>
+                                              <a href="#">view attendence</a>
+                                            </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Sonu</th>
+                                            <th>10</th>
+                                            <th>10/02/2017</th>
+                                            <th>Level 3</th>
+                                            <th>92%</th>
+                                            <th>
+                                              <a href="#">view attendence</a>
+                                            </th>
+                                          </tr>
+                                          <tr>
+                                            <th>varun</th>
+                                            <th>10</th>
+                                            <th>10/02/2017</th>
+                                            <th>Level 1</th>
+                                            <th>88%</th>
+                                            <th>
+                                              <a href="#">view attendence</a>
+                                            </th>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> Copyright © Mechatron Robotics 2018. All Rights Reserved. </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+	$('#myTable').DataTable();
+	$(document).ready(function() {
+		var table = $('#example').DataTable({
+			columnDefs: [
+				{
+					visible: false,
+					targets: 2
+				}
+			],
+			order: [[2, 'asc']],
+			displayLength: 25,
+			drawCallback: function(settings) {
+				var api = this.api();
+				var rows = api
+					.rows({
+						page: 'current'
+					})
+					.nodes();
+				var last = null;
+				api
+					.column(2, {
+						page: 'current'
+					})
+					.data()
+					.each(function(group, i) {
+						if (last !== group) {
+							$(rows)
+								.eq(i)
+								.before(
+									'<tr class="group"><td colspan="5">' + group + '</td></tr>'
+								);
+							last = group;
+						}
+					});
+			}
+		});
+		// Order by the grouping
+		$('#example tbody').on('click', 'tr.group', function() {
+			var currentOrder = table.order()[0];
+			if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+				table.order([2, 'desc']).draw();
+			} else {
+				table.order([2, 'asc']).draw();
+			}
+		});
+	});
+});
+</script>
+</body>
+
+</html>

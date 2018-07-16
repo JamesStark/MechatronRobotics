@@ -1,0 +1,32 @@
+
+<html>
+<head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+
+	<!-- Fa Fa-icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body><div class="container" style="margin-top: 100px">
+	<div style="display:none">
+		<input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}">
+	</div>
+	<center><h2>Thank You</h2></center>
+	<table class="table table-bordered" style="font-family: 'PT Sans Caption', sans-serif;">
+		<thead>
+			<tr><td>Payment Status</td><td>{{ status }}</td></tr>
+			<tr><td>Transaction Id</td><td>{{ txnid }}</td></tr>
+			<tr><td>Name</td><td> {{ firstname }}</td></tr>
+			<tr><td>Registered For </td><td>{{productinfo}}</td></tr>
+			<tr><td>Registration id</td><td>{{udf4}} </td></tr>
+			<tr><td>Amount</td><td>{{ amount}}</td></tr>
+		</table>
+		<center><a class="btn btn-primary btn-sm" href="printpreview.html" role="button">Print Preview</a></center>
+	</body>
+	</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>MechatronRobotics</title>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Fa Fa-icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- CSS Customization -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="../assets/js/traningfee.js"></script>
+  <script type="text/javascript" src="../assets/js/url.js"></script>
+  <script type="text/javascript" src="../assets/js/traningpayment.js"></script>
+  <script type="text/javascript" src="../assets/js/token.js"></script>
+  <script type="text/javascript" src="../assets/js/static_values.js"></script>
+  <script type="text/javascript" src="../assets/js/studentdash.js"></script>
+  <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+  <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+
+  <link rel="stylesheet" href="../assets/css/master.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body onload="getFee();myFunction()">
+  <!-- <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div> -->
+
+    <div id="main-wrapper" style="display:;">
+
+      <header class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a style="margin-left:70px;" class="navbar-brand" href="/../index.html">
+            <span>
+              <a href="/../index.html"> <img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav my-lg-0">
+                <!-- ============================================================== -->
+                <!-- Profile -->
+                <!-- ============================================================== -->
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="dashboard.html" style="color:#455a64;">Overview</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="attendance.html" style="color:#455a64;">Attendance</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                </li>
+                <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                  <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#455a64;" class="fa fa-user-cog"></i> </a>
+                    <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                        <ul class="dropdown-user">
+                          <li><a href="admissionform.html" style="color:#FF8500;"><i class="fas fa-user-edit"></i> Admission</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+   <div class="page-wrapper" style="margin-left:0px;background: #fff;">
+
+     <div class="" style="background:#f2f2f4;">
+       <h2 style="text-align:center;font-weight:600;padding:10px;">Select Level & Pay Fee</h2>
+     </div>
+
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-md-12">
+           <fieldset>
+             <div class="container" style="margin-top: 10px">
+               <ul class="progressbar">
+                 <li><a style="font-size:16px;font-weight:600;">Fill Form</a></li>
+                 <li class="active"><a href="trainingfeepay.html" style="font-size:16px;font-weight:600;color:green">Pay Fee</li></a>
+                 <li><a style="font-size:16px;font-weight:600;">Get Enrollment No</li></a>
+                 <li><a style="font-size:16px;font-weight:600;">Printout</a></li>
+               </ul>
+             </div>
+           </fieldset>
+         </div>
+       </div>
+
+
+<div  class="container-fluid" style="margin-top: 50px; font-family: 'PT Sans Caption', sans-serif;">
+ <div id="FillDetails" class="card-deck">
+  <div class="card" style=" ";>
+    <img class="card-img-top" src="../assets/img/trainings/1.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h6 class="card-title" style="font-family: 'PT Sans Caption', sans-serif;"><span><!--<font color="#2f5597">--><center><strong>( LEVEL 1 )</center><center> Pre-Fundamental</strong></center><!--</font>--></span></h6>
+      <!--  <center> <span class="circle">Level 1</span> </center> -->
+      <!--<table style="border:none; margin-left: -15px; margin-right: -100px">-->
+        <div style="background-color: #2f5597;">
+         <center> <span style="margin-left: 5px"><font color="#fff">Duration</font></span>
+          <span ><font color="#fff"> : 3 Months</font></span></center>
+        </div><hr>
+        <div class="form-group"  >
+          <!--<label for="name" name="hobbies" id="hobi">--><center>Select Level : <!--</label>-->
+           <input type="checkbox"  name="chkbox[]" id="showHide1" style="margin-left: 15px" onchange="validate()" value="LEVEL_1"> </center>   <!--  onchange="showHide1(this.checked)" -->
+         </div><hr>
+         <table class="hiddenField1" style="border:none;  display: none; margin-left: -15px; margin-right: -100px">
+           <tr>
+            <td>Payment Frequency:</td>
+            <td>
+             <select style="border: none" name="duration" id="month1">
+               <option>Select</option>
+              <option value="3_Months">3 Months</option>
+              <option value="2_Months">2 Months</option>
+              <option value="1_Month">1 Month</option>
+            </select></td>
+            <tr>
+              <td>
+                Traning Fee</td><td><input type="text" id="trainingfee1" name="training_fee" style="border:none;background: white"; disabled=""></td>
+            </tr>
+            <tr>
+              <td>
+              <!-- Kit Fee</td><td><input type="checkbox" name="kit_fee" id="kitck1" onchange="addKitFee1()"><span id="kitfee1"></span></td> -->
+            </tr>
+          </table>
+          <div class="error_form col-xs-12" id="kit1_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+
+        </div>
+      </div>
+      <div class="card" style=" ";>
+        <img class="card-img-top" src="../assets/img/trainings/2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h6 class="card-title" style="font-family: 'PT Sans Caption', sans-serif;"><span><!--<font color="#2f5597">--><center><strong>( LEVEL 2 )</center><center> Fundamental</strong> </center><!--</font>--><span></h6>
+            <!--   <center> <span class="circle" >Level 2</span></center> -->
+            <div style="background-color: #2f5597;">
+             <center><span style="margin-left: 5px"><font color="#fff">Duration</font></span>
+              <span><font color="#fff"> : 3 Months</font></span></center></div><hr>
+              <div class="form-group"  >
+                <!--<label for="name" name="hobbies" id="hobi">--><center>Select Level : <!--</label>-->
+                  <input type="checkbox"  onchange="validate()" name="chkbox[]" style="margin-left: 15px" id="showHide2" value="LEVEL_2"> </center>
+                </div><hr>
+                <table class="hiddenField2" style="border:none;  display: none; margin-left: -15px; margin-right: -100px">
+                 <tr>
+                  <td>Payment Frequency:</td>
+                  <td>
+                   <select style="border: none" name="duration" id="month2">
+                     <option>Select</option>
+                     <option value="3_Months">3 Months</option>
+                     <option value="2_Months">2 Months</option>
+                     <option value="1_Month">1 Month</option>
+                  </select>
+
+
+                  <!-- <table style="border:none; margin-left: -15px; margin-right: -50px">-->
+                   <tr>
+                      <td>Traning Fee</td><td><input type="text" id="trainingfee2" name="training_fee" style="border:none;background: white"; disabled=""><td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <!-- Kit Fee</td><td><input type="checkbox" name="kit_fee" id="kitck2"  style="border:none; background: white"; onchange="addKitFee2()" > <span id="kitfee2"></span></td> -->
+                    </tr>
+                  </table>
+                  <div class="error_form col-xs-12" id="kit2_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+                </div>
+              </div>
+              <div class="card" style=" ";>
+                <img class="card-img-top" src="../assets/img/trainings/3.jpg" alt="Card image cap">
+                <div class="card-body">
+                 <h6 class="card-title" style="font-family: 'PT Sans Caption', sans-serif;"><span><!--<font color="#2f5597">--><center><strong>( LEVEL 3 )</center><center> Intermediate</strong> </center><!--</font>--><span></h6>
+                  <!--   <center> <span class="circle" >Level 3</span> </center> -->
+                  <div style="background-color: #2f5597;">
+                   <center><span style="margin-left: 5px"><font color="#fff">Duration</font></span>
+                    <span><font color="#fff"> : 3 Months</font></span></center></div><hr>
+                    <div class="form-group"  >
+                      <!--<label for="name" name="hobbies" id="hobi">--><center>Select Level : <!--</label>-->
+                       <input type="checkbox" onchange="validate()" name="chkbox[]" style="margin-left: 15px" id="showHide3" value="LEVEL_3"> </center>
+                     </div><hr>
+                    <!--   <div class="table-responsive m-t-40"> -->
+                     <table class="hiddenField3" style="border:none;  display: none; margin-left: -15px; margin-right: -100px">
+                       <tr>
+                        <td>Payment Frequency:</td>
+                        <td>
+                         <select style="border: none" name="duration" id="month3">
+                           <option>Select</option>
+                           <option value="3_Months">3 Months</option>
+                           <option value="2_Months">2 Months</option>
+                           <option value="1_Month">1 Month</option>
+                        </select></td></tr>
+                        <tr>
+                          <td>Traning Fee:</td><td><input type="text" id="trainingfee3" name="training_fee" style="border:none;background: white"; disabled=""></td></tr>
+                          <tr>
+                            <td>
+                            <!-- Kit Fee:</td><td> <input type="checkbox"  name="kit_fee" id="kitck3"  style="border:none; background: white"; onchange="addKitFee3()" ><span id="kitfee3"></span></td> -->
+                          </tr>
+                        </table>
+                        <div class="error_form col-xs-12" id="kit3_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+                     <!--  </div> -->
+                    </div>
+                    </div>
+                    <div class="card" style=" ";>
+                      <img class="card-img-top" src="../assets/img/trainings/4.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h6 class="card-title" style="font-family: 'PT Sans Caption', sans-serif;"><span><!--<font color="#2f5597">--><center><strong>( LEVEL 4 )</center><center> Advanced</strong> </center><!--</font>--><span></h6>
+                          <!--  <center> <span class="circle">Level 4</span> </center> -->
+                          <div style="background-color: #2f5597;">
+                           <center><span style="margin-left: 5px"><font color="#fff">Duration</font></span>
+                            <span><font color="#fff"> : 3 Months</font></span></center></div><hr>
+                            <div class="form-group"  >
+                              <!--<label for="name" name="hobbies" id="hobi">--><center>Select Level : <!--</label>-->
+                                <input type="checkbox" onchange="validate()" id="showHide4" name="chkbox[]" style="margin-left: 15px" value="LEVEL_4"> </center>
+                              </div><hr>
+
+                              <table class="hiddenField4" style="border:none;  display: none; margin-left: -15px; margin-right: -100px">
+                               <tr>
+                                <td>Payment Frequency:</td>
+                                <td>
+                                 <select style="border: none" name="duration" id="month4">
+                                   <option>Select</option>
+                                   <option value="3_Months">3 Months</option>
+                                   <option value="2_Months">2 Months</option>
+                                   <option value="1_Month">1 Month</option>
+                                </select></td></tr>
+                                <tr><td>
+                                Traning Fee</td><td><input type="text" id="trainingfee4" name="training_fee" style="border:none;background: white"; disabled=""></td></tr>
+                                <tr><td>
+                                <!-- Kit Fee</td><td> <input type="checkbox"  name="kit_fee" id="kitck4" onchange="addKitFee4()" style="border:none; background: white"; ><span id="kitfee4"></span></td> -->
+                              </table>
+                              <div class="error_form col-xs-12" id="kit4_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                          </div>
+                          <div class="card" style=" ";>
+                            <img class="card-img-top" src="../assets/img/trainings/5.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h6 class="card-title" style="font-family: 'PT Sans Caption', sans-serif;"><span><!--<font color="#2f5597">--><center><strong>( LEVEL 5 ) </center><center> Expert</strong> </center><!--</font>--><span></h6>
+                                <!--  <center> <span class="circle" >Level 5</span> </center> -->
+                                <div style="background-color: #2f5597;">
+                                 <center><span style="margin-left: 5px"><font color="#fff">Duration</font></span>
+                                  <span><font color="#fff"> : 3 Months</font></span></center></div><hr>
+                                  <div class="form-group"  >
+                                    <!--<label for="name" name="hobbies" id="hobi">--><center>Select Level : <!--</label>-->
+                                     <input type="checkbox" onchange="validate()" id="showHide5" name="chkbox[]" style="margin-left: 15px" value="LEVEL_5"> </center>
+                                   </div><hr>
+                                   <table class="hiddenField5" style="border:none;  display: none; margin-left: -15px; margin-right: -100px">
+                                     <tr>
+                                      <td>Payment Frequency:</td>
+                                      <td>
+                                       <select style="border: none" name="duration" id="month5">
+                                         <option>Select</option>
+                                         <option value="3_Months">3 Months</option>
+                                         <option value="2_Months">2 Months</option>
+                                         <option value="1_Month">1 Month</option>
+                                      </select></td></tr>
+                                      <tr><td>
+
+                                      Traning Fee</td><td><input type="text" id="trainingfee5" name="training_fee" style="border:none;background: white"; disabled=""></td></tr>
+                                      <tr><td>
+                                      <!-- Kit Fee</td><td><input type="checkbox"  name="kit_fee" id="kitck5" style="border:none; background: white"; onchange="addKitFee5()" ><span id="kitfee5"></span></td> -->
+                                    </table>
+                                    <div class="error_form col-xs-12" id="kit5_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- MODAL POPUP -->
+                              <div class="modal fade" tabindex="-1" role="dialog" id="mymodaldis" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button style="outline:none;" type="button" class="close" data-dismiss="modal">&times;</button>
+                                 </div>
+                                 <div class="modal-body">
+                                  <h2 style="text-align:center;font-family: 'Varela Round', sans-serif;">Discounts Based On Levels</h2>
+                                    <div class="table-responsive m-t-40">
+                                    <table id="location" class="table table-bordered table-striped" style="font-family: 'Signika', sans-serif;">
+                                      <thead style="background-color:#92d050; color: #000000">
+                                        <tr>
+                                          <th >Level</th>
+                                          <th >Duration</th>
+                                          <th >Actual Fee</th>
+                                          <th >Discounted Fee</th>
+                                        </tr>
+                                      </thead>
+                                      <tr>
+                                        <td>Level 1</td>
+                                        <td>3 Months</td>
+                                        <td>12,000</td>
+                                        <td>10,800(10%)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Level 2 + Level 3</td>
+                                        <td>6 Months</td>
+                                        <td>27,000</td>
+                                        <td>18,900(30%)</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Level 2 + Level 3 + Level 4</td>
+                                        <td> 9 Months</td>
+                                        <td> 42,000</td>
+                                        <td> 25,200(40%)</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Level 2 + Level 3 + Level 4 + Level 5</td>
+                                        <td> 12 Months</td>
+                                        <td> 57,000</td>
+                                        <td> 28,500(50%)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Level 4 + Level 5</td>
+                                        <td> 6 Months</td>
+                                        <td> 30000</td>
+                                        <td> 21000(30%)</td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                               <!--  </div> -->
+                              </div>
+                            </div><!--end modal-contene-->
+                          </div><!--end .modal-dialog-->
+                        </div><!-- end .maodal -->
+                        <!--</div>-->
+
+
+                        <button type="button" class="btn btn-success" style="float:right; margin-top:10px";><a href="" data-toggle="modal" data-target="#mymodaldis" style="color: #fff; text-decoration: none";>Click To See Discount Details</button></a>
+                        <hr>
+                        <div class="card col-md-12 col-lg-12 col-sm-3 text-center" id="discountgot" style="display: none; height: 50px; margin-top: 10px;">
+                    </div>
+                      <div class="spinner" style="display:none; height: 150px;">
+                        <center><img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                         <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                       </div>
+                       <div class="row" style="margin-bottom:-40px;">
+                         <div class="col-md-6"></div>
+                         <div id="edit-btn" class="col-md-2 form-group" style="display:none;">
+                           <a href="traningfeepay.html">
+                             <button style="color:#fff;font-weight:500;" type="button" class="btn btn-success form-control" name="button">Edit Payment Details</button>
+                           </a>
+                         </div>
+                         <div class="col-md-2"></div>
+                       </div>
+                       <div id="paymentdetails" style="margin-top: 50px"></div>
+                       <div id="details">
+                        <h4>Pay Here</h4>
+                        <form id="training">
+                          <div style="overflow-x:auto;">
+                            <table class="table table-bordered" style="font-family: 'PT Sans Caption', sans-serif;">
+                              <thead>
+                                <tr>
+                                  <td><strong>Name</strong></td>
+                                  <td><input type="text" id="namest"style="border:none; background: white" disabled=""></td>
+
+                                </tr>
+                              </thead>
+                              <tr>
+                               <td><strong>Contact</strong></td>
+                               <td><input type="text" id="contactst" style="border:none; background: white",disabled=""></td>
+                             </tr>
+                             <tr>
+                               <td><strong>Email</strong></td>
+                               <td><input type="text" id="emailst" style="border:none ; background: white";  disabled=""></td>
+                             </tr>
+                             <tr>
+                               <td><strong>Level</strong></td>
+                               <td><p id="levelst" style="border:none; background: white"; disabled=""></p><!-- <span id="level2"></span><span id="level3"></span><span id="level4"></span><span id="level5"></span> -->
+                               </td>
+                             </tr>
+                             <tr>
+                               <td><strong>Course Type</strong></td>
+                               <td><input type="text" id="classst" style="border:none;background: white"; disabled=""></td>
+                             </tr>
+                             <tr>
+                               <td><strong>Center</strong></td>
+                               <td><input type="text" id="centerst" style="border:none;background: white"; disabled=""></td>
+                             </tr>
+                              <!-- <tr>
+                               <td><strong>Before Discount</strong></td>
+                                <td><input type="text" id="beforedis" style="border36:none;background: white"; disabled=""></td>
+                              </tr>
+                                <tr>
+                               <td><strong>Total</strong></td>
+                               <td><input type="text" id="total" style="border:none;background: white"; disabled=""></td>
+                             </tr> -->
+                             <tr>
+                               <td><strong>Payment Discription Before Discount</strong></td>
+                               <td colspan="5">
+                                <table border="0">
+                                  <tr><td>Level 1</td><td>Level 2</td><td>Level 3</td><td>Level 4</td><td>Level 5</td><td>Total Payble Before Discount</td></tr>
+                                  <tr><td><input type="text" id="totalbd1" style="border:none;background: white;width:100px"; disabled=""></td><td><input type="text" id="totalbd2" style="border:none;background: white;background: white;width:100px"; disabled="" ></td><td><input type="text" id="totalbd3" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="totalbd4" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="totalbd5" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="totalbd" style="border:none;background: white;background: white;width:100px"; disabled=""></td></tr>
+                                </table>
+
+                                <tr>
+                                 <td><strong>Discount</strong></td>
+                                 <td colspan="5"><input style="border: none; outline: none;" type="text" id="total_disc" readonly></span>
+                                  <!-- <table border="0">
+                                    <tr><td><input type="text" id="disc1" style="border:none;background: white;width:100px"; disabled=""></td><td><input type="text" id="disc2" style="border:none;background: white;background: white;width:100px"; disabled="" ></td><td><input type="text" id="disc3" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="disc4" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="disc5" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="total_disc" style="border:none;background: white;background: white;width:100px"; disabled=""></td></tr>
+                                  </table> -->
+                                <tr>
+                                 <td><strong>Payment Discription After Discout</strong></td>
+                                 <td colspan="5">
+                                  <table border="0">
+                                    <tr><td>Level 1</td><td>Level 2</td><td>Level 3</td><td>Level 4</td><td>Level 5</td><td>Total Payble After Discount</td></tr>
+                                    <tr><td><input type="text" id="total1" style="border:none;background: white;width:100px"; disabled=""></td><td><input type="text" id="total2" style="border:none;background: white;background: white;width:100px"; disabled="" ></td><td><input type="text" id="total3" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="total4" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="total5" style="border:none;background: white;background: white;width:100px"; disabled=""></td><td><input type="text" id="total" style="border:none;background: white;background: white;width:100px"; disabled=""></td></tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <center><button type="button" id="pay" class="btn btn-primary" disabled="true" onclick="$('#edit-btn').show()">Submit</button></center>
+                          </div>
+
+                          </form>
+                          <!-- <input type="button" style="float:right; background-color: rgb(255,133,0);" id ="pay" value="Preview"></div></form>-->
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+
+<!-- Section Content -->
+<section id="home" class="g-pos-rel g-theme-bg-blue-dark-v1-opacity-0_8--after">
+  <!-- <div class="requesttexttab"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#requestModal"> -->
+    <!-- <p style="font-family: 'PT Sans Caption', sans-serif;margin-left:15px;font-weight:600;color:#fff;font-size:15px;">E <br>N <br>Q <br>U <br>I <br>R <br>Y </p> -->
+    <!-- </div> -->
+    <div id="requestModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Enquiry Form</h2>
+            <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <label for="type" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Request Type</label>
+            <select style="border:1px solid #ced4da;outline:none;" type="text" name="type" id="type" class="form-control" required >
+              <option value="">--- Request Type ---</option>
+              <option value="">ROBOTICS TRAINING</option>
+              <option value="">ROBOTICS WORKSHOPS</option>
+              <option value="">ONLINE ROBOTICS</option>
+              <option value="">ROBOTICS LAB</option>
+              <option value="">ROBOT PARTS & KITS</option>
+              <option value="">ROBOTICS FRANCHISE</option>
+              <option value="">SPONSERSHIP</option>
+              <option value="">TECHNICAL SUPPORT</option>
+              <option value="">INTERNSHIP</option>
+              <option value="">OTHER</option>
+              <option value="">ENQUIRY</option>
+            </select>
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Name</label>
+            <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Name" required />
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Email</label>
+            <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Email" required />
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Mobile</label>
+            <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Mobile" required />
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">College/School</label>
+            <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="College/School" required />
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Location</label>
+            <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Location" required />
+            <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Query</label>
+            <textarea rows="4" style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Query" ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="tabs">
+    <div class="container" style="padding-top:150px">
+      <ul class="nav sm-pills nav-justified pills-secondary">
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link active" data-toggle="tab" href="#overview" role="tab">overview</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#attendance" role="tab">attendance</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#tutorials" role="tab">Tutorials</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#projects" role="tab">Projects</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#Quiz" role="tab">Quiz</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#feestatus" role="tab">Feestatus</a>
+        </li>
+        <li class="nav-item tab-style">
+          <a style="color:#fff" class="nav-link" data-toggle="tab" href="#certificate" role="tab">Certificate</a>
+        </li>
+      </ul>
+    </div>
+    <!--Panel 4-->
+    <div class="tab-pane fade" id="panel14" role="tabpanel">
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+        reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+      porro voluptate odit minima.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+        reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+      porro voluptate odit minima.</p>
+    </div>
+    <!--/.Panel 4-->
+  </div>
+</div>
+</section>
+
+    </div>
+
+    <footer class="footer" style="text-align:center;">
+        Copyright © Mechatron Robotics 2018. All Rights Reserved.
+    </footer>
+
+  </div>
+
+</div>
+
+  <!-- JS Global Compulsory -->
+  <script src="../assets/js/jquery.min.1.js"></script>
+  <script src="../assets/js/bootstrap.min.1.js"></script>
+  <script src="../assets/js/custom.min.js"></script>
+  <script type="text/javascript">
+</script>
+
+  </body>
+</html>

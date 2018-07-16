@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enrollment NO</title>
+
+	<!-- Required Meta Tags Always Come First -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+	<!-- CSS Customization -->
+
+	<link rel="stylesheet" href="../assets/css/master.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	<script type="text/javascript" src="../assets/js/token.js"></script>
+	<script type="text/javascript" src="../assets/js/studentdash.js"></script>
+	<script type="text/javascript" src="../assets/js/url.js"></script>
+	<script type="text/javascript" src="../assets/js/paymsg.js"></script>
+	<script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+	<script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+
+</head>
+<body  onload="getSession();getPaymentStatus();myFunction()">
+
+	<!-- <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div> -->
+
+    <div id="main-wrapper" style="display:;">
+
+        <header class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a style="margin-left:70px;" class="navbar-brand" href="index.html">
+              <span>
+             <a href="/../index.html"><img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-lg-0">
+                  <!-- ============================================================== -->
+                  <!-- Profile -->
+                  <!-- ============================================================== -->
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="dashboard.html" style="color:#FF8500;">Overview</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="attendance.html" style="color:#455a64;">Attendance</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#455a64;" class="fa fa-user-cog"></i> </a>
+                      <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                          <ul class="dropdown-user">
+                            <li><a href="admissionform.html" style="color:#FF8500;"><i class="fas fa-user-edit"></i> Admission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+		<div class="page-wrapper" style="margin-left:0px;background:#fff">
+
+				<form class="form-material" id="myForm" name="myForm">
+					<input type="hidden" id="txnid">
+
+				<!-- ============================================================== -->
+				<!-- Container fluid  -->
+				<!-- ============================================================== -->
+        <div class="" style="background:#f2f2f4;margin-top:px;">
+          <h2 style="text-align:center;font-weight:600;padding:10px;">Enrollment no</h2>
+        </div>
+				<div class="container-fluid" style="">
+
+						<!-- Row -->
+						<div class="row">
+								<!-- Column -->
+                <div class="col-md-12">
+                  <fieldset>
+                    <div class="container" style="margin-top: 10px">
+                      <ul class="progressbar">
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;">Fill Form</a></li>
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;color:#67757c" href="trainningfeepay.html">Pay Fee</li></a>
+                        <li style="font-weight:600;" class="active"><a style="font-size:16px;font-weight:600;color:green" href="enrollmentno.html">Get Enrollment No</li></a>
+                        <li style="font-weight:600;"><a style="font-size:16px;font-weight:600;">Printout</a></li>
+                      </ul>
+                    </div>
+                  </fieldset>
+                </div>
+
+								<div class="col-md-2"></div>
+								<div class="col-md-8" style="margin-top:20px;">
+										<div class="card">
+
+												<!-- Tab panes -->
+												<div class="tab-content">
+
+														<!--second tab-->
+														<div class="" role="tabpanel">
+																<div class="card-body">
+																	<center>
+																		<img style="margin-top:-20px;margin-bottom:-10px;" width="250" height="auto" src="https://trellis.co/wp-content/uploads/2018/01/shopifycheckout.gif" alt="">
+																		<h3 style="text-align:center; font-size:22px;margin-top:-5px; font-weight:600;">Congratulation</h3>
+																		<p style="font-family: 'Markazi Text', serif;margin-top:-5px;text-align:center;font-size:22px;">You have done Success Payment</p>
+																	</center>
+																	<hr><br>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Fee Status</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="status"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Amount</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="amount"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Registration Id</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="registration_id"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Name</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="name"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Contact</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="contact"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Email</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="email"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Date Of Payment</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="dop"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Transiction id</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="txd"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Course Type</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="course_type"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Payment For</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="payfor"></span>
+					                            </div>
+					                          </div>
+																	</div><hr>
+																	<div class="row">
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<label style="font-weight:600;" class="col-md-12">Merchant Name</label>
+					                            </div>
+					                          </div>
+																		<div class="col-md-6" style="margin-bottom:-40px;margin-top: 10px;text-align:left;">
+					                            <div class="form-group">
+																				<span class="col-md-12" id="mn"></span>
+					                            </div>
+					                          </div>
+																	</div><hr><br>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2"></div>
+												<div class="col-md-12">
+													<center>
+														<a href="printout.html" style="color:#fff;font-weight:600;">
+															<button type="button" class="btn btn-primary" name="button" style="font-weight:600;cursor:pointer;">Continue to Printout</button>
+														</a>
+													</center>
+												</div>
+											</div>
+
+				</div>
+			</form>
+
+		</div>
+		<footer class="footer" style="text-align:center;">
+				Copyright © Mechatron Robotics 2018. All Rights Reserved.
+		</footer>
+	</div>
+
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<script src="../assets/js/jquery.min.1.js"></script>
+	<script src="../assets/js/bootstrap.min.1.js"></script>
+	<script src="../assets/js/custom.min.js"></script>
+
+</body>
+</html>

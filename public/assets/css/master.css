@@ -1,0 +1,21 @@
+.tab-style1 {
+  background: #069059;
+  margin: 3px;
+  border-radius: 5px;
+}
+.tab-style1 .active {
+  background: #FF8500;
+  border-radius: 5px;
+}
+
+.tab-style2 {
+  background: #069059;
+  margin: 3px;
+  border-radius: 50%;
+  width: 50%;
+}
+.tab-style2 .active {
+  background: #FF8500;
+  border-radius: 50%;
+  width: 50%;
+}

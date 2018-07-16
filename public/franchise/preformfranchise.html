@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Franchise Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+  <!--   <script type="text/javascript" src="../assets/js/franchisedashboard.js"></script> -->
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+   <!--  <script type="text/javascript" src="../assets/js/admissionform.js"></script> -->
+   <!--  <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script> -->
+    <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getSession()">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <!-- <div class="">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div> -->
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                      <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Baburao Patil</h4>
+                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+
+        <div id="feeAlert" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <p class="modal-title" style="color:red;font-weight:600;font-size:20px;text-align:center;">PayFee Alert</p>
+              </div>
+              <div class="modal-body">
+                <p style="margin-bottom:-3px;font-size:18px;font-weight:600;">You must pay the Fee to access Student Details</p>
+                <a data-dismiss="modal" style="font-size:18px;font-weight:600;color:blue;cursor:pointer;">click here to continue...</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                            <!-- <ul aria-expanded="false" class="collapse">
+                                <li><a>Student Details</a></li>
+                                <li><a>Fee Details</a></li>
+                            </ul> -->
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+              <div class="row" style="background: #fff;">
+
+                <div class="col-md-12" id="msgadmit" style="font-weight: bold"></div>
+                <div class="col-md-12" style="padding-top:20px;">
+                  <!-- <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div>
+                  <center><a style="display:none;" id="continue" href="traningfeepay.html">Click here to continue...</a></center> -->
+                    <div class="container" id="admissionformcontainer" style="border:1px solid #ececec;">
+                      <form class="form-material"  id="admission" enctype="multipart/form-data" onsubmit="return false" >
+                        <input type="hidden"  id="auth_user_id" name="auth_user">
+                        <input type="hidden" id="created_by" name="created_by">
+                        <input type="hidden"  id="modified_by" name="modified_by">
+                        <div class="row" >
+
+                          <div class="col-md-12" style="padding:20px;">
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Personal Details</h5>
+                            <hr>
+
+                          </div>
+                          <div class="col-md-12" >
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Name Of Owner</label>
+                                <div class="col-md-12">
+                                    <input  type="text" id="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="Student name" autocomplete="off"/>
+                                    <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Email</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="" id="semail" class="form-control"  placeholder="email" autocomplete="off"/>
+                                    <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Contact no</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="" id="scontact" class="form-control"  placeholder="contact" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr1" id="add1" class="form-control"  placeholder="426" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add1_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Street</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr2" id="add2" class="form-control"  placeholder="Ganguly" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add2_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Landmark</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr3" id="add3" class="form-control"  placeholder="Forum Rangoli" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add3_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">City</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="city" id="city" class="form-control"  placeholder="Kolkata" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="city_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">State</label>
+                                <div class="col-md-12">
+                                    <select type="text" name="state" id="state" class="form-control"  placeholder="West Bengal" autocomplete="off">
+                                      <option>---- Please Select ----</option>
+                                      <option value="Andra Pradesh">Andra Pradesh</option>
+                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                      <option value="Assam">Assam</option>
+                                      <option value="Bihar">Bihar</option>
+                                      <option value="Chhattisgarh">Chhattisgarh</option>
+                                      <option value="Goa">Goa</option>
+                                      <option value="Gujarat">Gujarat</option>
+                                      <option value="Haryana">Haryana</option>
+                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                      <option value="Jharkhand">Jharkhand</option>
+                                      <option value="Karnataka">Karnataka</option>
+                                      <option value="Kerala">Kerala</option>
+                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                      <option value="Maharashtra">Maharashtra</option>
+                                      <option value="Manipur">Manipur</option>
+                                      <option value="Meghalaya">Meghalaya</option>
+                                      <option value="Mizoram">Mizoram</option>
+                                      <option value="Nagaland">Nagaland</option>
+                                      <option value="Orissa">Orissa</option>
+                                      <option value="Punjab">Punjab</option>
+                                      <option value="Rajasthan">Rajasthan</option>
+                                      <option value="Sikkim">Sikkim</option>
+                                      <option valu="Tamil Nadu">Tamil Nadu</option>
+                                      <option value="Tripura">Tripura</option>
+                                      <option value="Uttaranchal">Uttaranchal</option>
+                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                      <option value="West Bengal">West Bengal</option>
+                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                      <option value="Chandigarh">Chandigarh</option>
+                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                      <option value="Daman and Diu">Daman and Diu</option>
+                                      <option value="Delhi">Delhi</option>
+                                      <option value="Lakshadeep">Lakshadeep</option>
+                                      <option value="Pondicherry">Pondicherry</option>
+                                    </select>
+                                    <div class="error_form col-xs-12" id="state_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Country</label>
+                                <div class="col-md-12">
+                                  <select type="text" name="country" id="country" class="form-control"  placeholder="India" autocomplete="off">
+                                    <option>---- Please Select ----</option>
+                                    <!--  <option value="Afghanistan">Afghanistan</option>
+                                     <option value="Albania">Albania</option>
+                                     <option value="Algeria">Algeria</option>
+                                     <option value="Andorra">Andorra</option>
+                                     <option value="Angola">Angola</option>
+                                     <option value="Anguilla">Anguilla</option>
+                                     <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                     <option value="Argentina">Argentina</option>
+                                     <option value="Armenia">Armenia</option>
+                                     <option value="Australia">Australia</option>
+                                     <option value="Austria">Austria</option>
+                                     <option value="Azerbaijan">Azerbaijan</option>
+                                     <option value="Bahamas">Bahamas</option>
+                                     <option value="Bahrain">Bahrain</option>
+                                     <option value="Bangladesh">Bangladesh</option>
+                                     <option value="Barbados">Barbados</option>
+                                     <option value="Belarus">Belarus</option>
+                                     <option value="Belgium">Belgium</option>
+                                     <option value="Belize">Belize</option>
+                                     <option value="Benin">Benin</option>
+                                     <option value="Bermuda">Bermuda</option>
+                                     <option value="Bhutan">Bhutan</option>
+                                     <option value="Bolivia">Bolivia</option>
+                                     <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                     <option value="Botswana">Botswana</option>
+                                     <option value="Brazil">Brazil</option>
+                                     <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                     <option value="Bulgaria">Bulgaria</option>
+                                     <option value="Burkina Faso">Burkina Faso</option>
+                                     <option value="Myanmar/Burma">Myanmar/Burma</option>
+                                     <option value="Burundi">Burundi</option>
+                                     <option value="Cambodia">Cambodia</option>
+                                     <option value="Cameroon">Cameroon</option>
+                                     <option value="Canada">Canada</option>
+                                     <option value="Cape Verde">Cape Verde</option>
+                                     <option value="Cayman Islands">Cayman Islands</option>
+                                     <option value="Central African Republic">Central African Republic</option>
+                                     <option value="Chad">Chad</option>
+                                     <option value="Chile">Chile</option>
+                                     <option value="China">China</option>
+                                     <option value="Colombia">Colombia</option>
+                                     <option value="Comoros">Comoros</option>
+                                     <option value="Congo">Congo</option>
+                                     <option value="Costa Rica">Costa Rica</option>
+                                     <option value="Croatia">Croatia</option>
+                                     <option value="Cuba">Cuba</option>
+                                     <option value="Cyprus">Cyprus</option>
+                                     <option value="Czech Republic">Czech Republic</option>
+                                     <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                                     <option value="Denmark">Denmark</option>
+                                     <option value="Djibouti">Djibouti</option>
+                                     <option value="Dominican Republic">Dominican Republic</option>
+                                     <option value="Dominica">Dominica</option>
+                                     <option value="Ecuador">Ecuador</option>
+                                     <option value="Egypt">Egypt</option>
+                                     <option value="El Salvador">El Salvador</option>
+                                     <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                     <option value="Eritrea">Eritrea</option>
+                                     <option value="Estonia">Estonia</option>
+                                     <option value="Ethiopia">Ethiopia</option>
+                                     <option value="Fiji">Fiji</option>
+                                     <option value="Finland">Finland</option>
+                                     <option value="France">France</option>
+                                     <option value="French Guiana">French Guiana</option>
+                                     <option value="Gabon">Gabon</option>
+                                     <option value="Gambia">Gambia</option>
+                                     <option value="Georgia">Georgia</option>
+                                     <option value="Germany">Germany</option>
+                                     <option value="Ghana">Ghana</option>
+                                     <option value="Great Britain">Great Britain</option>
+                                     <option value="Greece">Greece</option>
+                                     <option value="Grenada">Grenada</option>
+                                     <option value="Guadeloupe">Guadeloupe</option>
+                                     <option value="Guatemala">Guatemala</option>
+                                     <option value="Guinea">Guinea</option>
+                                     <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                     <option value="Guyana">Guyana</option>
+                                     <option value="Haiti">Haiti</option>
+                                     <option value="Honduras">Honduras</option>
+                                     <option value="Hungary">Hungary</option>
+                                     <option value="Iceland">Iceland</option> -->
+                                     <option value="India">India</option>
+                                    <!--  <option value="Indonesia">Indonesia</option>
+                                     <option value="Iran">Iran</option>
+                                     <option value="Iraq">Iraq</option>
+                                     <option value="Israel and the Occupied Territories">Israel and the Occupied Territories</option>
+                                     <option value="Italy">Italy</option>
+                                     <option value="Ivory Coast (Cote d'Ivoire)">Ivory Coast (Cote d'Ivoire)</option>
+                                     <option value="Jamaica">Jamaica</option>
+                                     <option value="Japan">Japan</option>
+                                     <option value="Jordan">Jordan</option>
+                                     <option value="Kazakhstan">Kazakhstan</option>
+                                     <option value="Kenya">Kenya</option>
+                                     <option value="Kosovo">Kosovo</option>
+                                     <option value="Kuwait">Kuwait</option>
+                                     <option value="Kyrgyz Republic (Kyrgyzstan)">Kyrgyz Republic (Kyrgyzstan)</option>
+                                     <option value="Laos">Laos</option>
+                                     <option value="Latvia">Latvia</option>
+                                     <option value="Lebanon">Lebanon</option>
+                                     <option value="Lesotho">Lesotho</option>
+                                     <option value="Liberia">Liberia</option>
+                                     <option value="Libya">Libya</option>
+                                     <option value="Liechtenstein">Liechtenstein</option>
+                                     <option value="Lithuania">Lithuania</option>
+                                     <option value="Luxembourg">Luxembourg</option>
+                                     <option value="Republic of Macedonia">Republic of Macedonia</option>
+                                     <option value="Madagascar">Madagascar</option>
+                                     <option value="Malawi">Malawi</option>
+                                     <option value="Malaysia">Malaysia</option>
+                                     <option value="Maldives">Maldives</option>
+                                     <option value="Mali">Mali</option>
+                                     <option value="Malta">Malta</option>
+                                     <option value="Martinique">Martinique</option>
+                                     <option value="Mauritania">Mauritania</option>
+                                     <option value="Mauritius">Mauritius</option>
+                                     <option value="Mayotte">Mayotte</option>
+                                     <option value="Mexico">Mexico</option>
+                                     <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                     <option value="Monaco">Monaco</option>
+                                     <option value="Mongolia">Mongolia</option>
+                                     <option value="Montenegro">Montenegro</option>
+                                     <option value="Montserrat">Montserrat</option>
+                                     <option value="Morocco">Morocco</option>
+                                     <option value="Mozambique">Mozambique</option>
+                                     <option value="Namibia">Namibia</option>
+                                     <option value="Nepal">Nepal</option>
+                                     <option value="Netherlands">Netherlands</option>
+                                     <option value="New Zealand">New Zealand</option>
+                                     <option value="Nicaragua">Nicaragua</option>
+                                     <option value="Niger">Niger</option>
+                                     <option value="Nigeria">Nigeria</option>
+                                     <option value="Korea, Democratic Republic of (North Korea)">Korea, Democratic Republic of (North Korea)</option>
+                                     <option value="Norway">Norway</option>
+                                     <option value="Oman">Oman</option>
+                                     <option value="Pacific Islands">Pacific Islands</option>
+                                     <option value="Pakistan">Pakistan</option>
+                                     <option value="Panama">Panama</option>
+                                     <option value="Papua New Guinea">Papua New Guinea</option>
+                                     <option value="Paraguay">Paraguay</option>
+                                     <option value="Peru">Peru</option>
+                                     <option value="Philippines">Philippines</option>
+                                     <option value="Poland">Poland</option>
+                                     <option value="Portugal">Portugal</option>
+                                     <option value="Puerto Rico">Puerto Rico</option>
+                                     <option value="Qatar">Qatar</option>
+                                     <option value="Reunion">Reunion</option>
+                                     <option value="Romania">Romania</option>
+                                     <option value="Russian Federation">Russian Federation</option>
+                                     <option value="Rwanda">Rwanda</option>
+                                     <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                     <option value="Saint Lucia">Saint Lucia</option>
+                                     <option value="Saint Vincent's & Grenadines">Saint Vincent's & Grenadines</option>
+                                     <option value="Samoa">Samoa</option>
+                                     <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                     <option value="Saudi Arabia">Saudi Arabia</option>
+                                     <option value="Senegal">Senegal</option>
+                                     <option value="Serbia">Serbia</option>
+                                     <option value="Seychelles">Seychelles</option>
+                                     <option value="Sierra Leone">Sierra Leone</option>
+                                     <option value="Singapore">Singapore</option>
+                                     <option value="Slovak Republic (Slovakia)">Slovak Republic (Slovakia)</option>
+                                     <option value="Slovenia">Slovenia</option>
+                                     <option value="Solomon Islands">Solomon Islands</option>
+                                     <option value="Somalia">Somalia</option>
+                                     <option value="South Africa">South Africa</option>
+                                     <option value="Korea, Republic of (South Korea)">Korea, Republic of (South Korea)</option>
+                                     <option value="South Sudan">South Sudan</option>
+                                     <option value="Spain">Spain</option>
+                                     <option value="Sri Lanka">Sri Lanka</option>
+                                     <option value="Sudan">Sudan</option>
+                                     <option value="Suriname">Suriname</option>
+                                     <option value="Swaziland">Swaziland</option>
+                                     <option value="Sweden">Sweden</option>
+                                     <option value="Switzerland">Switzerland</option>
+                                     <option value="Syria">Syria</option>
+                                     <option value="Tajikistan">Tajikistan</option>
+                                     <option value="Tanzania">Tanzania</option>
+                                     <option value="Thailand">Thailand</option>
+                                     <option value="Timor Leste">Timor Leste</option>
+                                     <option value="Togo">Togo</option>
+                                     <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                     <option value="Tunisia">Tunisia</option>
+                                     <option value="Turkey">Turkey</option>
+                                     <option value="Turkmenistan">Turkmenistan</option>
+                                     <option value="Turks & Caicos Islands">Turks & Caicos Islands</option>
+                                     <option value="Uganda">Uganda</option>
+                                     <option value="Ukraine">Ukraine</option>
+                                     <option value="United Arab Emirates">United Arab Emirates</option>
+                                     <option value="United States of America (USA)">United States of America (USA)</option>
+                                     <option value="Uruguay">Uruguay</option>
+                                     <option value="Uzbekistan">Uzbekistan</option>
+                                     <option value="Venezuela">Venezuela</option>
+                                     <option value="Vietnam">Vietnam</option>
+                                     <option value="Virgin Islands">Virgin Islands (UK)</option>
+                                     <option value="Virgin Islands">Virgin Islands (US)</option>
+                                     <option value="Yemen">Yemen</option>
+                                     <option value="Zambia">Zambia</option>
+                                     <option value="Zimbabwe">Zimbabwe</option> -->
+                                  </select>
+                                  <div class="error_form col-xs-12" id="country_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-12">Zip</label>
+                                <div class="col-md-12">
+                                    <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12" style="padding:20px;">
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Organisation Details</h5>
+                            <hr>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">Name Of Organisation</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="org_name" id="org_name" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="org_name_error_message" style="font-size: 12px; font-weight: bold";></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Organisation Type</label>
+                                <div class="col-md-12">
+                                  <select type="text" name="org_type" id="org_type" class="form-control"  placeholder="Level 5">
+                                    <option>---- Please Select ----</option>
+                                    <option value="Proprietor">Proprietor</option>
+                                    <option value="LLP">LLP</option>
+                                    <option value="Pvt Ltd">Pvt Ltd</option>
+                                  </select>
+                                    <div class="error_form col-md-12" id="org_type_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">GST No</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="gst_no" id="gst_no" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="gst_no_error_message" style="font-size: 12px; font-weight: bold";></div>
+                              </div>
+                            </div>
+                          </div>
+                           <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr1" id="o_add1" class="form-control"  placeholder="426" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="o_add1_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Street</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr2" id="o_add2" class="form-control"  placeholder="Ganguly" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="o_add2_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Landmark</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="st_addr3" id="o_add3" class="form-control"  placeholder="Forum Rangoli" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="o_add3_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">City</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="city" id="o_city" class="form-control"  placeholder="Kolkata" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="o_city_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">State</label>
+                                <div class="col-md-12">
+                                    <select type="text" name="state" id="o_state" class="form-control"  placeholder="West Bengal" autocomplete="off">
+                                      <option>---- Please Select ----</option>
+                                      <option value="Andra Pradesh">Andra Pradesh</option>
+                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                      <option value="Assam">Assam</option>
+                                      <option value="Bihar">Bihar</option>
+                                      <option value="Chhattisgarh">Chhattisgarh</option>
+                                      <option value="Goa">Goa</option>
+                                      <option value="Gujarat">Gujarat</option>
+                                      <option value="Haryana">Haryana</option>
+                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                      <option value="Jharkhand">Jharkhand</option>
+                                      <option value="Karnataka">Karnataka</option>
+                                      <option value="Kerala">Kerala</option>
+                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                      <option value="Maharashtra">Maharashtra</option>
+                                      <option value="Manipur">Manipur</option>
+                                      <option value="Meghalaya">Meghalaya</option>
+                                      <option value="Mizoram">Mizoram</option>
+                                      <option value="Nagaland">Nagaland</option>
+                                      <option value="Orissa">Orissa</option>
+                                      <option value="Punjab">Punjab</option>
+                                      <option value="Rajasthan">Rajasthan</option>
+                                      <option value="Sikkim">Sikkim</option>
+                                      <option valu="Tamil Nadu">Tamil Nadu</option>
+                                      <option value="Tripura">Tripura</option>
+                                      <option value="Uttaranchal">Uttaranchal</option>
+                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                      <option value="West Bengal">West Bengal</option>
+                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                      <option value="Chandigarh">Chandigarh</option>
+                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                      <option value="Daman and Diu">Daman and Diu</option>
+                                      <option value="Delhi">Delhi</option>
+                                      <option value="Lakshadeep">Lakshadeep</option>
+                                      <option value="Pondicherry">Pondicherry</option>
+                                    </select>
+                                    <div class="error_form col-xs-12" id="o_state_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Country</label>
+                                <div class="col-md-12">
+                                  <select type="text" name="country" id="o_country" class="form-control"  placeholder="India" autocomplete="off">
+                                    <option>---- Please Select ----</option>
+                                    <!--  <option value="Afghanistan">Afghanistan</option>
+                                     <option value="Albania">Albania</option>
+                                     <option value="Algeria">Algeria</option>
+                                     <option value="Andorra">Andorra</option>
+                                     <option value="Angola">Angola</option>
+                                     <option value="Anguilla">Anguilla</option>
+                                     <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                     <option value="Argentina">Argentina</option>
+                                     <option value="Armenia">Armenia</option>
+                                     <option value="Australia">Australia</option>
+                                     <option value="Austria">Austria</option>
+                                     <option value="Azerbaijan">Azerbaijan</option>
+                                     <option value="Bahamas">Bahamas</option>
+                                     <option value="Bahrain">Bahrain</option>
+                                     <option value="Bangladesh">Bangladesh</option>
+                                     <option value="Barbados">Barbados</option>
+                                     <option value="Belarus">Belarus</option>
+                                     <option value="Belgium">Belgium</option>
+                                     <option value="Belize">Belize</option>
+                                     <option value="Benin">Benin</option>
+                                     <option value="Bermuda">Bermuda</option>
+                                     <option value="Bhutan">Bhutan</option>
+                                     <option value="Bolivia">Bolivia</option>
+                                     <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                     <option value="Botswana">Botswana</option>
+                                     <option value="Brazil">Brazil</option>
+                                     <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                     <option value="Bulgaria">Bulgaria</option>
+                                     <option value="Burkina Faso">Burkina Faso</option>
+                                     <option value="Myanmar/Burma">Myanmar/Burma</option>
+                                     <option value="Burundi">Burundi</option>
+                                     <option value="Cambodia">Cambodia</option>
+                                     <option value="Cameroon">Cameroon</option>
+                                     <option value="Canada">Canada</option>
+                                     <option value="Cape Verde">Cape Verde</option>
+                                     <option value="Cayman Islands">Cayman Islands</option>
+                                     <option value="Central African Republic">Central African Republic</option>
+                                     <option value="Chad">Chad</option>
+                                     <option value="Chile">Chile</option>
+                                     <option value="China">China</option>
+                                     <option value="Colombia">Colombia</option>
+                                     <option value="Comoros">Comoros</option>
+                                     <option value="Congo">Congo</option>
+                                     <option value="Costa Rica">Costa Rica</option>
+                                     <option value="Croatia">Croatia</option>
+                                     <option value="Cuba">Cuba</option>
+                                     <option value="Cyprus">Cyprus</option>
+                                     <option value="Czech Republic">Czech Republic</option>
+                                     <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                                     <option value="Denmark">Denmark</option>
+                                     <option value="Djibouti">Djibouti</option>
+                                     <option value="Dominican Republic">Dominican Republic</option>
+                                     <option value="Dominica">Dominica</option>
+                                     <option value="Ecuador">Ecuador</option>
+                                     <option value="Egypt">Egypt</option>
+                                     <option value="El Salvador">El Salvador</option>
+                                     <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                     <option value="Eritrea">Eritrea</option>
+                                     <option value="Estonia">Estonia</option>
+                                     <option value="Ethiopia">Ethiopia</option>
+                                     <option value="Fiji">Fiji</option>
+                                     <option value="Finland">Finland</option>
+                                     <option value="France">France</option>
+                                     <option value="French Guiana">French Guiana</option>
+                                     <option value="Gabon">Gabon</option>
+                                     <option value="Gambia">Gambia</option>
+                                     <option value="Georgia">Georgia</option>
+                                     <option value="Germany">Germany</option>
+                                     <option value="Ghana">Ghana</option>
+                                     <option value="Great Britain">Great Britain</option>
+                                     <option value="Greece">Greece</option>
+                                     <option value="Grenada">Grenada</option>
+                                     <option value="Guadeloupe">Guadeloupe</option>
+                                     <option value="Guatemala">Guatemala</option>
+                                     <option value="Guinea">Guinea</option>
+                                     <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                     <option value="Guyana">Guyana</option>
+                                     <option value="Haiti">Haiti</option>
+                                     <option value="Honduras">Honduras</option>
+                                     <option value="Hungary">Hungary</option>
+                                     <option value="Iceland">Iceland</option> -->
+                                     <option value="India">India</option>
+                                    <!--  <option value="Indonesia">Indonesia</option>
+                                     <option value="Iran">Iran</option>
+                                     <option value="Iraq">Iraq</option>
+                                     <option value="Israel and the Occupied Territories">Israel and the Occupied Territories</option>
+                                     <option value="Italy">Italy</option>
+                                     <option value="Ivory Coast (Cote d'Ivoire)">Ivory Coast (Cote d'Ivoire)</option>
+                                     <option value="Jamaica">Jamaica</option>
+                                     <option value="Japan">Japan</option>
+                                     <option value="Jordan">Jordan</option>
+                                     <option value="Kazakhstan">Kazakhstan</option>
+                                     <option value="Kenya">Kenya</option>
+                                     <option value="Kosovo">Kosovo</option>
+                                     <option value="Kuwait">Kuwait</option>
+                                     <option value="Kyrgyz Republic (Kyrgyzstan)">Kyrgyz Republic (Kyrgyzstan)</option>
+                                     <option value="Laos">Laos</option>
+                                     <option value="Latvia">Latvia</option>
+                                     <option value="Lebanon">Lebanon</option>
+                                     <option value="Lesotho">Lesotho</option>
+                                     <option value="Liberia">Liberia</option>
+                                     <option value="Libya">Libya</option>
+                                     <option value="Liechtenstein">Liechtenstein</option>
+                                     <option value="Lithuania">Lithuania</option>
+                                     <option value="Luxembourg">Luxembourg</option>
+                                     <option value="Republic of Macedonia">Republic of Macedonia</option>
+                                     <option value="Madagascar">Madagascar</option>
+                                     <option value="Malawi">Malawi</option>
+                                     <option value="Malaysia">Malaysia</option>
+                                     <option value="Maldives">Maldives</option>
+                                     <option value="Mali">Mali</option>
+                                     <option value="Malta">Malta</option>
+                                     <option value="Martinique">Martinique</option>
+                                     <option value="Mauritania">Mauritania</option>
+                                     <option value="Mauritius">Mauritius</option>
+                                     <option value="Mayotte">Mayotte</option>
+                                     <option value="Mexico">Mexico</option>
+                                     <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                     <option value="Monaco">Monaco</option>
+                                     <option value="Mongolia">Mongolia</option>
+                                     <option value="Montenegro">Montenegro</option>
+                                     <option value="Montserrat">Montserrat</option>
+                                     <option value="Morocco">Morocco</option>
+                                     <option value="Mozambique">Mozambique</option>
+                                     <option value="Namibia">Namibia</option>
+                                     <option value="Nepal">Nepal</option>
+                                     <option value="Netherlands">Netherlands</option>
+                                     <option value="New Zealand">New Zealand</option>
+                                     <option value="Nicaragua">Nicaragua</option>
+                                     <option value="Niger">Niger</option>
+                                     <option value="Nigeria">Nigeria</option>
+                                     <option value="Korea, Democratic Republic of (North Korea)">Korea, Democratic Republic of (North Korea)</option>
+                                     <option value="Norway">Norway</option>
+                                     <option value="Oman">Oman</option>
+                                     <option value="Pacific Islands">Pacific Islands</option>
+                                     <option value="Pakistan">Pakistan</option>
+                                     <option value="Panama">Panama</option>
+                                     <option value="Papua New Guinea">Papua New Guinea</option>
+                                     <option value="Paraguay">Paraguay</option>
+                                     <option value="Peru">Peru</option>
+                                     <option value="Philippines">Philippines</option>
+                                     <option value="Poland">Poland</option>
+                                     <option value="Portugal">Portugal</option>
+                                     <option value="Puerto Rico">Puerto Rico</option>
+                                     <option value="Qatar">Qatar</option>
+                                     <option value="Reunion">Reunion</option>
+                                     <option value="Romania">Romania</option>
+                                     <option value="Russian Federation">Russian Federation</option>
+                                     <option value="Rwanda">Rwanda</option>
+                                     <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                     <option value="Saint Lucia">Saint Lucia</option>
+                                     <option value="Saint Vincent's & Grenadines">Saint Vincent's & Grenadines</option>
+                                     <option value="Samoa">Samoa</option>
+                                     <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                     <option value="Saudi Arabia">Saudi Arabia</option>
+                                     <option value="Senegal">Senegal</option>
+                                     <option value="Serbia">Serbia</option>
+                                     <option value="Seychelles">Seychelles</option>
+                                     <option value="Sierra Leone">Sierra Leone</option>
+                                     <option value="Singapore">Singapore</option>
+                                     <option value="Slovak Republic (Slovakia)">Slovak Republic (Slovakia)</option>
+                                     <option value="Slovenia">Slovenia</option>
+                                     <option value="Solomon Islands">Solomon Islands</option>
+                                     <option value="Somalia">Somalia</option>
+                                     <option value="South Africa">South Africa</option>
+                                     <option value="Korea, Republic of (South Korea)">Korea, Republic of (South Korea)</option>
+                                     <option value="South Sudan">South Sudan</option>
+                                     <option value="Spain">Spain</option>
+                                     <option value="Sri Lanka">Sri Lanka</option>
+                                     <option value="Sudan">Sudan</option>
+                                     <option value="Suriname">Suriname</option>
+                                     <option value="Swaziland">Swaziland</option>
+                                     <option value="Sweden">Sweden</option>
+                                     <option value="Switzerland">Switzerland</option>
+                                     <option value="Syria">Syria</option>
+                                     <option value="Tajikistan">Tajikistan</option>
+                                     <option value="Tanzania">Tanzania</option>
+                                     <option value="Thailand">Thailand</option>
+                                     <option value="Timor Leste">Timor Leste</option>
+                                     <option value="Togo">Togo</option>
+                                     <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                     <option value="Tunisia">Tunisia</option>
+                                     <option value="Turkey">Turkey</option>
+                                     <option value="Turkmenistan">Turkmenistan</option>
+                                     <option value="Turks & Caicos Islands">Turks & Caicos Islands</option>
+                                     <option value="Uganda">Uganda</option>
+                                     <option value="Ukraine">Ukraine</option>
+                                     <option value="United Arab Emirates">United Arab Emirates</option>
+                                     <option value="United States of America (USA)">United States of America (USA)</option>
+                                     <option value="Uruguay">Uruguay</option>
+                                     <option value="Uzbekistan">Uzbekistan</option>
+                                     <option value="Venezuela">Venezuela</option>
+                                     <option value="Vietnam">Vietnam</option>
+                                     <option value="Virgin Islands">Virgin Islands (UK)</option>
+                                     <option value="Virgin Islands">Virgin Islands (US)</option>
+                                     <option value="Yemen">Yemen</option>
+                                     <option value="Zambia">Zambia</option>
+                                     <option value="Zimbabwe">Zimbabwe</option> -->
+                                  </select>
+                                  <div class="error_form col-xs-12" id="o_country_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-12">Zip</label>
+                                <div class="col-md-12">
+                                    <input type="pin" name="pin" id="o_zip" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="o_zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Type Of Franchise</label>
+                                <div class="col-md-12">
+                                  <select type="text" name="center" id="center" class="form-control"  placeholder="Howrah">
+                                    <option>---- Please Select ----</option>
+                                     <option value="Silver">Silver</option>
+                                     <option value="Gold">Gold</option>
+                                     <option value="Platinum">Platinum</option>
+                                  </select>
+                                    <div class="error_form col-md-12" id="center_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <!-- <div class="row"> -->
+                             <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="col-md-12">Date Of Start</label>
+                              <div class="col-md-12">
+                                  <input type="date" name="dob" id="dos" class="form-control" aria-describedby="dob" placeholder="date" >
+                                  <div class="error_form col-md-12" id="dos_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
+                            </div>
+                          </div>
+                         <!--  <div class="row"> -->
+                             <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="col-md-12">Date Of Renew</label>
+                              <div class="col-md-12">
+                                  <input type="date" name="dob" id="dor" class="form-control" aria-describedby="dob" placeholder="date" >
+                                  <div class="error_form col-md-12" id="dor_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                     <!--  </div> -->
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-12">Payment Mode</label>
+
+                               <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" data-toggle="collapse" onclick="cheque()" data-target="#cheque" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                 <label class="form-check-label" for="inlineRadio1">Cheque</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" data-toggle="collapse" onclick="neft()" data-target="#neft" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                 <label class="form-check-label" for="inlineRadio2">Neft</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" data-toggle="collapse" onclick="ot()" data-target="#ot" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                                 <label class="form-check-label" for="inlineRadio3">Online Transfer</label>
+                               </div>
+                               <div id="cheque" class="collapse">
+                                 <div class="row">
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Ac no.</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Sum Of Amount</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                            <!-- </div> -->
+                            <!-- <div class="row"> -->
+                                 <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Cheque No</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                                 <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Type Of Cheque</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                             </div>
+                          <!--   <div class="row"> -->
+                             <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="col-md-12">Date</label>
+                              <div class="col-md-12">
+                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder="date" >
+                                  <div class="error_form col-md-12" id="dob_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
+                            </div>
+                          </div>
+                     <!--  </div> -->
+                                 <!-- <p>sglkvnlknjnbfgnj</p> -->
+                               </div>
+                               <div id="neft" class="collapse">
+                                  <div class="row">
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="col-md-12">Name Of Ac Holder</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="why_robotics_by_parents" id="why2" class="form-control"  placeholder=" " autocomplete="off"/>
+                                        <div class="error_form col-xs-12" id="why2_error_message" style="font-size: 12px; font-weight: bold";></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Ac No.</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                          <!--   </div> -->
+                                <!--  <div class="row"> -->
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="col-md-12">IFSC Code Of Bank</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="why_robotics_by_parents" id="why2" class="form-control"  placeholder=" " autocomplete="off"/>
+                                        <div class="error_form col-xs-12" id="why2_error_message" style="font-size: 12px; font-weight: bold";></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="col-md-12">Name Of Bank</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="why_robotics_by_parents" id="why2" class="form-control"  placeholder=" " autocomplete="off"/>
+                                        <div class="error_form col-xs-12" id="why2_error_message" style="font-size: 12px; font-weight: bold";></div>
+                                    </div>
+                                  </div>
+                                </div>
+                           <!--  </div> -->
+
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label class="col-md-12">Sum Of Amount</label>
+                                      <div class="col-md-12">
+                                          <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                          <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                                   <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="col-md-12">Date Of Neft</label>
+                                    <div class="col-md-12">
+                                        <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder="date" >
+                                        <div class="error_form col-md-12" id="dob_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                           </div>
+                                <!--  <p>fgste</p> -->
+                               </div>
+                               <div id="ot" class="collapse">
+
+                                 <p>Online Transaction</p>
+                               </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6" >
+                             <div class="row">
+                             <div class="form-group">
+                              <center class="m-t-20">
+                               <!--  <img src="../assets/img/png/user2.png" id="imgupld" width="150" height="150" class="img-circle" style="border:1px solid #ececec;" /> -->
+                                <label style="text-align:left;" class="col-md-12 m-t-40">Franchise Agreement</label>
+                                <div class="col-md-12">
+                                  <input type="file" name="profile_pic" id="pic" class="form-control" accept="image/png,image/jpg,image/jpeg" multiple="" onchange="readURL(this);" >
+                                  <div class="error_form col-xs-12" id="pic_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                </div>
+                              </center>
+                            </div>
+                        </div>
+                    </div>
+                          <div class="col-md-12">
+                            <div class="spinner" style="display:none;height: 150px;">
+                            <center>
+                              <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                              <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                          </div>
+                          <center>
+                            <button type="button" id="franchisePreform" class="btn btn-primary" style="margin-top: 50px;margin-bottom: 10px;" onclick="">Submit</button>
+                          </center>
+                          </div>
+                       <!--  </div> -->
+                      </form>
+                    </div>
+                </div>
+
+                    <div id="changepwd" class="modal fade" role="dialog">
+
+                      <div class="modal-dialog modal-md ">
+                        <form id="">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Change Password</h2>
+                              <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter Old Password</label> -->
+                                  <form id="changepasswordform">
+                                    <div class="col-xs-12" id="passwordedit"></div>
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                    </div>
+                                  <div class="col-md-12">
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <div class="col-xs-12" id="passwordmsg"></div>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <div class="col-xs-12" id="npasswordmsg"></div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Confirm New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <div class="col-xs-12" id="cnpasswordmsg"></div>
+                                  </div>
+                              </div>
+                            </form>
+                              <div class="spinner" style="display:none;height: 150px;">
+                               <center>
+                                 <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                                 <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                               </center>
+                             </div>
+                             <div class="form-group" style="" id="updatepwd">
+                                 <center>
+                                   <div class="col-md-8">
+                                       <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="submit" id="updatepwd" onclick="updatePassword()" class="form-control btn btn-primary"  name="updatepwd" >Update Password</button>
+                                   </div>
+                                 </center>
+                             </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> Copyright © Mechatron Robotics 2018. All Rights Reserved. </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script type="text/javascript">
+    function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+			$('#imgupld')
+				.attr('src', e.target.result)
+				.width(150)
+				.height(140)
+				.border('1px solid #ececec');
+		};
+
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+</script>
+    <script type="text/javascript">
+    $(window).on('load', function() {
+	$('#feeAlert').modal('show');
+});
+</script>
+
+<script type="text/javascript">
+function neft() {
+	document.getElementById('cheque').style.display = 'none';
+	document.getElementById('ot').style.display = 'none';
+	document.getElementById('neft').style.display = '';
+}
+function cheque() {
+	document.getElementById('neft').style.display = 'none';
+	document.getElementById('ot').style.display = 'none';
+	document.getElementById('cheque').style.display = '';
+}
+function ot() {
+	document.getElementById('cheque').style.display = 'none';
+	document.getElementById('neft').style.display = 'none';
+	document.getElementById('ot').style.display = '';
+}
+</script>
+</body>
+
+</html>

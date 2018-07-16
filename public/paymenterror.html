@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MechatronRobotics</title>
+
+	<!-- Required Meta Tags Always Come First -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+
+	<!-- Fa Fa-icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/css/simple-line-icons.css">
+	<link rel="stylesheet" href="../assets/css/style1.css">
+	<link rel="stylesheet" href="../assets/css/hamburgers.min.css">
+	<link rel="stylesheet" href="../assets/css/animate.css">
+	<link rel="stylesheet" href="../assets/css/slick.css">
+	<link rel="stylesheet" href="../assets/css/default.css">
+
+	<!-- CSS Template -->
+	<link rel="stylesheet" href="../assets/css/styles.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/js/url.js"></script>
+	<script type="text/javascript" src="../assets/js/token.js"></script>
+	<script type="text/javascript" src="../assets/js/payerror.js"></script>
+</head>
+<body onload="getPaymentStatus()">
+	 <div class="container" style=" background-color:white; margin-top: 100px" >
+	<!--<div class="jumbotron text-xs-center" style="width: 50%;float: center">-->
+	<center><h4 class="display-5">Error!</h4>
+		<p class="lead"><strong><font color="#0066c0">Payment Failed</strong> </p>
+		<hr>
+		<form id="myForm" name="myForm">
+			<input type="hidden" id="txnid">
+		<table class="table table-bordered" style="font-family: 'PT Sans Caption', sans-serif;">
+
+				<tr>
+					<td><strong>Fee Status</strong></td>
+					<td><span id="status"></span></td>
+				</tr>
+				<tr>
+					<td><strong>Amount</strong></td>
+					<td><span id="amount"></span></td>
+				</tr>
+
+				<tr>
+					<td><strong>Name</strong></td>
+					<td><span id="name"></span></td>
+				</tr>
+
+				<tr>
+					<td><strong>Contact</strong></td>
+					<td><span id="contact"></span></td>
+				</tr>
+
+				<tr>
+					<td><strong>Email</strong></td>
+					<td><span id="email"></span></td>
+				</tr>
+
+				<tr>
+					<td><strong>Date Of Payf</strong></td>
+					<td><span id="dop"></span></td>
+				</tr>
+
+			<tr>
+				<td><strong>Transiction id</strong></td>
+				<td><span id="txd"></span></td>
+			</tr>
+			<tr>
+				<td><strong>Course Type</strong></td>
+				<td><span id="course_type"></span></td>
+			</tr>
+			<tr>
+				<td><strong>Payment For</strong></td>
+				<td><span id="payfor"></span></td>
+			</tr>
+
+			<tr>
+				<td><strong>Merchant Name</strong></td>
+				<td><span id="mn"></span></td>
+			</tr>
+
+			</tbody>
+		</table>
+	</form>
+	<div id="res"></div>
+		<p class="lead">
+			<a class="btn btn-primary btn-sm" href="student/dashboard.html" role="button">Back</a>
+		</p></center>
+	</div>
+</div>
+
+</body>
+</html>

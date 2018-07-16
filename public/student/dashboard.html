@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Student Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+    <script type="text/javascript" src="../assets/js/studentdash.js"></script>
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+    <!--<script type="text/javascript" src="../assets/js/admission.js"></script>-->
+    <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+    <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+     <script type="text/javascript" src="../assets/js/static_values.js"></script>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/circle.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getSession();myFunction()">
+
+  <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div>
+
+    <div id="main-wrapper" style="display:none;">
+
+        <header class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a style="margin-left:70px;" class="navbar-brand" href="index.html">
+              <span>
+               <a href="/../index.html">  <img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-lg-0">
+                  <!-- ============================================================== -->
+                  <!-- Profile -->
+                  <!-- ============================================================== -->
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="dashboard.html" style="color:#FF8500;">Overview</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Attendance</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#455a64;" class="fa fa-user-cog"></i> </a>
+                      <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                          <ul class="dropdown-user">
+                            <li><a href="admissionform.html"><i class="fas fa-user-edit"></i> Admission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <div class="page-wrapper" style="margin-left:0px;">
+          <div class="col-xs-12" id="admissionedit" style="font-weight: bold"></div>
+
+            <form id="" enctype="multipart/form-data" class="form-material" onsubmit="return false">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+                <!-- Row -->
+                <div class="row">
+
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                          <div class="pull-right">
+
+                          </div>
+                            <div class="card-body">
+                                <div class="">
+                                  <center class="m-t-30">
+                                    <a  href="viewprofile.html"><img src="../assets/img/png/user2.png" id="imgupld" class="img-circle" width="150" height="150" style="border:1px solid #ececec;"><!--<img src="../assets/img/png/user2.png " id="imgupldbd" class="img-circle" width="150" height="150" style="border:1px solid #ececec;" />--></a>
+                                    <input style="background: #fff;border: none;outline: none;text-align:center; font-weight:bold; color:#000"  type="text" id="name" class="form-control"  name="sname" disabled="" >
+                                    <input style="background: #fff;border: none;outline: none; margin-top: -7px;text-align:center;"  type="email" id="sessionEmail" class="form-control"  name="semail" disabled="" >
+                                  </center>
+                                </div>
+                            </div>
+                            <div>
+                              <div class="col-xs-12" id="useredit" style="font-weight: bold"></div>
+                              <hr>
+                            </div>
+                            <div class="card-body">
+                              <small class="db" style="margin-top:0px;color:#FFD700; text-align:center; font-weight:600; font-size:40px;"> 0 </small>
+                                <small class="db" style="margin-top:0px;color:#455a64; text-align:center; font-weight:600; font-size:17px;">Coins Earned </small>
+                                <center><a href="#" style="font-weight:600; font-size:15px">(Learn how to earn coins)</a></center>
+                                <hr>
+                                <small class="db" style="margin-top:0px;color:#455a64; text-align:; font-weight:600; font-size:17px;">Gold :</small>
+                                <small class="db" style="margin-top:0px;color:#455a64; text-align:; font-weight:600; font-size:17px;">Silver :</small>
+                                <small class="db" style="margin-top:0px;color:#455a64; text-align:; font-weight:600; font-size:17px;">Bronze :</small>
+                                <hr><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+
+                                <!--second tab-->
+                                <div class="" role="tabpanel">
+                                    <div class="card-body">
+                                      <h3 style="text-align:center; font-size:20px; font-weight:600;">Overview</h3>
+                                      <hr><br>
+                                      <div class="row">
+                                        <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                          <div class="col-lg-5">
+                                              <div class="card score-box">
+                                                  <div class="card-body">
+                                                      <div class="row">
+                                                        <div class="col-md-12">
+                                                          <h3 style="font-weight: 600;margin-bottom:20px;font-size:18px;text-align:center;">Level</h3>
+                                                        </div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-6">
+                                                          <center>
+                                                            <div class="c100 p20">
+                                                              <div class="slice">
+                                                                <div class="bar"></div>
+                                                                <div class="fill"></div>
+                                                              </div>
+                                                            </div>
+                                                          </center>
+                                                        </div><div class="col-md-3"></div>
+                                                        <div class="col-md-12" style="margin-top:25px;">
+                                                          <center>
+                                                            <span style="font-size:18px; font-weight:600; color:#FF8500;margin-right:5px;">Level 1</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 2</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 3</span><br>
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 4</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 5</span>
+                                                          </center>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-lg-5">
+                                              <div class="card score-box">
+                                                  <div class="card-body">
+                                                      <div class="row">
+                                                        <div class="col-md-12">
+                                                          <h3 style="font-weight: 600;margin-bottom:20px;font-size:18px;text-align:center;">Course Progress</h3>
+                                                        </div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-6">
+                                                          <center>
+                                                            <div class="c100 p5">
+                                                              <span>5%</span>
+                                                              <div class="slice">
+                                                                <div class="bar"></div>
+                                                                <div class="fill"></div>
+                                                              </div>
+                                                            </div>
+                                                          </center>
+                                                        </div><div class="col-md-3"></div>
+                                                        <div class="col-md-12" style="margin-top:25px;">
+                                                          <center>
+                                                            <span style="font-size:18px; font-weight:600; color:#FF8500;margin-right:5px;">Level 1</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 2</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 3</span><br>
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 4</span> *
+                                                            <span style="font-size:18px; font-weight:600; color:#999;margin-right:5px;">Level 5</span>
+                                                          </center>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div><div class="col-md-1 hidden-sm hidden-xs"></div>
+                                          <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                          <div class="col-lg-5">
+                                              <div class="card score-box">
+                                                  <div class="card-body">
+                                                      <div class="row">
+                                                        <div class="col-md-12">
+                                                          <h3 style="font-weight: 600;margin-bottom:20px;font-size:18px;text-align:center;">Attendance</h3>
+                                                        </div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-6">
+                                                          <center>
+                                                            <div class="c100 p100">
+                                                              <span>80%</span>
+                                                              <div class="slice">
+                                                                <div class="bar"></div>
+                                                                <div class="fill"></div>
+                                                              </div>
+                                                            </div>
+                                                          </center>
+                                                        </div><div class="col-md-3"></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-lg-5">
+                                              <div class="card score-box">
+                                                  <div class="card-body">
+                                                      <div class="row">
+                                                        <div class="col-md-12">
+                                                          <h3 style="font-weight: 600;margin-bottom:20px;font-size:18px;text-align:center;">Quiz Score <br> Average</h3>
+                                                        </div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-6">
+                                                          <center>
+                                                            <span style="font-size:50px;">7/10</span><br><br>
+                                                          </center>
+                                                        </div><div class="col-md-3"></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div><div class="col-md-1 hidden-sm hidden-xs"></div>
+                                            <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                            <div class="col-lg-10">
+                                                <div class="card score-box">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                          <div class="col-md-12">
+                                                            <h3 style="text-align:center;margin-bottom:20px;font-size:18px; font-weight:600;">Skills</h3>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="60%" height="auto" src="../assets/img/png/creativity.jpg" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Creativity</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="50%" height="auto" src="../assets/img/png/ps.png" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Problem Solving</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="50%" height="auto" src="../assets/img/png/teamwork.png" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Team Work</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                            <span class="fa fa-star"></span>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="50%" height="auto" src="../assets/img/png/conceptual.png" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Conceptual</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="50%" height="auto" src="../assets/img/png/tech.png" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Technical</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                            <center><img style="border-radius:50%" width="50%" height="auto" src="../assets/img/png/presentation.png" alt=""></center>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;">
+                                                            <p style="font-weight:600;text-align:center;">Presentation</p>
+                                                          </div>
+                                                          <div class="col-md-5" style="margin-top:15px;text-align:center;">
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star"></span>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><div class="col-md-1 hidden-sm hidden-xs"></div>
+                                            <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                            <div class="col-lg-5">
+                                                <div class="card score-box">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                          <div class="col-md-12">
+                                                            <h3 style="text-align:center;margin-bottom:20px;font-size:18px;font-weight:600;">Projects Completed</h3>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <h4 style="font-weight:600;text-align:center;">Level 1</h4>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <p style="text-align:center;">25/50</p>
+                                                          </div><br>
+                                                          <div class="col-md-6">
+                                                            <h4 style="font-weight:600;text-align:center;">Level 2</h4>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <p style="text-align:center;">0/25</p>
+                                                          </div><br>
+                                                          <div class="col-md-6">
+                                                            <h4 style="font-weight:600;text-align:center;">Level 3</h4>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <p style="text-align:center;">0/20</p>
+                                                          </div><br>
+                                                          <div class="col-md-6">
+                                                            <h4 style="font-weight:600;text-align:center;">Level 4</h4>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <p style="text-align:center;">0/20</p>
+                                                          </div><br>
+                                                          <div class="col-md-6">
+                                                            <h4 style="font-weight:600;text-align:center;">Level 5</h4>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <p style="text-align:center;">0/10</p>
+                                                          </div><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div class="card score-box">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                          <div class="col-md-12">
+                                                            <center>
+                                                              <h3 style="margin-bottom:33px;font-size:18px;font-weight:600;">Next Project</h3><br>
+                                                              <span style="font-size:21px;font-weight:600;">"Automatic <br> Dark Detector"</span><br><br><br>
+                                                            </center>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                        <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                        <div class="col-lg-5">
+                                            <div class="card score-box">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                      <div class="col-md-12">
+                                                        <center>
+                                                          <h3 style="margin-bottom:20px;font-size:18px;font-weight:600;">Fee Status</h3>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-bottom:15px">
+                                                      <h5 style="text-align: center;font-size:15px;font-weight:600;">Fee Due Date 20/6/2018 <a style="font-size:14px;" href="#">Pay Now</a></h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <h5 style="font-size:15px;font-weight:600;">Level 1</h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <p style="font-size:13px;">Partialy Paid</p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Pay Now</a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <h5 style="font-size:15px;font-weight:600;">Level 2</h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <p style="font-size:13px;">Not Paid</p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Pay Now</a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <h5 style="font-size:15px;font-weight:600;">Level 3</h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <p style="font-size:13px;">Not Paid</p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Pay Now</a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <h5 style="font-size:15px;font-weight:600;">Level 4</h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <p style="font-size:13px;">Not Paid</p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Pay Now</a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <h5 style="font-size:15px;font-weight:600;">Level 5</h5>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <p style="font-size:13px;">Not Paid</p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Pay Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                        <div class="col-lg-5">
+                                            <div class="card score-box">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                      <div class="col-md-12">
+                                                        <center>
+                                                          <h3 style="margin-bottom:20px;font-size:18px;font-weight:600;">Workshop Certificate</h3><br>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <h5 style="text-align: center;font-size:14px;font-weight:600;">Workshop Name </h5>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Click to view</a>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <h5 style="text-align: center;font-size:14px;font-weight:600;">Workshop Name </h5>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Click to view</a>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <h5 style="text-align: center;font-size:14px;font-weight:600;">Workshop Name </h5>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:15px">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Click to view</a>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:10px">
+                                                      <h5 style="text-align: center;font-size:14px;font-weight:600;">Workshop Name </h5>
+                                                    </div>
+                                                    <div class="col-md-6" style="margin-bottom:10px">
+                                                      <a style="font-size:14px;font-weight:600;" href="#">Click to view</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><div class="col-md-1 hidden-sm hidden-xs"></div>
+                                    <div class="col-md-1 hidden-sm hidden-xs"></div>
+                                    <div class="col-md-10">
+                                        <div class="card score-box">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                    <h3 style="text-align:center;margin-bottom:25px;font-size:18px; font-weight:600;">Training Certificate</h3>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                    <h5 style="font-size:17px;font-weight:600;text-align:center;">Level 1</h5>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                    <p style="font-size:15px;text-align:center;">Completed</p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                    <a style="font-size:14px;font-weight:600;text-align:center;" href="#">Click to View</a>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                    <h5 style="font-size:17px;font-weight:600;text-align:center;">Level 2</h5>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                    <p style="font-size:15px;text-align:center;">NotCompleted</p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                    <a style="font-size:14px;font-weight:600;text-align:center;" href="#"></a>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                    <h5 style="font-size:17px;font-weight:600;text-align:center;">Level 3</h5>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                    <p style="font-size:15px;text-align:center;">NotCompleted</p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                    <a style="font-size:14px;font-weight:600;text-align:center;" href="#"></a>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                    <h5 style="font-size:17px;font-weight:600;text-align:center;">Level 4</h5>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                    <p style="font-size:15px;text-align:center;">NotCompleted</p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                    <a style="font-size:14px;font-weight:600;text-align:center;" href="#"></a>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                    <h5 style="font-size:17px;font-weight:600;text-align:center;">Level 5</h5>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                    <p style="font-size:15px;text-align:center;">NotCompleted</p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                    <a style="font-size:14px;font-weight:600;text-align:center;" href="#"></a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><div class="col-md-1 hidden-sm hidden-xs"></div><hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="changepwd" class="modal fade" role="dialog">
+
+                      <div class="modal-dialog modal-md ">
+                        <form id="">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Change Password</h2>
+                              <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter Old Password</label> -->
+                                  <form id="changepasswordform">
+                                    <div class="col-xs-12" id="passwordedit"></div>
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                    </div>
+                                  <div class="col-md-12">
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <div class="col-xs-12" id="passwordmsg"></div>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <div class="col-xs-12" id="npasswordmsg"></div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Confirm New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <div class="col-xs-12" id="cnpasswordmsg"></div>
+                                  </div>
+                              </div>
+                            </form>
+                              <div class="spinner" style="display:none;height: 150px;">
+                               <center>
+                                 <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                                 <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                               </center>
+                             </div>
+                             <div class="form-group" style="" id="updatepwd">
+                                 <center>
+                                   <div class="col-md-8">
+                                       <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="submit" id="updatepwd" onclick="updatePassword()" class="form-control btn btn-primary"  name="updatepwd" >Update Password</button>
+                                   </div>
+                                 </center>
+                             </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div></form>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer" style="text-align:center;">
+                Copyright © Mechatron Robotics 2018. All Rights Reserved.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+@media (max-width: 767px)  and (max-width: 991px) {
+  .btn-successbtn  {
+   margin-bottom: 10px!important;
+    margin-right: 10px!important;
+    
+ 
+  }
+}
+
+@media (max-width: 767px) and (max-width: 991px) {
+  .centered-form {
+    font-size: 20px!important;
+  }
+}
+@media (max-width: 767px) and (max-width: 991px) {
+  .img {
+    
+    margin-right: -1px!important;
+    margin-left: -1px!important;
+  }
+}
+
+
+@media (max-width: 767px) and (max-width: 991px) {
+  .btn-info{
+    font-size: 14px!important;
+    margin-bottom: -1px!important;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 991px) {
+  .centered-form .panel{
+    font-size: 15px!important;
+    margin-bottom: -1px!important;
+  }
+}
+@media (max-width: 767px)  and (max-width: 991px)  {
+  .container {
+   margin-bottom: 10px!important;
+   margin-right: 2px!important;
+   margin-left: 2px!important;
+   margin-top: 50px!important;
+   font-size: 15px!important;
+  }
+}
+@media (max-width: 767px)  and (max-width: 991px)  {
+  .p{
+  
+   margin-right: 5px!important;
+   margin-left: -1px!important;
+   
+  }
+}
+
+
+
+
+
+@media (max-width: 767px) and (max-width: 991px) {
+  .panel-titlel{
+    font-size: 15px!important;
+    margin-bottom: -1px!important;
+
+  }
+}
+@media (max-width: 767px) and (max-width: 991px) {
+  .venue {
+     font-size: 15px!important;
+    margin-bottom: -1px!important;
+    
+
+  }
+}
+@media (max-width: 767px) and (max-width: 991px) {
+  .date {
+    font-size: 15px!important;
+    margin-bottom: -1px!important;
+    margin-left: 50px!important; 
+
+  }
+}
+
+
+@media (max-width: 767px) and (max-width: 991px) {
+  body {
+    font-size: 10px!important;
+    margin-bottom: -1px!important;
+    margin-right: 5px!important;
+     margin-left: 5px!important;
+  }
+}
+
+
+
+
+
+body{
+	background-color:none;
+	position: center;
+
+}
+.centered-form {
+	margin-top: 60px;
+	position: center;
+	/*margin-right: 120px; */
+
+}
+
+.centered-form .panel {
+	background: rgba(255,255,255,0.8);
+	box-shadow: : rgb(47,85,151)10px 10px 10px;
+	position: center;
+}
+.btn-successbtn {
+       color: #fff;
+       border:none;
+       background-color: rgb(255,133,0);
+         margin-bottom: 5px!important;
+    margin-right: 10px!important; 
+    margin-top: 5%;  
+       }
+      
+.btn-primary {
+       color: #fff;
+       background-color:rgb(146,208,80);
+        margin-bottom: 5px!important;
+   		margin-right: 10px!important;
+   		margin-top: 5%;
+        
+       }   
+
+
+          
+.btn-three {
+       color: #fff;
+       background-color: rgb(47,85,151);
+       margin-bottom: 5px!important;
+   		margin-right: 10px!important;
+   		margin-top: 5%;
+        
+         }
+ 
+   #workshop
+   {
+   	margin-left: 20px;
+   	margin-right: 20px;
+   }
+   .coursetitle1
+   {
+   	margin-left: 20px;
+   	margin-right: 20px;
+   
+
+   }
+
+    .coursetitle2
+   {
+
+   	margin-left: 60%;
+   	margin-right: 5px;
+   	margin-top: 5px;
+
+   }
+.btn-success1 {
+       color: #fff;
+       background-color: rgb(255,133,0);
+         margin-bottom: 5px!important;
+    margin-right: 10px!important; 
+      
+       }
+ .button{
+ 	margin-bottom: 50px;
+ 	margin-left:40%;
+
+ }
+ .register 
+ {
+ 	margin-left: 50px;
+ }
+ .form-group
+ {
+ 	margin-left: 10px;
+ 	margin-right:20px;
+ }
+ .btn-success {
+       color: #fff;
+       /*background-color: rgb(255,133,0);*/
+      	 margin-bottom: 50px;
+ 		margin-left:40%;
+         margin-bottom: 5px!important;
+    	margin-right: 10px!important;
+    } 
+
+    #form-check1{
+ 	margin-left: 20px;
+ }
+ #form-check2{
+ 	margin-left: 20px;
+ }
+ #form-check3{
+ 	margin-left: 20px;
+ }
+
+.p1{
+	margin-left: 20%;
+
+}
+.from-group1
+  {
+    margin-right: 100px;
+  }
+
+

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>MechatronRobotics</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/icons/title-icon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+
+  <!-- Fa Fa-icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/master.css">
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../assets/css/style1.css">
+
+  <link rel="stylesheet" href="../assets/css/hamburgers.min.css">
+  <link rel="stylesheet" href="../assets/css/animate.css">
+  <link rel="stylesheet" href="../assets/css/slick.css">
+  <link rel="stylesheet" href="../assets/css/default.css">
+
+  <!-- CSS Template -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <link href="assets/dash/css/style5.css" rel="stylesheet">
+  <!---Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/js/url.js"></script>
+  <script type="text/javascript" src="../assets/js/shopping.js"></script>
+  <script type="text/javascript" src="../assets/js/token.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    margin-top: 110px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 550px;
+  }
+</style>
+</head>
+<body onload="getData()">
+  <main>
+    <!-- Header v1 -->
+    <header id="js-header" class="u-header u-header--sticky-top u-header--change-logo"
+    data-header-fix-moment="0" style="">
+    <div class="u-header__section g-bg-white g-transition-0_3 g-py-7 g-py-0--md"
+    data-header-fix-moment-exclude="g-bg-white g-py-23--md"
+    data-header-fix-moment-classes="u-shadow-v19 g-bg-white g-py-15--md" style="box-shadow:0 0 10px #b5b5b5;" >
+    <!-- style="box-shadow:0 0 10px #b5b5b5;" -->
+    <nav class="navbar navbar-expand-lg g-py-0">
+     <div class="container g-pos-rel">
+
+       <!-- Logo -->
+       <a href="/" class="js-go-to navbar-brand mr-0 logo"
+       data-type="static" style="">
+       <img class="d-block g-width-150 g-width-160--md" src="../assets/img/icons/mecbot.png" alt="Image Description"
+       data-header-fix-moment-exclude="d-block"
+       data-header-fix-moment-classes="d-none" style="margin-top:35px;">
+     </a>
+     <!-- End Logo -->
+     <!-- Navigation -->
+     <div class="collapse navbar-collapse align-items-center flex-sm-row"  id="navBar1" style="">
+       <ul style="font-family: 'Signika', sans-serif;margin-top:10px;" id="js-scroll-nav" class="js-scroll-nav navbar-nav text-uppercase g-font-weight-600 g-font-size-14 g-letter-spacing-1 g-pt-20 g-pt-0--lg ml-auto">
+         <a href="/" style="color:#333;" class="nav-link p-0">Home</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#ourofferings" style="color:#333;" class="nav-link p-0">Our Offerings</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#aboutus" style="color:#333;" class="nav-link p-0">About Us</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#events" style="color:#333;" class="nav-link p-0">Events</a>
+       </li>           
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#reviews" style="color:#333;" class="nav-link p-0">Reviews</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#blogs" style="color:#333;" class="nav-link p-0">Blogs</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="../gallery.html" style="color:#333;" class="nav-link p-0">Gallery</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="../careers.html" style="color:#333;" class="nav-link p-0">Careers</a>
+       </li>
+       <li class="nav-item g-mx-12--lg g-mb-7 g-mb-0--lg">
+         <a href="/#contactus" style="color:#333;" class="nav-link p-0">Contact Us</a>
+       </li>               
+     </ul>             
+   </div>
+   <!-- End Navigation -->
+   <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"; style="background-color: white; border:none; margin-top:25px"; >
+     <!-- Dropdown button--><img src="../assets/img/dashboard/img/comn/ed.jpg" img class="d-block g-width-20 g-width-30--md" >
+   </button>
+   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-family: 'Signika', sans-serif";>
+    <a class="dropdown-item" href="#" ><img src="../assets/img/dashboard/img/comn/editpro.jpg" img class="d-block g-width-18 g-width-30--md" style="float:left";>&nbsp;  Edit Profile</a>
+    <a class="dropdown-item" href="#"><img src="../assets/img/dashboard/img/comn/viewpro.jpg" img class="d-block g-width-18 g-width-30--md" style="float:left"; >&nbsp;  View Profile</a>
+    <a class="dropdown-item" href="../index.html"><img src="../assets/img/dashboard/img/comn/logoutpro.jpg" img class="d-block g-width-18 g-width-25--md" style="float:left";>&nbsp; Logout</a>
+  </div>
+</div>
+</div>
+
+<!-- Responsive Toggle Button -->
+<button id="toggle-nav" class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0" type="button"
+aria-label="Toggle navigation"
+aria-expanded="false"
+aria-controls="navBar"
+data-toggle="collapse"
+data-target="#navBar1,#navBar2" style="margin:5px;">
+<span class="hamburger hamburger--slider">
+ <span class="hamburger-box">
+   <span class="hamburger-inner"></span>
+ </span>
+</span>
+</button>
+<!-- End Responsive Toggle Button -->
+</div>
+</nav>
+<!--<div class="container">--><strong>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="margin-left: auto">
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right:50px";>Search</button>
+    </form>
+        <li class="nav-item active">
+          <!--   <a class="nav-link" href="#" style="color:#FF8500;">Shopping<span class="sr-only">(current)</span></a>-->
+          <a class="nav-link" href="../dashboards/studentdashboard.html" style="color:#000000;">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../admissionform.html" style="color:#000000;">Admission</a>
+        </li><li class="nav-item">
+         <!-- <a class="nav-link" href="studentdash.html">Dashboard</a>-->
+         <a class="nav-link" href="#" style="color:#FF8500;">Shopping<span class="sr-only">(current)</span></a>
+       </li>
+     <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Attendence</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Tutorials</a>
+      </li> <li class="nav-item">
+        <a class="nav-link" href="#">Projects</a>
+      </li> <li class="nav-item">
+        <a class="nav-link" href="#">Quiz</a>
+      </li> <li class="nav-item">
+        <a class="nav-link" href="#">Fee Status</a>
+         </li>-->
+         <li>
+          <a class="nav-link" href="#"> <img src="../assets/img/dashboard/img/comn/cart.jpg" img class="d-block g-width-18 g-width-30--md" style="margin-left: 200px; float:left";>  Cart</a>
+        </li>
+      <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Shopping
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Shopping.html">Kits</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>-->
+    <!--  </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>-->
+    </ul>
+  <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right:50px";>Search</button>
+    </form>-->
+  </div>
+</nav>
+</strong>
+</div>
+</header>
+<!-- End Header v1 -->
+<div class="col-md-11" style="margin-top:200px" >
+  <style type="text/css">
+  .sign-in-icon
+  {
+    background-image: url("../assets/img/dashboard/img/comn/cart.jpg");
+    background-position: 8px -6px;
+    background-repeat: no-repeat;
+    background-size: 39px 43px;
+    padding-left: 25px;
+    /* color: #c45500;*/
+  }
+  .sign-in-icon:hover
+  {
+    background-image: url("../assets/img/dashboard/img/comn/cart.jpg");
+    background-position: 8px -6px;
+    background-repeat: no-repeat;
+    background-size: 39px 43px;
+    padding-left: 25px;
+    /*color: #c45500;*/
+  }
+  .sign-in-icon2
+  {
+    background-image: url("../assets/img/dashboard/img/comn/buynow.jpg");
+    background-position: 8px -6px;
+    background-repeat: no-repeat;
+    background-size: 39px 43px;
+    padding-left: 25px;
+    /* color: #c45500;*/
+  }
+  .sign-in-icon2:hover
+  {
+    background-image: url("../assets/img/dashboard/img/comn/buynow.jpg");
+    background-position: 8px -6px;
+    background-repeat: no-repeat;
+    background-size: 39px 43px;
+    padding-left: 25px;
+    /*color: #c45500;*/
+  }
+</style>
+
+<!--Third-->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Image of the Product </h5>
+        <img class="card-img-top img-fluid"; class="arduino1image" src="../assets/img/Robortpartandkits/Arduinouno/arduinouno.jpg"  alt="Card image cap">
+        <p class="card-text"></p>
+        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Name Of Product</h2>
+        <hr>
+        <p class="card-text">Price : 5000<br> Inclusive of all taxes</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="card col-sm-2" style="margin-top: 20px; margin-bottom: 300px ">
+    <input type="button" style="margin-top: 20px" value="Add to Cart" class="btn btn-primary sign-in-icon" style="margin-top:2px; margin-bottom:2px; background-color: #c45500" >
+    <input type="button" style="margin-top: 20px" value="Buy Now" class="btn btn-primary sign-in-icon2" style="margin-top:2px; margin-bottom:2px; background-color: #c45500" >
+  </div>
+</div>
+</div>
+
+<!-- Section Content -->
+<section id="home" class="g-pos-rel g-theme-bg-blue-dark-v1-opacity-0_8--after">
+
+  <!-- <div class="requesttexttab"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#requestModal"> -->
+    <!-- <p style="font-family: 'PT Sans Caption', sans-serif;margin-left:15px;font-weight:600;color:#fff;font-size:15px;">E <br>N <br>Q <br>U <br>I <br>R <br>Y </p> -->
+<!--   </div> -->
+  <div id="requestModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Enquiry Form</h2>
+          <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label for="type" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Request Type</label>
+          <select style="border:1px solid #ced4da;outline:none;" type="text" name="type" id="type" class="form-control" required >
+            <option value="">--- Request Type ---</option>
+            <option value="">ROBOTICS TRAINING</option>
+            <option value="">ROBOTICS WORKSHOPS</option>
+            <option value="">ONLINE ROBOTICS</option>
+            <option value="">ROBOTICS LAB</option>
+            <option value="">ROBOT PARTS & KITS</option>
+            <option value="">ROBOTICS FRANCHISE</option>
+            <option value="">SPONSERSHIP</option>
+            <option value="">TECHNICAL SUPPORT</option>
+            <option value="">INTERNSHIP</option>
+            <option value="">OTHER</option>
+            <option value="">ENQUIRY</option>
+          </select>
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Name</label>
+          <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Name" required />
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Email</label>
+          <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Email" required />
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Mobile</label>
+          <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Mobile" required />
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">College/School</label>
+          <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="College/School" required />
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Location</label>
+          <input style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Location" required />
+          <label for="username" style="font-family: 'PT Sans Caption', sans-serif;font-weight:600;margin-bottom:-5px;margin-top:10px;">Query</label>
+          <textarea rows="4" style="border:1px solid #ced4da;outline:none" type="text" name="username" id="username" class="form-control" placeholder="Query" ></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="tabs">
+  <div class="container" style="padding-top:150px">
+    <ul class="nav sm-pills nav-justified pills-secondary">
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link active" data-toggle="tab" href="#overview" role="tab">overview</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#attendance" role="tab">attendance</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#tutorials" role="tab">Tutorials</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#projects" role="tab">Projects</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#Quiz" role="tab">Quiz</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#feestatus" role="tab">Feestatus</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a style="color:#fff" class="nav-link" data-toggle="tab" href="#certificate" role="tab">Certificate</a>
+      </li>
+    </ul>
+  </div>
+
+  <!--Panel 4-->
+  <div class="tab-pane fade" id="panel14" role="tabpanel">
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+      reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+    porro voluptate odit minima.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+      reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+    porro voluptate odit minima.</p>
+  </div>
+  <!--/.Panel 4-->
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+      <footer>
+        <div class="text-center g-color-gray-dark-v5  g-py-70" style="border-top:1px solid #ececec;background-color:#ececec;">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <h4 style="text-align:left;font-family: 'PT Sans Caption', sans-serif;font-weight:600" class="g-letter-spacing- g-font-size-18 g-theme-color-gray-dark-v5 g-mb-10">
+                  QuikLinks
+                  <img width="100%" src="http://wedesignthemes.com/html/kidslife/images/red_sketch.png" alt="">
+                </h4>
+                <ul style="text-align:left;list-style:none; font-family: 'PT Sans Caption', sans-serif;font-size:14px;font-weight:500;" class="g-color-gray-opacity-0_5 mb-0">
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/"><li><i class="fa fa-check" style="color:#76D7C4"></i> Home</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#ourofferings"><li><i class="fa fa-check" style="color:#76D7C4"></i> Our Offerings</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#aboutus"><li><i class="fa fa-check" style="color:#76D7C4"></i> About Us</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#events"><li><i class="fa fa-check" style="color:#76D7C4"></i> Events</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#reviews"><li><i class="fa fa-check" style="color:#76D7C4"></i> Reviews</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#blogs"><li><i class="fa fa-check" style="color:#76D7C4"></i> Blogs</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="gallery.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Gallery</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="careers.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Careers</li></a>
+                  <!--  <a style="text-decoration:none;color:#999;font-weight:500" href="feedback.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Feedback</li></a>-->
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/#contactus"><li><i class="fa fa-check" style="color:#76D7C4"></i> Contact Us</li></a>
+                </ul>
+              </div>
+               <div class="col-md-3">
+                <h4 style="text-align:left;font-family: 'PT Sans Caption', sans-serif;font-weight:600" class="g-letter-spacing- g-font-size-18 g-theme-color-gray-dark-v5 g-mb-10">
+                  Services<br>
+                  <img src="http://wedesignthemes.com/html/kidslife/images/green_sketch.png" alt="">
+                </h4>
+                <ul style="list-style:none;text-align:left">
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/training.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Robotics Training</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/workshop.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Robotics Workshop</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/online.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Online Robotics</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/labs.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Robotics Lab</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/kits.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Robotics Parts & Kits</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/offerings/franchise.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Robotics Franchise</li></a>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4 style="text-align:left;font-family: 'PT Sans Caption', sans-serif;font-weight:700" class="g-letter-spacing- g-font-size-18 g-theme-color-gray-dark-v5 g-mb-10">
+                  Latest Posts<br>
+                  <img src="http://wedesignthemes.com/html/kidslife/images/yellow_sketch.png" alt="">
+                </h4>
+                <ul style="list-style:none;text-align:left">
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/blogs/why-stem.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Why is STEM education so important ?</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/blogs/why-robotics-for-students.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Why Robotics for Student ?</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/blogs/education-system.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Does our education system need to prepare us well for a better life ?</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/blogs/engineers.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Engineers are made at College or at Work Place ?</li></a>
+                  <a style="text-decoration:none;color:#999;font-weight:500" href="/blogs/need-education-system-upgrade.html"><li><i class="fa fa-check" style="color:#76D7C4"></i> Does our education system need to upgrade to Education 4.0 ?</li></a>
+                </div>
+                <div class="col-md-8" style="margin-top: 10px">
+                  <h4 style="text-align:left;font-family: 'PT Sans Caption', sans-serif;font-weight:600" class="g-letter-spacing- g-font-size-18 g-theme-color-gray-dark-v5 g-mb-10">
+                    Social Links<br>
+                    <img src="http://wedesignthemes.com/html/kidslife/images/steelblue_sketch.png" alt="">
+                  </h4>
+                  <p style="text-align:left">
+                    <a style="" class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#!"><i class="fa fa-twitter" target="_blank"></i></a>
+                    <a style="" class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#!"><i class="fa fa-pinterest" target="_blank"></i></a>
+                    <a style="" class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="https://www.facebook.com/MechatronRobotics/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a style="" class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="https://www.instagram.com/mechatron_robotics/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a style="" class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#!"><i class="fa fa-linkedin" target="_blank"></i></a>
+                      <hr style="margin-right: 540px";>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <ul style="display: flex; justify-content: center; margin-bottom: -30px";>
+                  <li style="list-style:none" >
+                    <a href="../privacypolicy.html" style="text-decoration:none;">
+                      <p style="color:#999;font-weight:500;"><i  style="color:#76D7C4; margin-left: -50px;"></i> Privacy Policy <!--<span style="margin-left: 4px; margin-right: 4px";> | </span>--> &nbsp;|&nbsp;  </p>
+                    </a>
+                  </li>  
+                  <li style="list-style:none" >
+                    <a href="../termsandconditions.html" style="text-decoration:none;">
+                      <p style="color:#999;font-weight:500;"><i  style="color:#76D7C4 ;"></i> Terms & Conditions <!---<span style="margin-left: 2px; margin-right: 4px;"> | </span>--> &nbsp;|&nbsp;  </p>
+                    </a>
+                  </li> 
+                  <li style="list-style:none" >
+                    <a href="../disclaimer.html" style="text-decoration:none;">
+                      <p style="text-align:center;color:#999;font-weight:500;"><i  style="color:#76D7C4;"></i> Disclaimer  </p>
+                    </a>
+                  </li> 
+                </ul>
+              </p>               
+            </div>
+          </div>
+          <hr> 
+          <center style="margin-top: -20px">Copyright © Mechatron Robotics 2018. All Rights Reserved.</center>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a class="js-go-to u-go-to-v1" href="#!"
+    data-type="fixed"
+    data-position='{
+    "bottom": 15,
+    "right": 15
+  }'
+  data-offset-top="400"
+  data-compensation="#js-header"
+  data-show-effect="zoomIn">
+  <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</a>
+</main>
+
+<!-- JS Global Compulsory -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery-migrate.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="../assets/js/appear.js"></script>
+<script src="../assets/js/slick.js"></script>
+<script src="../assets/js/raphael.js"></script>
+<script src="../assets/js/init.js"></script>
+
+<!-- JS Unify -->
+<script src="../assets/js/hs.core.js"></script>
+<script src="../assets/js/hs.header.js"></script>
+<script src="../assets/js/hs.hamburgers.js"></script>
+<script src="../assets/js/hs.scroll-nav.js"></script>
+<script src="../assets/js/hs.tabs.js"></script>
+<script src="../assets/js/hs.carousel.js"></script>
+<script src="../assets/js/hs.go-to.js"></script>
+
+<!-- JS Customization -->
+<script src="../assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script>
+  $(document).on("ready", function() {
+    $.HSCore.components.HSCarousel.init(".js-carousel");
+    $.HSCore.components.HSHeader.init($("#js-header"));
+    $.HSCore.helpers.HSHamburgers.init(".hamburger");
+    $.HSCore.components.HSTabs.init('[role="tablist"]');
+    $.HSCore.components.HSGoTo.init(".js-go-to");
+    $('#processes [role="tablist"] .nav-link').on("click", function() {
+      setTimeout(function() {
+        $("#processesTabs .js-carousel").slick("setPosition");
+      }, 200);
+    });
+  });
+  $(window).on("load", function() {
+    $.HSCore.components.HSScrollNav.init($(".js-scroll-nav"), { duration: 700 });
+  });
+  $(window).on("resize", function() {
+    setTimeout(function() {
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+    }, 200);
+  });
+</script>
+</body>
+</html>

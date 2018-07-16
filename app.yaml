@@ -1,0 +1,41 @@
+application: mechatron-1317
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+- url: /(verify)/(.*)
+  static_files: public/\1.html
+  mime_type: text/html
+  upload: public/(verify)
+  secure: always
+ 
+- url: /(.+)
+  static_files: public/\1
+  upload: public/(.*)
+  secure: always
+  
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+  secure: always
+
+- url: /public/assets/font-awesome/fonts/(.*\.otf)
+  static_files: /public/assets/font-awesome/fonts/\1
+  upload: /public/assets/font-awesome/fonts/(.*\.otf)
+  mime_type: application/x-font-otf  
+  secure: always
+
+- url: /public/assets/dash/fonts/(.*\.eot)
+  static_files: /public/assets/dash/fonts/\1
+  upload: /public/assets/dash/fonts/(.*\.eot)
+  mime_type: application/x-font-eot    
+  secure: always
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

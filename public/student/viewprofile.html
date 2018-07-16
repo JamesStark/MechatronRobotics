@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Student Profile</title>
+    <!-- Bootstrap Core CSS -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script type="text/javascript" src="../assets/js/token.js"></script>
+    <script type="text/javascript" src="../assets/js/studentdash.js"></script>
+    <script type="text/javascript" src="../assets/js/url.js"></script>
+    <!--<script type="text/javascript" src="../assets/js/admission.js"></script>-->
+    <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script>
+    <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+    <script type="text/javascript" src="../assets/js/static_values.js"></script>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" onload="getSession();myFunction();">
+
+  <div class="">
+    <img style="top:13%" id="loader" src="../assets/img/png/loading.gif" alt="">
+    <h6 style="top:22%;" id="loadertext">Please wait....</h6></center>
+  </div>
+
+    <div id="main-wrapper" style="display:none;" >
+
+        <header class="topbar">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a style="margin-left:70px;" class="navbar-brand" href="index.html">
+              <span>
+                <a href="/../index.html"> <img width="26%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-lg-0">
+                  <!-- ============================================================== -->
+                  <!-- Profile -->
+                  <!-- ============================================================== -->
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="dashboard.html" style="color:#455a64;">Overview</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Attendance</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="tutorials.html" style="color:#455a64;">Tutorials</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Projects</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Quiz</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">FeeStatus</a>
+                  </li>
+                  <li class="nav-item" style="margin-right:10px;margin-top:5px;font-weight:600;">
+                    <a class="nav-link" href="#" style="color:#455a64;">Certificate</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i style="border: 2px solid;padding:6px; border-radius: 50%; color:#FF8500;" class="fa fa-user-cog"></i> </a>
+                      <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                          <ul class="dropdown-user">
+                            <li><a href="admissionform.html"><i class="fas fa-user-edit"></i> Admission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="viewprofile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <div class="page-wrapper" style="margin-left:0px;">
+          <div class="col-xs-12" id="admissionedit" style="font-weight: bold"></div>
+          <div class="col-xs-12" id="useredit" style="font-weight: bold"></div>
+
+            <form id="admissionedit" enctype="multipart/form-data" class="form-material" onsubmit="return false">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+                <!-- Row -->
+                <div class="row">
+
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                          <div class="pull-right">
+
+                          </div>
+                            <div class="card-body">
+                              <a href="#">
+                               <!--  <i class="fa fa-edit" id="editprofile1" style="float: right;color: #000; font-size: 18px;" onclick="$('#updatebtn1').show()"></i> -->
+                              </a>
+                                <div class="form-group">
+                                  <center class="m-t-30">
+                                    <img src="../assets/img/png/user2.png" id="imgprofile" class="img-circle" width="150" height="150" style="border:1px solid #ececec;cursor:pointer" data-toggle="modal" data-target="#editprofilephoto" />
+                                    <input style="text-align:center; font-weight:bold; color:#000"  type="text" id="stdname" class="form-control card-title m-t-10"  name="sname" disabled="" >
+                                    <p style="text-align:center;">Student</p>
+                                  </center>
+                                </div>
+                            </div>
+                            <div>
+                              <hr>
+                            </div>
+                            <!-- <div class="card-body"> -->
+                             <!--  <small class="text-muted" style="color:#000; font-size:15px;">Email address </small>
+                              <input style="font-size: 15px; margin-top:0px;"  type="email" id="semail" class="form-control card-title m-t-10"  name="semail" disabled="" >
+                              <small class="text-muted p-t-20 db" style="color:#000; font-size:15px;">Phone</small>
+                              <input style="font-size: 15px; margin-top:0px;"  type="text" id="scontact" class="form-control card-title m-t-10"  name="scontact" disabled="" ><br><br> -->
+                              <!-- <div class="form-group" style="display:none;" id="updatebtn1">
+                                <center>
+                                  <div class="spinner" style="display:none;height: 150px;">
+                                      <center><img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                                     <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                                  </div> -->
+                                <!--   <div class="col-md-8">
+                                      <button style="border-radius: 5px;border: 1px solid #999;background: #FF8500; color: #fff; font-weight: bold;" type="button" id="userupdatebt" class="form-control btn btn-primary" name="updatebtn" onclick="updateUserDetails()">Update User Detail</button>
+                                  </div> -->
+                                <!-- </center>
+                              </div> -->
+                            </div>
+                        </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs profile-tab" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+
+                                <!--second tab-->
+                                <div class="tab-pane active" id="profile" role="tabpanel">
+                                    <div class="card-body">
+                                      <a href="#">
+                                        <i class="fa fa-edit" id="editprofile2" style="float: right;color: #000; font-size: 18px;" onclick="$('#updatebtn2').show();"></i>
+                                      </a>
+                                        <h4 class="font-medium m-t-30">Admission Details</h4>
+                                        <hr>
+                                        <div class="card-body">
+                                          <div class="form-group">
+                                                <label class="col-md-12">Name</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="sname" class="form-control card-title m-t-10"  name="sname" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Email address</label>
+                                                <div class="col-md-12">
+                                                   <input style="font-size: 15px; margin-top:0px;"  type="email" id="semail" class="form-control card-title m-t-10"  name="semail" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Phone</label>
+                                                <div class="col-md-12">
+                                                    <input style="font-size: 15px; margin-top:0px;"  type="text" id="scontact" class="form-control card-title m-t-10"  name="scontact" disabled="" ><br><br>
+                                                </div>
+                                            </div>
+
+                                          <!--  <input type="text" id="sname" class="form-control card-title m-t-10"  name="sname" disabled="" > -->
+                                        <!--   <small class="text-muted" style="color:#000; font-size:15px;">Email address </small> -->
+                                         <!--  <input style="font-size: 15px; margin-top:0px;"  type="email" id="semail" class="form-control card-title m-t-10"  name="semail" disabled="" > -->
+                                        <!--   <small class="text-muted p-t-20 db" style="color:#000; font-size:15px;">Phone</small>
+                                          <input style="font-size: 15px; margin-top:0px;"  type="text" id="scontact" class="form-control card-title m-t-10"  name="scontact" disabled="" ><br><br> -->
+                                            <div class="form-group">
+                                                <label class="col-md-12">Date of Birth</label>
+                                                <div class="col-md-12">
+                                                    <input type="date" id="dob" class="form-control"  name="dob" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Hobbies</label>
+                                                <div class="col-md-12">
+
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Robotics" id="rbt"> Robotics</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Sports" id="sprts"> Sports</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Dance" id="dnc"> Dance</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Music" id="msc"> Music</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Crafts" id="cft"> Crafts</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Drawing" id="dwg"> Drawing</label>
+                                                  <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Others" id="oth"> Others</label>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Father's Name</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="fname" class="form-control"  name="fname" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Mother's Name</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="mname" class="form-control"  name="mname" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Father's Occupation / Mother's Occupation</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="occp" class="form-control"  name="occp" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="add1" class="form-control"  name="add1" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Street</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="add2" class="form-control"  name="add2" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Landmark</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="add3" class="form-control"  name="add3" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">City</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="city" class="form-control"  name="city" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">State</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="state" class="form-control"  name="state" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="Andra Pradesh">Andra Pradesh</option>
+                                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                      <option value="Assam">Assam</option>
+                                                      <option value="Bihar">Bihar</option>
+                                                      <option value="Chhattisgarh">Chhattisgarh</option>
+                                                      <option value="Goa">Goa</option>
+                                                      <option value="Gujarat">Gujarat</option>
+                                                      <option value="Haryana">Haryana</option>
+                                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                      <option value="Jharkhand">Jharkhand</option>
+                                                      <option value="Karnataka">Karnataka</option>
+                                                      <option value="Kerala">Kerala</option>
+                                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                      <option value="Maharashtra">Maharashtra</option>
+                                                      <option value="Manipur">Manipur</option>
+                                                      <option value="Meghalaya">Meghalaya</option>
+                                                      <option value="Mizoram">Mizoram</option>
+                                                      <option value="Nagaland">Nagaland</option>
+                                                      <option value="Orissa">Orissa</option>
+                                                      <option value="Punjab">Punjab</option>
+                                                      <option value="Rajasthan">Rajasthan</option>
+                                                      <option value="Sikkim">Sikkim</option>
+                                                      <option valu="Tamil Nadu">Tamil Nadu</option>
+                                                      <option value="Tripura">Tripura</option>
+                                                      <option value="Uttaranchal">Uttaranchal</option>
+                                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                      <option value="West Bengal">West Bengal</option>
+                                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                                      <option value="Chandigarh">Chandigarh</option>
+                                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                                      <option value="Daman and Diu">Daman and Diu</option>
+                                                      <option value="Delhi">Delhi</option>
+                                                      <option value="Lakshadeep">Lakshadeep</option>
+                                                      <option value="Pondicherry">Pondicherry</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Country</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="country" class="form-control"  name="country" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="India">India</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Zip</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="zip" class="form-control"  name="zip" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Name Of School/ College</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="school" class="form-control"  name="school" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Standard</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="std" class="form-control"  name="std" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="1st">1st</option>
+                                                      <option value="2nd">2nd</option>
+                                                      <option value="3rd">3rd</option>
+                                                      <option value="4th">4th</option>
+                                                      <option value="5th">5th</option>
+                                                      <option value="6th">6th</option>
+                                                      <option value="7th">7th</option>
+                                                      <option value="8th">8th</option>
+                                                      <option value="9th">9th</option>
+                                                      <option value="10th">10th</option>
+                                                      <option value="11th">11th</option>
+                                                      <option value="12th">12th</option>
+                                                      <option value="Graduation">Graduation</option>
+                                                      <option value="Post Graduation">Post Graduation</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Level</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="lvl" class="form-control"  name="lvl" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="LEVEL_1">LEVEL 1</option>
+                                                      <option value="LEVEL_2">LEVEL 2</option>
+                                                      <option value="LEVEL_3">LEVEL 3</option>
+                                                      <option value="LEVEL_4">LEVEL 4</option>
+                                                      <option value="LEVEL_5">LEVEL 5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Center</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="center" class="form-control"  name="center" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="Howrah">Howrah</option>
+                                                      <option value="Baner_Pune">Baner, Pune</option>
+                                                      <option value="Hadapsar_Pune">Hadapsar, Pune</option>
+                                                      <option value="Wakad_Pune">Wakad, Pune</option>
+                                                      <option value="Gurugram">Gurugram</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Class Type</label>
+                                                <div class="col-md-12">
+                                                    <select type="text" id="class" class="form-control"  name="class" disabled="" >
+                                                      <option>---- Please Select ----</option>
+                                                      <option value="Online_Class">Online Class</option>
+                                                      <option value="Regular_Class">Regular Class</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Date Of Admission</label>
+                                                <div class="col-md-12">
+                                                    <input type="date" id="doa" class="form-control"  name="doa" disabled="" >
+                                                </div>
+                                            </div>
+                                            <h4 class="font-medium m-t-30">Q/A's</h4>
+                                            <hr>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Why do you want to learn Robotics?</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="why1" class="form-control"  name="why1" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">Why do you want your child to learn Robotics?</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="why2" class="form-control"  name="why2" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-12">What are your expectations from this Robotics course?</label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="why3" class="form-control"  name="why3" disabled="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="display:none;" id="updatebtn2">
+                                                <center>
+                                                    <div class="spinner" style="display:none;height: 150px;">
+                                                      <center>
+                                                          <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                                                          <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                                                        </center>
+                                                    </div>
+                                                  <div class="col-md-6">
+                                                      <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="button" id="updatebt" class="form-control btn btn-primary" onclick="updateAdmissionDetails()"  name="updatebtn" >Update Admission Detail</button>
+                                                  </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="settings" role="tabpanel">
+                                    <div class="card-body">
+                                        <h4 class="font-medium m-t-30"><i class="fa fa-cog" area-hidden="true"></i> Settings </h4>
+                                        <hr>
+                                        <div class="form-group">
+                                            <label class="col-md-12"><a href="#" data-toggle="modal" data-target="#changepwd"><i class="fa fa-key"></i> Change Password
+                                            </a></label>
+                                            <label class="col-md-12"><a href=""><i class="fa fa-question-circle"></i> Help</a></label>
+                                            <label class="col-md-12"><a href=""><i class="fa fa-power-off"></i> Logout</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div id="changepwd" class="modal fade" role="dialog">
+
+                      <div class="modal-dialog modal-md ">
+                        <form id="">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 style="font-family: 'PT Sans Caption', sans-serif;margin-bottom:-10px;">Change Password</h2>
+                              <button type="button" style="outline:none;" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter Old Password</label> -->
+                                  <form id="changepasswordform">
+                                    <div class="col-xs-12" id="passwordedit"></div>
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                    </div>
+                                  <div class="col-md-12">
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <div class="col-xs-12" id="passwordmsg"></div>
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Enter New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <div class="col-xs-12" id="npasswordmsg"></div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <!-- <label class="col-md-12">Confirm New Password</label> -->
+                                  <div class="col-md-12">
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <div class="col-xs-12" id="cnpasswordmsg"></div>
+                                  </div>
+                              </div>
+                            </form>
+                              <div class="spinner" style="display:none;height: 150px;">
+                               <center>
+                                 <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                                 <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                               </center>
+                             </div>
+                             <div class="form-group" style="" id="updatepwd">
+                                 <center>
+                                   <div class="col-md-8">
+                                       <button style="border-radius: 5px;border: 1px solid #666;background: #FF8500; color: #fff;" type="submit" id="updatepwd" onclick="updatePassword()" class="form-control btn btn-primary"  name="updatepwd" >Update Password</button>
+                                   </div>
+                                 </center>
+                             </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div></form>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+            <!-- Edit Profile Modal -->
+            <div class="modal fade" id="editprofilephoto" role="dialog">
+
+              <div class="modal-dialog modal-lg">
+                <form id="profile" class="form-material">
+                <!-- Modal content-->
+                <div class="modal-content" style="border-radius:0px;">
+
+                  <div class="modal-header" style="padding:10px">
+                    <h4 class="modal-title" style="font-weight:600;margin-top:7px">Profile Photo</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="font-size: 40px;outline:none;">&times;</button>
+                  </div>
+                  <div class="col-xs-12" id="profileup" style="font-weight: bold"></div>
+                  <div class="modal-body">
+                    <div class="row">
+
+                      <div class="col-lg-4"></div>
+                       <div class="col-lg-5">
+                         <img src="../assets/img/png/user2.png" id="imgupld" class="img-circle" width="150" height="150" style="border:1px solid #ececec;cursor:pointer" data-toggle="modal" data-target="#editprofilephoto" />
+                       </div>
+                       <div class="col-lg-3"></div>
+                    </div>
+                    <div class="form-group" id="imgupload">
+                        <label class="col-md-12">Change Profile Pic</label>
+                        <div class="col-md-12">
+                            <input type="file" id="simg" accept="image/png,image/jpg,image/jpeg" multiple="" onchange="readURL(this);" class="form-control" name="img">
+                        </div>
+                    </div>
+                  </div>
+                   <div class="spinner" style="display:none;height: 150px;">
+                     <center>
+                       <img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                       <h6 style="margin-bottom: -10px;">Please wait....</h6>
+                     </center>
+                   </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="updateProfilePic()">Apply</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                Copyright © Mechatron Robotics 2018. All Rights Reserved.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script type="text/javascript">
+    function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+			$('#imgupld')
+				.attr('src', e.target.result)
+				.width(150)
+				.height(150);
+		};
+
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+</script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+</body>
+
+</html>
