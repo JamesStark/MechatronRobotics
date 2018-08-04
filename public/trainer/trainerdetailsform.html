@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
-    <title>Trainer</title>
+    <title>Instructor Reg Form</title>
 
     <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -176,7 +176,7 @@
                              <!--  <li><a href="#" onclick="verifyTrainer()" id="fee">Fee Details</a></li> -->
                           </ul>
                         </li>
-                        <li> <a  class="waves-effect waves-dark" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                        <li> <a  class="waves-effect waves-dark"  href="student-attendance.html" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -219,7 +219,7 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Trainer Name</label>
+                                <label class="col-md-12">First Name *</label>
                                 <div class="col-md-12">
                                     <input  type="text" id="sname" name="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder=" " readonly>
                                     <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
@@ -227,147 +227,197 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                             <div class="form-group">
-                                <label class="col-md-12">Center</label>
-                                <div class="col-md-12">
-                                    <select type="text" id="center" class="form-control"  name="center">
-                                      <option>---- Please Select ----</option>
-                                      <option value="Howrah">Howrah</option>
-                                      <option value="Baner_Pune">Baner, Pune</option>
-                                      <option value="Hadapsar_Pune">Hadapsar, Pune</option>
-                                      <option value="Wakad_Pune">Wakad, Pune</option>
-                                      <option value="Gurugram">Gurugram</option>
-                                  </select>
-                                  <div class="error_form col-md-12" id="center_error_message" style="font-size: 12px; font-weight: bold"></div>
-                              </div>
-                          </div>
-                      </div>
-                          <!--  <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Center</label>
+                                <label class="col-md-12">Last Name *</label>
                                 <div class="col-md-12">
-                                    <input  type="text" id="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="Center name" autocomplete="off"/>
+                                    <input  type="text" id="sname" name="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder=" " readonly>
                                     <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
                                 </div>
                             </div>
-                          </div> -->
-                           <div class="col-md-6">
+                          </div>
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Email</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="" id="semail" class="form-control"  placeholder=" " readonly>
-                                    <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
+                              <label class="col-md-12">Date of Birth *</label>
+                              <div class="col-md-12">
+                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder=" " >
+                                  <div class="error_form col-md-12" id="dob_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Contact no</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="" id="scontact" class="form-control"  placeholder=" " readonly>
-                                    <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              <label class="col-md-12">Gender *</label>
+                                <div class="custom-control custom-radio custom-control-inline" style="margin-left: 5px">
+                                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked >
+                                  <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline2">Female</label>
                                 </div>
                             </div>
                           </div>
-
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Qualification *</label>
+                              <div class="col-md-12">
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Headline</label>
+                              <div class="col-md-12">
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="col-md-12">Biography</label>
+                              <div class="col-md-12">
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12" style="padding:20px;">
+                          <h5 style="text-align:center;font-weight:600; font-size: 18px;">Contact Details</h5>
+                          <hr>
+                        </div>
+                        <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Email </label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="semail" class="form-control"  placeholder=" " readonly>
+                                 <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Mobile no *</label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="scontact" class="form-control"  placeholder=" " readonly>
+                                 <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Landline no *</label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="landline" class="form-control"  placeholder=" " readonly>
+                                 <div class="error_form col-xs-12" id="landline_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                             <label class="col-md-12">Center</label>
+                             <div class="col-md-12">
+                                 <input type="text" id="sname" name="sname"  class="form-control"  name="sname" title="" placeholder=" ">
+                               <div class="error_form col-md-12" id="center_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Flat / HouseNo / Floor / Building *</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr1" id="add1t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add1t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Street *</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr2" id="add2t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add2t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Area</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr2" id="add2t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add2t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Landmark *</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="addr3" id="add3t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="add3t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">City *</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="pr_city" id="cityt" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="cityt_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">State *</label>
+                            <div class="col-md-12">
+                                <select type="text" name="pr_state" id="statet" class="form-control"  placeholder="West Bengal" autocomplete="off">
+                                  <option>---- Please Select ----</option>
+                                  <option value="Andra Pradesh">Andra Pradesh</option>
+                                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                  <option value="Assam">Assam</option>
+                                  <option value="Bihar">Bihar</option>
+                                  <option value="Chhattisgarh">Chhattisgarh</option>
+                                  <option value="Goa">Goa</option>
+                                  <option value="Gujarat">Gujarat</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                  <option value="Jharkhand">Jharkhand</option>
+                                  <option value="Karnataka">Karnataka</option>
+                                  <option value="Kerala">Kerala</option>
+                                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Manipur">Manipur</option>
+                                  <option value="Meghalaya">Meghalaya</option>
+                                  <option value="Mizoram">Mizoram</option>
+                                  <option value="Nagaland">Nagaland</option>
+                                  <option value="Orissa">Orissa</option>
+                                  <option value="Punjab">Punjab</option>
+                                  <option value="Rajasthan">Rajasthan</option>
+                                  <option value="Sikkim">Sikkim</option>
+                                  <option valu="Tamil Nadu">Tamil Nadu</option>
+                                  <option value="Tripura">Tripura</option>
+                                  <option value="Uttaranchal">Uttaranchal</option>
+                                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                  <option value="West Bengal">West Bengal</option>
+                                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                  <option value="Chandigarh">Chandigarh</option>
+                                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                  <option value="Daman and Diu">Daman and Diu</option>
+                                  <option value="Delhi">Delhi</option>
+                                  <option value="Lakshadeep">Lakshadeep</option>
+                                  <option value="Pondicherry">Pondicherry</option>
+                                </select>
+                                <div class="error_form col-xs-12" id="statet_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Qualification</label>
-                                <div class="col-md-12">
-                                    <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
-                                    <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12" style="padding:20px;">
-                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Permanent Address</h5>
-                            <hr>
-                          </div>
-                           <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="pr_addr1" id="add1t" class="form-control"  placeholder=" " autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add1t_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Street</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="pr_addr2" id="add2t" class="form-control"  placeholder=" " autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add2t_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Landmark</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="pr_addr3" id="add3t" class="form-control"  placeholder=" " autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add3t_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">City</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="pr_city" id="cityt" class="form-control"  placeholder=" " autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="cityt_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">State</label>
-                                <div class="col-md-12">
-                                    <select type="text" name="pr_state" id="statet" class="form-control"  placeholder="West Bengal" autocomplete="off">
-                                      <option>---- Please Select ----</option>
-                                      <option value="Andra Pradesh">Andra Pradesh</option>
-                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                      <option value="Assam">Assam</option>
-                                      <option value="Bihar">Bihar</option>
-                                      <option value="Chhattisgarh">Chhattisgarh</option>
-                                      <option value="Goa">Goa</option>
-                                      <option value="Gujarat">Gujarat</option>
-                                      <option value="Haryana">Haryana</option>
-                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                      <option value="Jharkhand">Jharkhand</option>
-                                      <option value="Karnataka">Karnataka</option>
-                                      <option value="Kerala">Kerala</option>
-                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                      <option value="Maharashtra">Maharashtra</option>
-                                      <option value="Manipur">Manipur</option>
-                                      <option value="Meghalaya">Meghalaya</option>
-                                      <option value="Mizoram">Mizoram</option>
-                                      <option value="Nagaland">Nagaland</option>
-                                      <option value="Orissa">Orissa</option>
-                                      <option value="Punjab">Punjab</option>
-                                      <option value="Rajasthan">Rajasthan</option>
-                                      <option value="Sikkim">Sikkim</option>
-                                      <option valu="Tamil Nadu">Tamil Nadu</option>
-                                      <option value="Tripura">Tripura</option>
-                                      <option value="Uttaranchal">Uttaranchal</option>
-                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                      <option value="West Bengal">West Bengal</option>
-                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                      <option value="Chandigarh">Chandigarh</option>
-                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                                      <option value="Daman and Diu">Daman and Diu</option>
-                                      <option value="Delhi">Delhi</option>
-                                      <option value="Lakshadeep">Lakshadeep</option>
-                                      <option value="Pondicherry">Pondicherry</option>
-                                    </select>
-                                    <div class="error_form col-xs-12" id="statet_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Country</label>
+                                <label class="col-md-12">Country *</label>
                                 <div class="col-md-12">
                                   <select type="text" name="pr_country" id="countryt" class="form-control"  placeholder=" " autocomplete="off">
                                     <option>---- Please Select ----</option>
@@ -576,327 +626,71 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Zip</label>
+                                <label class="col-md-12">Zip *</label>
                                 <div class="col-md-12">
                                     <input type="pin" name="pin" id="zipt" class="form-control"  placeholder="" />
                                     <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-
-                          <div class="col-md-12" style="padding:20px;">
-                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Temporary Address</h5>
-                            <hr>
-                            <div class="col-md-6" style="margin-left: -40px">
-                            <div class="col-auto my-1">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                  <input type="checkbox"  name="billingtoo" onclick="FillForm(this.form)" class="custom-control-input" id="customControlAutosizing">
-                                  <label class="custom-control-label" for="customControlAutosizing">Same As Above</label>
-                                </div>
-                              </div>
-                          </div>
-                        </div>
-                           <div class="col-md-6" >
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
+                                <label class="col-md-12">Proof of Address</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="tp_addr1" id="add1" class="form-control"  placeholder=" " autocomplete="off"/>
+                                    <input type="file" name="pin" id="zipt" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Proof of Identity</label>
+                                <div class="col-md-12">
+                                    <input type="file" name="pin" id="zipt" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12" style="padding:20px;">
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Social Links</h5>
+                            <hr>
+                          </div>
+                          <div class="col-md-6" >
+                            <div class="form-group">
+                                <label class="col-md-12">Website Link</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="corr_addr1" id="add1" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="add1_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Street</label>
+                                <label class="col-md-12">Facebook Link</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="tp_addr2" id="add2" class="form-control"  placeholder=" " autocomplete="off"/>
+                                    <input type="text" name="corr_addr2" id="add2" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="add2_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Landmark</label>
+                                <label class="col-md-12">Twitter Link</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="tp_addr3" id="add3" class="form-control"  placeholder="" autocomplete="off"/>
+                                    <input type="text" name="corr_addr3" id="add3" class="form-control"  placeholder="" autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="add3_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">City</label>
+                                <label class="col-md-12">LinkedIn Link</label>
                                 <div class="col-md-12">
                                     <input type="text" name="tp_city" id="city" class="form-control"  placeholder="" autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="city_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">State</label>
-                                <div class="col-md-12">
-                                    <select type="text" name="tp_state" id="state" class="form-control"  placeholder="" autocomplete="off">
-                                      <option>---- Please Select ----</option>
-                                      <option value="Andra Pradesh">Andra Pradesh</option>
-                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                      <option value="Assam">Assam</option>
-                                      <option value="Bihar">Bihar</option>
-                                      <option value="Chhattisgarh">Chhattisgarh</option>
-                                      <option value="Goa">Goa</option>
-                                      <option value="Gujarat">Gujarat</option>
-                                      <option value="Haryana">Haryana</option>
-                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                      <option value="Jharkhand">Jharkhand</option>
-                                      <option value="Karnataka">Karnataka</option>
-                                      <option value="Kerala">Kerala</option>
-                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                      <option value="Maharashtra">Maharashtra</option>
-                                      <option value="Manipur">Manipur</option>
-                                      <option value="Meghalaya">Meghalaya</option>
-                                      <option value="Mizoram">Mizoram</option>
-                                      <option value="Nagaland">Nagaland</option>
-                                      <option value="Orissa">Orissa</option>
-                                      <option value="Punjab">Punjab</option>
-                                      <option value="Rajasthan">Rajasthan</option>
-                                      <option value="Sikkim">Sikkim</option>
-                                      <option valu="Tamil Nadu">Tamil Nadu</option>
-                                      <option value="Tripura">Tripura</option>
-                                      <option value="Uttaranchal">Uttaranchal</option>
-                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                      <option value="West Bengal">West Bengal</option>
-                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                      <option value="Chandigarh">Chandigarh</option>
-                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                                      <option value="Daman and Diu">Daman and Diu</option>
-                                      <option value="Delhi">Delhi</option>
-                                      <option value="Lakshadeep">Lakshadeep</option>
-                                      <option value="Pondicherry">Pondicherry</option>
-                                    </select>
-                                    <div class="error_form col-xs-12" id="state_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Country</label>
-                                <div class="col-md-12">
-                                  <select type="text" name="tp_country" id="country" class="form-control"  placeholder="" autocomplete="off">
-                                    <option>---- Please Select ----</option>
-                                    <!--  <option value="Afghanistan">Afghanistan</option>
-                                     <option value="Albania">Albania</option>
-                                     <option value="Algeria">Algeria</option>
-                                     <option value="Andorra">Andorra</option>
-                                     <option value="Angola">Angola</option>
-                                     <option value="Anguilla">Anguilla</option>
-                                     <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-                                     <option value="Argentina">Argentina</option>
-                                     <option value="Armenia">Armenia</option>
-                                     <option value="Australia">Australia</option>
-                                     <option value="Austria">Austria</option>
-                                     <option value="Azerbaijan">Azerbaijan</option>
-                                     <option value="Bahamas">Bahamas</option>
-                                     <option value="Bahrain">Bahrain</option>
-                                     <option value="Bangladesh">Bangladesh</option>
-                                     <option value="Barbados">Barbados</option>
-                                     <option value="Belarus">Belarus</option>
-                                     <option value="Belgium">Belgium</option>
-                                     <option value="Belize">Belize</option>
-                                     <option value="Benin">Benin</option>
-                                     <option value="Bermuda">Bermuda</option>
-                                     <option value="Bhutan">Bhutan</option>
-                                     <option value="Bolivia">Bolivia</option>
-                                     <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-                                     <option value="Botswana">Botswana</option>
-                                     <option value="Brazil">Brazil</option>
-                                     <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                     <option value="Bulgaria">Bulgaria</option>
-                                     <option value="Burkina Faso">Burkina Faso</option>
-                                     <option value="Myanmar/Burma">Myanmar/Burma</option>
-                                     <option value="Burundi">Burundi</option>
-                                     <option value="Cambodia">Cambodia</option>
-                                     <option value="Cameroon">Cameroon</option>
-                                     <option value="Canada">Canada</option>
-                                     <option value="Cape Verde">Cape Verde</option>
-                                     <option value="Cayman Islands">Cayman Islands</option>
-                                     <option value="Central African Republic">Central African Republic</option>
-                                     <option value="Chad">Chad</option>
-                                     <option value="Chile">Chile</option>
-                                     <option value="China">China</option>
-                                     <option value="Colombia">Colombia</option>
-                                     <option value="Comoros">Comoros</option>
-                                     <option value="Congo">Congo</option>
-                                     <option value="Costa Rica">Costa Rica</option>
-                                     <option value="Croatia">Croatia</option>
-                                     <option value="Cuba">Cuba</option>
-                                     <option value="Cyprus">Cyprus</option>
-                                     <option value="Czech Republic">Czech Republic</option>
-                                     <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
-                                     <option value="Denmark">Denmark</option>
-                                     <option value="Djibouti">Djibouti</option>
-                                     <option value="Dominican Republic">Dominican Republic</option>
-                                     <option value="Dominica">Dominica</option>
-                                     <option value="Ecuador">Ecuador</option>
-                                     <option value="Egypt">Egypt</option>
-                                     <option value="El Salvador">El Salvador</option>
-                                     <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                     <option value="Eritrea">Eritrea</option>
-                                     <option value="Estonia">Estonia</option>
-                                     <option value="Ethiopia">Ethiopia</option>
-                                     <option value="Fiji">Fiji</option>
-                                     <option value="Finland">Finland</option>
-                                     <option value="France">France</option>
-                                     <option value="French Guiana">French Guiana</option>
-                                     <option value="Gabon">Gabon</option>
-                                     <option value="Gambia">Gambia</option>
-                                     <option value="Georgia">Georgia</option>
-                                     <option value="Germany">Germany</option>
-                                     <option value="Ghana">Ghana</option>
-                                     <option value="Great Britain">Great Britain</option>
-                                     <option value="Greece">Greece</option>
-                                     <option value="Grenada">Grenada</option>
-                                     <option value="Guadeloupe">Guadeloupe</option>
-                                     <option value="Guatemala">Guatemala</option>
-                                     <option value="Guinea">Guinea</option>
-                                     <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                     <option value="Guyana">Guyana</option>
-                                     <option value="Haiti">Haiti</option>
-                                     <option value="Honduras">Honduras</option>
-                                     <option value="Hungary">Hungary</option>
-                                     <option value="Iceland">Iceland</option> -->
-                                     <option value="India">India</option>
-                                    <!--  <option value="Indonesia">Indonesia</option>
-                                     <option value="Iran">Iran</option>
-                                     <option value="Iraq">Iraq</option>
-                                     <option value="Israel and the Occupied Territories">Israel and the Occupied Territories</option>
-                                     <option value="Italy">Italy</option>
-                                     <option value="Ivory Coast (Cote d'Ivoire)">Ivory Coast (Cote d'Ivoire)</option>
-                                     <option value="Jamaica">Jamaica</option>
-                                     <option value="Japan">Japan</option>
-                                     <option value="Jordan">Jordan</option>
-                                     <option value="Kazakhstan">Kazakhstan</option>
-                                     <option value="Kenya">Kenya</option>
-                                     <option value="Kosovo">Kosovo</option>
-                                     <option value="Kuwait">Kuwait</option>
-                                     <option value="Kyrgyz Republic (Kyrgyzstan)">Kyrgyz Republic (Kyrgyzstan)</option>
-                                     <option value="Laos">Laos</option>
-                                     <option value="Latvia">Latvia</option>
-                                     <option value="Lebanon">Lebanon</option>
-                                     <option value="Lesotho">Lesotho</option>
-                                     <option value="Liberia">Liberia</option>
-                                     <option value="Libya">Libya</option>
-                                     <option value="Liechtenstein">Liechtenstein</option>
-                                     <option value="Lithuania">Lithuania</option>
-                                     <option value="Luxembourg">Luxembourg</option>
-                                     <option value="Republic of Macedonia">Republic of Macedonia</option>
-                                     <option value="Madagascar">Madagascar</option>
-                                     <option value="Malawi">Malawi</option>
-                                     <option value="Malaysia">Malaysia</option>
-                                     <option value="Maldives">Maldives</option>
-                                     <option value="Mali">Mali</option>
-                                     <option value="Malta">Malta</option>
-                                     <option value="Martinique">Martinique</option>
-                                     <option value="Mauritania">Mauritania</option>
-                                     <option value="Mauritius">Mauritius</option>
-                                     <option value="Mayotte">Mayotte</option>
-                                     <option value="Mexico">Mexico</option>
-                                     <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                     <option value="Monaco">Monaco</option>
-                                     <option value="Mongolia">Mongolia</option>
-                                     <option value="Montenegro">Montenegro</option>
-                                     <option value="Montserrat">Montserrat</option>
-                                     <option value="Morocco">Morocco</option>
-                                     <option value="Mozambique">Mozambique</option>
-                                     <option value="Namibia">Namibia</option>
-                                     <option value="Nepal">Nepal</option>
-                                     <option value="Netherlands">Netherlands</option>
-                                     <option value="New Zealand">New Zealand</option>
-                                     <option value="Nicaragua">Nicaragua</option>
-                                     <option value="Niger">Niger</option>
-                                     <option value="Nigeria">Nigeria</option>
-                                     <option value="Korea, Democratic Republic of (North Korea)">Korea, Democratic Republic of (North Korea)</option>
-                                     <option value="Norway">Norway</option>
-                                     <option value="Oman">Oman</option>
-                                     <option value="Pacific Islands">Pacific Islands</option>
-                                     <option value="Pakistan">Pakistan</option>
-                                     <option value="Panama">Panama</option>
-                                     <option value="Papua New Guinea">Papua New Guinea</option>
-                                     <option value="Paraguay">Paraguay</option>
-                                     <option value="Peru">Peru</option>
-                                     <option value="Philippines">Philippines</option>
-                                     <option value="Poland">Poland</option>
-                                     <option value="Portugal">Portugal</option>
-                                     <option value="Puerto Rico">Puerto Rico</option>
-                                     <option value="Qatar">Qatar</option>
-                                     <option value="Reunion">Reunion</option>
-                                     <option value="Romania">Romania</option>
-                                     <option value="Russian Federation">Russian Federation</option>
-                                     <option value="Rwanda">Rwanda</option>
-                                     <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                     <option value="Saint Lucia">Saint Lucia</option>
-                                     <option value="Saint Vincent's & Grenadines">Saint Vincent's & Grenadines</option>
-                                     <option value="Samoa">Samoa</option>
-                                     <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                     <option value="Saudi Arabia">Saudi Arabia</option>
-                                     <option value="Senegal">Senegal</option>
-                                     <option value="Serbia">Serbia</option>
-                                     <option value="Seychelles">Seychelles</option>
-                                     <option value="Sierra Leone">Sierra Leone</option>
-                                     <option value="Singapore">Singapore</option>
-                                     <option value="Slovak Republic (Slovakia)">Slovak Republic (Slovakia)</option>
-                                     <option value="Slovenia">Slovenia</option>
-                                     <option value="Solomon Islands">Solomon Islands</option>
-                                     <option value="Somalia">Somalia</option>
-                                     <option value="South Africa">South Africa</option>
-                                     <option value="Korea, Republic of (South Korea)">Korea, Republic of (South Korea)</option>
-                                     <option value="South Sudan">South Sudan</option>
-                                     <option value="Spain">Spain</option>
-                                     <option value="Sri Lanka">Sri Lanka</option>
-                                     <option value="Sudan">Sudan</option>
-                                     <option value="Suriname">Suriname</option>
-                                     <option value="Swaziland">Swaziland</option>
-                                     <option value="Sweden">Sweden</option>
-                                     <option value="Switzerland">Switzerland</option>
-                                     <option value="Syria">Syria</option>
-                                     <option value="Tajikistan">Tajikistan</option>
-                                     <option value="Tanzania">Tanzania</option>
-                                     <option value="Thailand">Thailand</option>
-                                     <option value="Timor Leste">Timor Leste</option>
-                                     <option value="Togo">Togo</option>
-                                     <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-                                     <option value="Tunisia">Tunisia</option>
-                                     <option value="Turkey">Turkey</option>
-                                     <option value="Turkmenistan">Turkmenistan</option>
-                                     <option value="Turks & Caicos Islands">Turks & Caicos Islands</option>
-                                     <option value="Uganda">Uganda</option>
-                                     <option value="Ukraine">Ukraine</option>
-                                     <option value="United Arab Emirates">United Arab Emirates</option>
-                                     <option value="United States of America (USA)">United States of America (USA)</option>
-                                     <option value="Uruguay">Uruguay</option>
-                                     <option value="Uzbekistan">Uzbekistan</option>
-                                     <option value="Venezuela">Venezuela</option>
-                                     <option value="Vietnam">Vietnam</option>
-                                     <option value="Virgin Islands">Virgin Islands (UK)</option>
-                                     <option value="Virgin Islands">Virgin Islands (US)</option>
-                                     <option value="Yemen">Yemen</option>
-                                     <option value="Zambia">Zambia</option>
-                                     <option value="Zimbabwe">Zimbabwe</option> -->
-                                  </select>
-                                  <div class="error_form col-xs-12" id="country_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Zip</label>
-                                <div class="col-md-12">
-                                    <input type="pin" name="tp_pin" id="zip" class="form-control"  placeholder="" />
-                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-
                           <div class="col-md-12">
                             <div class="spinner" style="display:none;height: 150px;">
                             <center>

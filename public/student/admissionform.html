@@ -14,8 +14,8 @@
     <!-- Bootstrap Core CSS -->
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
@@ -150,7 +150,7 @@
                             <div class="form-group">
                               <center class="m-t-20">
                                 <img src="../assets/img/png/user2.png" id="imgupld" width="150" height="150" class="img-circle" style="border:1px solid #ececec;" />
-                                <label style="text-align:left;" class="col-md-12 m-t-40">Upload Photo</label>
+                                <label style="text-align:left;" class="col-md-12 m-t-40">Upload Photo *</label>
                                 <div class="col-md-12">
                                   <input type="file" name="profile_pic" id="pic" class="form-control" accept="image/png,image/jpg,image/jpeg" multiple="" onchange="readURL(this);" >
                                   <div class="error_form col-xs-12" id="pic_error_message" style="font-size: 12px; font-weight: bold"> </div>
@@ -160,23 +160,43 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Name Of Student</label>
+                                <label class="col-md-12">First Name *</label>
                                 <div class="col-md-12">
-                                    <input  type="text" id="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="Student name" autocomplete="off"/>
-                                    <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input  type="text" id="fname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="" autocomplete="off" readonly/>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Date of Birth</label>
+                                <label class="col-md-12">Last Name *</label>
+                                <div class="col-md-12">
+                                  <input  type="text" id="lname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="" autocomplete="off" readonly/>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">Date of Birth *</label>
                               <div class="col-md-12">
-                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder="date" >
+                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder="" >
                                   <div class="error_form col-md-12" id="dob_error_message" style="font-size: 12px; font-weight: bold"></div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-12">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">Gender *</label>
+                                <div class="custom-control custom-radio custom-control-inline" style="margin-left: 5px">
+                                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked >
+                                  <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline2">Female</label>
+                                </div>
+                            </div>
+                          </div>
+                           <div class="col-md-12">
                             <div class="form-group" >
                               <div class="col-md-12">
                                 <label for="name" name="hobbies" id="hobi">Hobbies</label><br>
@@ -187,32 +207,33 @@
                                 <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Crafts" id="cft"> Crafts</label>
                                 <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Drawing" id="dwg"> Drawing</label>
                                 <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Others" id="oth"> Others</label>
-                                <div class="error_form col-xs-6" id="hobi_error_message" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Father's Name</label>
+                              <label class="col-md-12">Father's Name *</label>
                               <div class="col-md-12">
-                                  <input type="text" id="fname" class="form-control" name="father_name" title="only alphbates and space is required (use only one space between two word)" placeholder="Father's Name" autocomplete="off"/>
-                                  <div class="error_form col-md-12" id="fname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input type="text" id="father_name" class="form-control" name="father_name" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-12" id="father_name_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <div class="error_form col-md-12" id="father_name_error_message2" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Mother's Name</label>
+                              <label class="col-md-12">Mother's Name *</label>
                               <div class="col-md-12">
-                                  <input type="text" id="mname" class="form-control" name="mother_name" title="only alphbates and space is required (use only one space between two word)" placeholder="Mother's Name" autocomplete="off"/>
-                                  <div class="error_form col-md-12" id="mname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input type="text" id="mother_name" class="form-control" name="mother_name" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-12" id="mother_name_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <div class="error_form col-md-12" id="mother_name_error_message2" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group col-md-12" >
-                              <label for="name">Father's Occupation / Mother's Occupation</label>
-                              <input type="text" id="occp" class="form-control"  name="mf_occupation" title="only alphbates and space is required (use only one space between two word)" placeholder="Occupation" autocomplete="off"/>
+                              <label for="name">Father's Occupation / Mother's Occupation *</label>
+                              <input type="text" id="occp" class="form-control"  name="parents_occupation" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
                               <div class="error_form col-md-12" id="occupation_error_message" style="font-size: 12px; font-weight: bold";> </div>
                             </div>
                           </div>
@@ -224,34 +245,44 @@
                             <div class="form-group">
                                 <label class="col-md-12">Email</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="" id="semail" class="form-control"  placeholder="email" autocomplete="off"/>
+                                    <input type="text" name="" id="semail" class="form-control"  placeholder=" " autocomplete="off" readonly/>
                                     <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Contact no</label>
+                                <label class="col-md-12">Contact no *</label>
                                 <div class="col-md-12">
-                                    <input type="text" name=" " id="scontact" class="form-control"  placeholder="contact" autocomplete="off"/>
+                                    <input type="text" name=" " id="scontact" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <div class="error_form col-xs-12" id="contact_error_message2" style="font-size: 12px; font-weight: bold"></div>
+                                    <div class="error_form col-xs-12" id="contact_error_message3" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Landline no </label>
+                                <div class="col-md-12">
+                                    <input type="text" name=" " id="scontact" class="form-control"  placeholder=" " autocomplete="off"/>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
+                                <label class="col-md-12">Flat / HouseNo / Floor / Building *</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="st_addr1" id="add1" class="form-control"  placeholder="426" autocomplete="off"/>
+                                    <input type="text" name="st_addr1" id="add1" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="add1_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Street</label>
+                                <label class="col-md-12">Street *</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="st_addr2" id="add2" class="form-control"  placeholder="Ganguly" autocomplete="off"/>
+                                    <input type="text" name="st_addr2" id="add2" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="add2_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
@@ -260,25 +291,24 @@
                             <div class="form-group">
                                 <label class="col-md-12">Landmark</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="st_addr3" id="add3" class="form-control"  placeholder="Forum Rangoli" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add3_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="text" name="st_addr3" id="landmark" class="form-control"  placeholder=" " autocomplete="off"/>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">City</label>
+                                <label class="col-md-12">City *</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="city" id="city" class="form-control"  placeholder="Kolkata" autocomplete="off"/>
+                                    <input type="text" name="city" id="city" class="form-control"  placeholder=" " autocomplete="off"/>
                                     <div class="error_form col-xs-12" id="city_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">State</label>
+                                <label class="col-md-12">State *</label>
                                 <div class="col-md-12">
-                                    <select type="text" name="state" id="state" class="form-control"  placeholder="West Bengal" autocomplete="off">
+                                    <select type="text" name="state" id="state" class="form-control"  placeholder=" " autocomplete="off">
                                       <option>---- Please Select ----</option>
                                       <option value="Andra Pradesh">Andra Pradesh</option>
                                       <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -322,9 +352,9 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Country</label>
+                                <label class="col-md-12">Country *</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="country" id="country" class="form-control"  placeholder="India" autocomplete="off">
+                                  <select type="text" name="country" id="country" class="form-control"  placeholder=" " autocomplete="off">
                                     <option>---- Please Select ----</option>
                                     <!--  <option value="Afghanistan">Afghanistan</option>
                                      <option value="Albania">Albania</option>
@@ -529,29 +559,24 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Zip</label>
+                                <label class="col-md-12">Zip *</label>
                                 <div class="col-md-12">
                                     <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
                                     <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="col-md-12">Name Of School/ College</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="school_name" id="school" class="form-control"  placeholder="st.xavies" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="sc_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
+                          <div class="col-md-12" style="padding:20px;">
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Academic Details</h5>
+                            <hr>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Standard</label>
+                                <label class="col-md-12">Qualification *</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="standard" id="std" class="form-control"  placeholder="5th">
+                                  <select type="text" name="standard" id="std" class="form-control"  placeholder=" ">
                                     <option>---- Please Select ----</option>
                                     <option value="1st">1st</option>
                                     <option value="2nd">2nd</option>
@@ -572,15 +597,24 @@
                                 </div>
                             </div>
                           </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Name Of School/ College *</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="school_name" id="school" class="form-control"  placeholder=" " autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="sc_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
+                            </div>
+                          </div>
                           <div class="col-md-12" style="padding:20px;">
                             <h5 style="text-align:center;font-weight:600; font-size: 18px;">Admission Details</h5>
                             <hr>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Level</label>
+                                <label class="col-md-12">Level *</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="level" id="lvl" class="form-control"  placeholder="Level 5">
+                                  <select type="text" name="level" id="lvl" class="form-control"  placeholder=" ">
                                     <option>---- Please Select ----</option>
                                     <option value="LEVEL_1">LEVEL 1</option>
                                     <option value="LEVEL_2">LEVEL 2</option>
@@ -594,9 +628,9 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Center</label>
+                                <label class="col-md-12">Center *</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="center" id="center" class="form-control"  placeholder="Howrah">
+                                  <select type="text" name="center" id="center" class="form-control"  placeholder=" ">
                                     <option>---- Please Select ----</option>
                                      <option value="Howrah">Howrah</option>
                                      <option value="Baner_Pune">Baner, Pune</option>
@@ -610,9 +644,9 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Class Type</label>
+                                <label class="col-md-12">Class Type *</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="class_type" id="class" class="form-control"  placeholder="Regular Class">
+                                  <select type="text" name="class_type" id="class" class="form-control"  placeholder=" ">
                                     <option>---- Please Select ----</option>
                                     <option value="Online_Class">Online Class</option>
                                     <option value="Regular_Class">Regular Class</option>
@@ -623,9 +657,9 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Date Of Admission</label>
+                              <label class="col-md-12">Date Of Admission *</label>
                               <div class="col-md-12">
-                                  <input type="date" name="date_of_admission" id="doa" class="form-control" aria-describedby="doa" placeholder="date" >
+                                  <input type="date" name="date_of_admission" id="doa" class="form-control" aria-describedby="doa" placeholder=" " >
                                   <div class="error_form col-xs-12" id="doa_error_message" style="font-size: 12px; font-weight: bold";></div>
                               </div>
                             </div>
@@ -687,10 +721,10 @@
                                   <form id="changepasswordform">
                                     <div class="col-xs-12" id="passwordedit"></div>
                                     <div class="col-md-12">
-                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder=" " />
                                     </div>
                                   <div class="col-md-12">
-                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
+                                      <input type="password" id="password" class="form-control"  name="oldpwd" placeholder=" " />
                                       <div class="col-xs-12" id="passwordmsg"></div>
 
                                   </div>
@@ -698,14 +732,14 @@
                               <div class="form-group">
                                   <!-- <label class="col-md-12">Enter New Password</label> -->
                                   <div class="col-md-12">
-                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder="New Password" />
+                                      <input type="password" id="npassword" class="form-control"  name="newpwd" placeholder=" " />
                                       <div class="col-xs-12" id="npasswordmsg"></div>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <!-- <label class="col-md-12">Confirm New Password</label> -->
                                   <div class="col-md-12">
-                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder="Confirm Password" />
+                                      <input type="password" id="cnpassword" class="form-control"  name="cfmpwd" placeholder=" " />
                                       <div class="col-xs-12" id="cnpasswordmsg"></div>
                                   </div>
                               </div>

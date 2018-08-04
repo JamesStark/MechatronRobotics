@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
+    <title>Attendance Details</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">MechatronRObotics</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">
+                    <!-- Logo -->
+                    <span>
+                    <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                    </span>
+                  </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Baburao Patil</h4>
+                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-profile">
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                        </li>
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="student-details.html">Student Details</a></li>
+                                <li><a href="#">Fee Details</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">Ritesh</h3>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                              <div class="col-md-12">
+                                <h3 style="text-align:center;font-weight:600;font-size:22px">Attendance</h3>
+                                <hr>
+                              </div><br>
+<!--
+                              <div class="row">
+                                <div class="col-md-4" style="margin-bottom:8px;">
+                                  <select class="form-control" name="year">
+                                    <option value="">----- Select Year -----</option>
+                                    <option value="">2017</option>
+                                    <option value="">2018</option>
+                                    <option value="">2019</option>
+                                    <option value="">2020</option>
+                                    <option value="">2021</option>
+                                    <option value="">2022</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-4" style="margin-bottom:8px;">
+                                  <select class="form-control" name="month">
+                                    <option value="">----- Select Month -----</option>
+                                    <option value="">January </option>
+                                    <option value="">February </option>
+                                    <option value="">March </option>
+                                    <option value="">April </option>
+                                    <option value="">May </option>
+                                    <option value="">June </option>
+                                    <option value="">July </option>
+                                    <option value="">August </option>
+                                    <option value="">September </option>
+                                    <option value="">October </option>
+                                    <option value="">November </option>
+                                    <option value="">December </option>
+                                  </select>
+                                </div>
+                                <div class="col-md-4" style="margin-bottom:8px;">
+                                  <button style="background:#DE5446;color:#fff;font-weight:600;" type="button" class="form-control btn btn-default" name="button">Check Attendance</button>
+                                </div>
+                              </div><br><br>
+-->
+                              <div class="table-responsive m-t-40">
+                                  <table id="studentTable" class="table table-bordered table-striped">
+                                      <thead style="background-color:#92d050; color: #000000">
+                                        <tr style="font-size:14px;">
+                                          <th style="font-size:20px;font-weight:600;border-right:1px solid #999;">2018</th>
+                                           <th>1</th>
+                                            <th>2</th>
+                                           <th>3</th>
+                                           <th>4</th>
+                                           <th>5</th>
+                                           <th>6</th>
+                                           <th>7</th>
+                                           <th>8</th>
+                                           <th>9</th>
+                                           <th>10</th>
+                                           <th>11</th>
+                                           <th>12</th>
+                                           <th>13</th>
+                                           <th>14</th>
+                                           <th>15</th>
+                                           <th>16</th>
+                                           <th>17</th>
+                                           <th>18</th>
+                                           <th>19</th>
+                                           <th>20</th>
+                                           <th>21</th>
+                                           <th>22</th>
+                                           <th>23</th>
+                                           <th>24</th>
+                                           <th>25</th>
+                                           <th>26</th>
+                                           <th>27</th>
+                                           <th>28</th>
+                                           <th>29</th>
+                                           <th>30</th>
+                                           <th>31</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                            <td style="border-right:1px solid #999;">January</td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>A</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-right:1px solid #999;">February</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>P</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>A</td>
+                                            <td>P</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>P</td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">March</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">April</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">May</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">June</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">July</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">August</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">September</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">October</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">November</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                          <tr>
+                                            <td style="border-right:1px solid #999;">December</td>
+                                              <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                            </div>
+                        </div>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> Copyright © Mechatron Robotics 2018. All Rights Reserved. </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <script src="../assets/js/jquery.min.1.js"></script>
+    <script src="../assets/js/bootstrap.min.1.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+	$('#myTable').DataTable();
+	$(document).ready(function() {
+		var table = $('#example').DataTable({
+			columnDefs: [
+				{
+					visible: false,
+					targets: 2
+				}
+			],
+			order: [[2, 'asc']],
+			displayLength: 25,
+			drawCallback: function(settings) {
+				var api = this.api();
+				var rows = api
+					.rows({
+						page: 'current'
+					})
+					.nodes();
+				var last = null;
+				api
+					.column(2, {
+						page: 'current'
+					})
+					.data()
+					.each(function(group, i) {
+						if (last !== group) {
+							$(rows)
+								.eq(i)
+								.before(
+									'<tr class="group"><td colspan="5">' + group + '</td></tr>'
+								);
+							last = group;
+						}
+					});
+			}
+		});
+		// Order by the grouping
+		$('#example tbody').on('click', 'tr.group', function() {
+			var currentOrder = table.order()[0];
+			if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+				table.order([2, 'desc']).draw();
+			} else {
+				table.order([2, 'asc']).draw();
+			}
+		});
+	});
+});
+</script>
+</body>
+
+</html>

@@ -65,6 +65,8 @@
   <script type="text/javascript" src="assets/js/url.js"></script>
   <script type="text/javascript" src="assets/js/token.js"></script>
   <script type="text/javascript" src="assets/js/enquiry.js"></script>
+  <script type="text/javascript" src="assets/js/recaptcha.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body>
@@ -224,6 +226,11 @@ data-header-fix-moment-classes="u-shadow-v19 " style="background:#f2f2f4;padding
            <input style="border:1px solid #ced4da;outline:none" type="password" name="password" id="passwordid1" class="form-control" placeholder="Password" required />
            <div class="error_form col-xs-12" id="passwordid1_error_message"  style="font-size: 12px; font-weight: bold"></div>
          </div>
+         <div class="form-group">
+           <center>
+             <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfCBmUUAAAAAPIuC0Fx0hihEiKI3tGoJOR9hDoX"></div>
+           </center>
+         </div>
          <div class="row" style="padding-top:20px;">
            <div class="col-md-2">
            </div>
@@ -280,80 +287,72 @@ data-header-fix-moment-classes="u-shadow-v19 " style="background:#f2f2f4;padding
               <form role="form" style="display: block;" id="signup" onsubmit="return false">
                 <h2 style="text-align:center;font-family: 'Varela Round', data-sans-serif;">SIGNUP</h2>
                 <div class="form-group">
-                  <label for="sel1" style="font-family: 'PT Sans Caption', sans-serif;">Signup As</label>
-                  <select id="user_type" class="form-control" id="sel1" name="user_type" id="selectwe">
-                   <option value="none">---- Signup As ----</option>
-                   <option value="student">Student</option>
-                   <option value="franchise">Franchise</option>
-                   <option value="trainer">Trainer</option>
-                 </select>
-                 <div class="error_form col-xs-12" id="user_type_error_message" style="font-size: 12px; font-weight: bold"></div>
-               </div>
-              <!-- For Student -->
+                  <label style="font-family: 'PT Sans Caption', sans-serif;font-size:1rem;">Register As</label><br>
+                    <div class="custom-control custom-radio custom-control-inline" style="margin-left: 8px">
+                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked >
+                      <label class="custom-control-label" for="customRadioInline1" value="1" style="font-size:15px;font-weight:500;">Student</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline" style="margin-left: 8px">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2" value="2" style="font-size:15px;font-weight:500;">Instructor</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline" style="margin-left: 8px">
+                      <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline3" value="3" style="font-size:15px;font-weight:500;">Franchise</label>
+                    </div>
+                </div>
+
               <div class="form-group" id="f_name">
-                <label for="name" style="font-family: 'PT Sans Caption', sans-serif;">Full Name</label>
-                <input style="border:1px solid #ced4da;outline:none" type="text" name="full_name" id="form_fname" class="form-control" title="only alphbates and space is required (use only one space between two word)" placeholder="Full Name" >
+                <label for="name" style="font-family: 'PT Sans Caption', sans-serif;">First Name</label>
+                <input style="border:1px solid #ced4da;outline:none" type="text" name="full_name" id="form_fname" class="form-control" placeholder="" >
                 <div class="error_form col-xs-12" id="fname_error_message" style="font-size: 12px; font-weight: bold";> </div>
               </div>
-              <!-- ============ -->
 
-              <!-- For Franchise -->
-
-            <div class="form-group" id="f_location" style="display:none">
-              <label for="f_location" style="font-family: 'PT Sans Caption', sans-serif;">Franchise Location</label>
-              <input style="border:1px solid #ced4da;outline:none" type="text" name="f_center" id="form_flocation" class="form-control" title="only alphbates and space is required (use only one space between two word)" placeholder="Franchise Location" >
-              <div class="error_form col-xs-12" id="flocation_error_message" style="font-size: 12px; font-weight: bold";> </div>
-            </div>
-             <!-- ============== -->
+              <div class="form-group" id="f_name">
+                <label for="name" style="font-family: 'PT Sans Caption', sans-serif;">Last Name</label>
+                <input style="border:1px solid #ced4da;outline:none" type="text" name="full_name" id="form_fname" class="form-control" placeholder="" >
+                <div class="error_form col-xs-12" id="fname_error_message" style="font-size: 12px; font-weight: bold";> </div>
+              </div>
 
               <div class="form-group">
                 <label for="email" style="font-family: 'PT Sans Caption', sans-serif;">Email ID</label>
-                <input style="border:1px solid #ced4da;outline:none" type="text" name="email" id="form_email" class="form-control" aria-describedby="email" placeholder="robort@gmail.com">
+                <input style="border:1px solid #ced4da;outline:none" type="text" name="email" id="form_email" class="form-control" aria-describedby="email" placeholder="">
                 <div class="error_form col-xs-12" id="email_error_message" style="font-size: 12px; font-weight: bold";></div>
               </div>
-                 <!-- <div class="form-group">
-                                  <div class="input-group">
-                                    <span class="input-group-addon" id="email">Email</span>
-                                    <input type="email" class="form-control" name="email"  aria-describedby="email" placeholder ="robort@gmail.com" required>
-                                  </div>
-                                </div>-->
-                                <div class="form-group">
-                                  <label for="contact" style="font-family: 'PT Sans Caption', sans-serif;">Contact No.</label>
-                                  <input style="border:1px solid #ced4da;outline:none" type="text" name="contact_no" id="form_contact" class="form-control"  aria-describedby="mobno" pattern="^([0-9]{10})$" title="Invalid Mobile No" placeholder = "enter mobno" placeholder="Contact No.">
-                                  <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                                <!--<div class="form-row">-->
-                                  <div class="form-group" >
-                                    <label for="password" style="font-family: 'PT Sans Caption', sans-serif;">Password</label>
-                                    <input style="border:1px solid #ced4da;outline:none" type="password" name="password" id="form_password" class="form-control"  placeholder="Password">
 
-                                    <div class="error_form col-xs-12" id="password_error_message"  style="font-size: 12px; font-weight: bold"></div>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="password" style="font-family: 'PT Sans Caption', sans-serif;">Confirm Password</label>
-                                    <input style="border:1px solid #ced4da;outline:none" type="password" name="cpassword" id="form_cpassword" class="form-control"  placeholder="Confirm Password">
-                                    <div class="error_form col-xs-12" id="retype_password_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                  </div>
-                                </div>
-                                <div class="row" style="padding-top:20px;">
-                                  <div class="col-md-2"></div>
-                                  <div class="col-md-8">
-                                    <div class="spinner" style="display:none;height: 150px;">
-                                      <center><img class="img-spinner" src="assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
-                                     <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
-                                  </div>
-                                  <div id= "Signupwait" style="font-weight: bold"></div>
-                                    <button type="submit"  id="submit_button" value="Register" class="form-control btn btn-success" style="color:#fff;background-color: #28a745;font-family: 'PT Sans Caption', sans-serif;">SIGN UP</button>
-                                  </div>
-                                  <div class="col-md-2"></div>
-                                </div>
-                                <div class="col-xs-12" style="padding-top:20px;padding-bottom:20px;border-bottom:1px solid #ced4da;font-family: 'PT Sans Caption', sans-serif;">
-                                 <center style="font-size:15px; font-weight:600;font-family: 'PT Sans Caption', sans-serif;">Already Registered ?
-                                   <button style="outline:none;border:none;background:#fff;font-size:14px;font-weight:600;cursor:pointer;" type="button" name="button" onClick="$('#registerbox').hide(); $('#loginbox').show();">
-                                     <a style="text-decoration:none;color:#FF8500;">Login</a>
-                                   </button>
-                                 </center>
-                               </div>
+              <div class="form-group" >
+                <label for="password" style="font-family: 'PT Sans Caption', sans-serif;">Password</label>
+                <input style="border:1px solid #ced4da;outline:none" type="password" name="password" id="form_password" class="form-control"  placeholder="">
+                <div class="error_form col-xs-12" id="password_error_message"  style="font-size: 12px; font-weight: bold"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" style="font-family: 'PT Sans Caption', sans-serif;">Confirm Password</label>
+                <input style="border:1px solid #ced4da;outline:none" type="password" name="cpassword" id="form_cpassword" class="form-control"  placeholder="">
+                <div class="error_form col-xs-12" id="retype_password_error_message" style="font-size: 12px; font-weight: bold"></div>
+              </div>
+            </div>
+
+            <div class="row" style="padding-top:20px;">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="spinner" style="display:none;height: 150px;">
+                  <center><img class="img-spinner" src="assets/img/png/loading.gif" alt="Loading" height="50" width="200"/>
+                 <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+              </div>
+              <div id= "Signupwait" style="font-weight: bold"></div>
+                <button type="submit"  id="submit_button" value="Register" class="form-control btn btn-success" style="color:#fff;background-color: #28a745;font-family: 'PT Sans Caption', sans-serif;">SIGN UP</button>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+
+            <div class="col-xs-12" style="padding-top:20px;padding-bottom:20px;border-bottom:1px solid #ced4da;font-family: 'PT Sans Caption', sans-serif;">
+             <center style="font-size:15px; font-weight:600;font-family: 'PT Sans Caption', sans-serif;">Already Registered ?
+               <button style="outline:none;border:none;background:#fff;font-size:14px;font-weight:600;cursor:pointer;" type="button" name="button" onClick="$('#registerbox').hide(); $('#loginbox').show();">
+                 <a style="text-decoration:none;color:#FF8500;">Login</a>
+               </button>
+             </center>
+           </div>
                    <!--<div class="form-group row" style="padding-top:20px;">
                        <div class="col-md-2"></div>
                      <button style="background:#e96656;color:#fff;font-family: 'PT Sans Caption', sans-serif;" class="form-control btn col-md-8">SignIn with Google</button>
@@ -1486,20 +1485,7 @@ $(document).ready(function() {
 	}, 3000);
 });
 </script>
-<script>
-$('select').on('change', function() {
-	var position = this.value;
-	if (position == 'franchise') {
-		$('#f_location').show();
-		document.getElementById('form_flocation').value = '';
-	} else if (position == 'student') {
-		$('#f_location').hide();
-		document.getElementById('form_flocation').value = 'null';
-	} else if (position == 'trainer') {
-		$('#f_location').hide();
-		document.getElementById('form_flocation').value = 'null';
-	}
-});
+
 </script>
 
 </body>

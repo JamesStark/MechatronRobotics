@@ -3,6 +3,8 @@
 <html lang="en">
 
 <head>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -11,7 +13,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
-    <title>Student Details</title>
+    <title>Trainer Student Attendance</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -111,11 +113,6 @@
                   <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div>
                   <center><a style="display:none;" id="continue" href="traningfeepay.html">Click here to continue...</a></center>
                   </div>
-
-
-
-
-
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
@@ -135,7 +132,7 @@
                              <!--  <li><a href="#" onclick="verifyTrainer()" id="fee">Fee Details</a></li> -->
                           </ul>
                         </li>
-                        <li> <a  class="waves-effect waves-dark" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                        <li> <a  class="waves-effect waves-dark"  href="student-attendance.html" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -177,39 +174,49 @@
 
                                 <!-- <h4 class="card-title">Data Table</h4> -->
                                 <!-- <h6 class="card-subtitle">Data table example</h6> -->
-                                <div class="table-responsive m-t-40">
-                                  <table id="studentst" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);margin:-15px;">
-                                            <th style="background:#468ADE;color:#fff;">Attendance</th>
-                                        </tr>
-                                    </thead>
-
+                                <form class="" id="student_attendance_form">
+                                  <div class="table-responsive m-t-40">
+                                    <table id="studentst" class="table table-bordered table-striped">
                                       <thead>
-                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
-                                              <th>Date:</th>
-                                              <th>
-                                                <input style="font-weight:600;" type="date" id="datePicker" class="form-control" name="date">
-                                              </th>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);margin:-15px;">
+                                              <th style="background:#468ADE;color:#fff;">Attendance</th>
                                           </tr>
                                       </thead>
-                                      <tbody>
-                                          <tr style="font-size:16px;border-bottom: 1px solid rgba(0,0,0,.125);">
-                                               <th>Student ID</th>
-                                              <th>Student Name</th>
-                                               <th>Attendance</th>
-                                              <th>Time in</th>
-                                              <th>Time out</th>
-                                              <th>Duration</th>
-                                              <th>Topics Covered</th>
+
+                                        <thead>
+                                            <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                                <th>Date:</th>
+                                                <th>
+                                                  <input style="font-weight:600;" type="date" id="datePicker" class="form-control" name="date">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="font-size:16px;border-bottom: 1px solid rgba(0,0,0,.125);">
+                                                 <th>Student ID</th>
+                                                <th>Student Name</th>
+                                                 <th>Present</th>
+                                                <th>Time in</th>
+                                                <th>Time out</th>
+                                                <th>Duration</th>
+                                                <th>Topics Covered</th>
+                                            </tr>
+                                        </tbody>
+                                         <tbody>
+                                          <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
                                           </tr>
                                       </tbody>
-                                       <tbody>
-                                        <tr style="font-size:17px;border-bottom: 1px solid rgba(0,0,0,.125);">
-                                        </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
+
+                                    </table>
+                                     <center>
+                                         <div class="spinner" style="display:none;height: 150px;">
+                                      <center><img class="img-spinner" src="../assets/img/png/loading.gif" alt="Loading.." height="50" width="200" />
+                                     <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
+                                  </div>
+                              <button type="button" id="submit_attendance" class="btn btn-primary" ; style="margin-top: 50px;margin-bottom: 10px;" onclick="submit_attendance()">Submit</button>
+                            </center>
+                                  </div>
+                                </form>
                             </div>
                         </div>
 

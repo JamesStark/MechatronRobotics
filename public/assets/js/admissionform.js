@@ -68,8 +68,7 @@ $(document).ready(function() {
 	// 		return false;
 	// 	}
 	// });
-/*                                  =============================== remove for timebeing======================================                      */
-
+	/*                                  =============================== remove for timebeing======================================                      */
 
 	$('#update').click(function() {
 		//$(".spinner").show();                                           ///not use
@@ -275,84 +274,76 @@ $(document).ready(function() {
 		// 	return false; // stops the execution.
 		// } else {
 
-				/*  ===========================================   Remove for time being =========================    */
+		/*  ===========================================   Remove for time being =========================    */
 
-
-
-			$('.spinner').show();
-			var checkBoxValue = getCheckBoxValue();
-			var photo = document.getElementById('pic');
-			var file = photo.files[0];
-			var obj = {};
-			var fd = new FormData(document.getElementById('admission'));
-			fd.append('auth_user', document.getElementById('auth_user_id').value);
-			alert(document.getElementById('auth_user_id').value)
-			fd.append('created_by', document.getElementById('created_by').value);
-			fd.append('modified_by', document.getElementById('modified_by').value);
-			fd.append('profile_pic', file);
-			fd.append('father_name', document.getElementById('fname').value);
-			fd.append('mother_name', document.getElementById('mname').value);
-			fd.append('hobbies', checkBoxValue);
-			fd.append('dob', document.getElementById('dob').value);
-			fd.append('st_addr1', document.getElementById('add1').value);
-			fd.append('st_addr2', document.getElementById('add2').value);
-			fd.append('st_addr3', document.getElementById('add3').value);
-			fd.append('state', document.getElementById('state').value);
-			fd.append('pin', document.getElementById('zip').value);
-			fd.append('school_name', document.getElementById('school').value);
-			fd.append('standard', document.getElementById('std').value);
-			fd.append('level', document.getElementById('lvl').value);
-			fd.append('class_type', document.getElementById('class').value);
-			fd.append('date_of_admission', document.getElementById('doa').value);
-			fd.append('city', document.getElementById('city').value);
-			fd.append('center', document.getElementById('center').value);
-			fd.append('why_robotics_by_child', document.getElementById('why1').value);
-			fd.append(
-				'why_robotics_by_parents',
-				document.getElementById('why2').value
-			);
-			fd.append('expectations', document.getElementById('why3').value);
-			ADMISSIONS_SERVICE_URL = 'st/admissions/';
-			var token = secure['token'];
-			$.ajax({
-				type: 'POST',
-				url: BASE_URL + ADMISSIONS_SERVICE_URL,
-				enctype: 'multipart/form-data',
-				processData: false,
-				contentType: false,
-				data: fd,
-				headers: {
-					Authorization: 'token ' + token
-				},
-				success: function(data, textStatus, jqXHR) {
-					if (data.message) {
-						$('.spinner').hide();
-						$('#msgadmitfd')
-							.addClass('alert alert-success')
-							.text(data.message)
-							.fadeTo(5000, 3000)
-							.slideUp(5000, function() {
-								$(this).removeClass();
-							});
-
-					} else {
-						$('#update').disabled = false
-						$('.spinner').hide();
-						$('#msgadmitfd')
-							.addClass('alert alert-danger')
-							.text(data.error)
-							.fadeTo(5000, 3000)
-							.slideUp(5000, function() {
-								$(this).removeClass();
-							});
-					}
-					$('#admission').trigger('reset');
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-
+		$('.spinner').show();
+		var checkBoxValue = getCheckBoxValue();
+		var photo = document.getElementById('pic');
+		var file = photo.files[0];
+		var obj = {};
+		var fd = new FormData(document.getElementById('admission'));
+		fd.append('auth_user', document.getElementById('auth_user_id').value);
+		alert(document.getElementById('auth_user_id').value);
+		fd.append('created_by', document.getElementById('created_by').value);
+		fd.append('modified_by', document.getElementById('modified_by').value);
+		fd.append('profile_pic', file);
+		fd.append('father_name', document.getElementById('fname').value);
+		fd.append('mother_name', document.getElementById('mname').value);
+		fd.append('hobbies', checkBoxValue);
+		fd.append('dob', document.getElementById('dob').value);
+		fd.append('st_addr1', document.getElementById('add1').value);
+		fd.append('st_addr2', document.getElementById('add2').value);
+		fd.append('st_addr3', document.getElementById('add3').value);
+		fd.append('parents_occupation', document.getElementById('occp').value);
+		fd.append('state', document.getElementById('state').value);
+		fd.append('pin', document.getElementById('zip').value);
+		fd.append('school_name', document.getElementById('school').value);
+		fd.append('standard', document.getElementById('std').value);
+		fd.append('level', document.getElementById('lvl').value);
+		fd.append('class_type', document.getElementById('class').value);
+		fd.append('date_of_admission', document.getElementById('doa').value);
+		fd.append('city', document.getElementById('city').value);
+		fd.append('center', document.getElementById('center').value);
+		fd.append('why_robotics_by_child', document.getElementById('why1').value);
+		fd.append('why_robotics_by_parents', document.getElementById('why2').value);
+		fd.append('expectations', document.getElementById('why3').value);
+		ADMISSIONS_SERVICE_URL = 'st/admissions/';
+		var token = secure['token'];
+		$.ajax({
+			type: 'POST',
+			url: BASE_URL + ADMISSIONS_SERVICE_URL,
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: fd,
+			headers: {
+				Authorization: 'token ' + token
+			},
+			success: function(data, textStatus, jqXHR) {
+				if (data.message) {
+					$('.spinner').hide();
+					$('#msgadmitfd')
+						.addClass('alert alert-success')
+						.text(data.message)
+						.fadeTo(5000, 3000)
+						.slideUp(5000, function() {
+							$(this).removeClass();
+						});
+				} else {
+					$('#update').disabled = false;
+					$('.spinner').hide();
+					$('#msgadmitfd')
+						.addClass('alert alert-danger')
+						.text(data.error)
+						.fadeTo(5000, 3000)
+						.slideUp(5000, function() {
+							$(this).removeClass();
+						});
 				}
-			});
-
+				$('#admission').trigger('reset');
+			},
+			error: function(jqXHR, textStatus, errorThrown) {}
+		});
 	});
 });
 

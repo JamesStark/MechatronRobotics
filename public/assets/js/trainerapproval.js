@@ -16,7 +16,7 @@ function getTrainerApproved() {
 		success: function(data) {
 			var trHTML = '';
 			trHTML +=
-				'<tr style="font-size:14px;"><td><input style="color:green;" type="checkbox" id="app">A <input style="color:red;" type="checkbox" id="app">R</td><td>' +
+				'<tr style="font-size:14px;"><td><input style="color:green;" type="checkbox" id="app"></td><td>' +
 				data.data.auth_user +
 				'</td><td>' +
 				data.data.full_name +

@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icons/title-icon.png">
-    <title>Franchise Dashboard</title>
+    <title>Franchise Reg Form</title>
 
     <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -23,20 +23,22 @@
     <link rel="stylesheet" href="../assets/css/master.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
     <script type="text/javascript" src="../assets/js/token.js"></script>
-    <script type="text/javascript" src="../assets/js/franchisedashboard.js"></script>
+  <!--   <script type="text/javascript" src="../assets/js/franchisedashboard.js"></script> -->
     <script type="text/javascript" src="../assets/js/url.js"></script>
-    <script type="text/javascript" src="../assets/js/admissionform.js"></script>
-   <!--  <script type="text/javascript" src="../assets/js/admissionformvalid.js"></script> -->
-    <script type="text/javascript" src="../assets/js/viewprofile.js"></script>
+    <!--  <script type="text/javascript" src="../assets/js/studentdash.js"></script> -->
+   <!--  <script type="text/javascript" src="../assets/js/admissionform.js"></script> -->
+    <script type="text/javascript" src="../assets/js/traningdetailsform.js"></script>
+   <!--  <script type="text/javascript" src="../assets/js/viewprofile.js"></script> -->
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/default-dark.css" id="theme" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 </head>
 
-<body class="fix-header fix-sidebar card-no-border" onload="getSession()">
+<body class="fix-header fix-sidebar card-no-border" onload="getSession();">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -62,7 +64,7 @@
                   <a class="navbar-brand" href="index.html">
                     <!-- Logo -->
                     <span>
-                      <a href="/../index.html"> <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
+                     <a href="/../index.html">  <img width="60%" height="auto" src="../assets/img/icons/mecbot.png" alt="homepage" class="dark-logo" /></a>
                     </span>
                   </a>
                 </div>
@@ -94,8 +96,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="../assets/img/png/user.png" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Baburao Patil</h4>
-                                                <p class="text-muted">hannagover@gmail.com</p></div>
+                                                <h4 id="fname"></h4>
+                                                <p class="text-muted" id="emailid"></p></div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
@@ -109,12 +111,52 @@
                 </div>
             </nav>
         </header>
+         <div class="modal fade" tabindex="-1" role="dialog" id="mymodaldis" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <p class="modal-title" style="color:red;font-weight:600;font-size:20px;text-align:center;">Alert</p>
+              </div>
+              <div class="modal-body">
+                <p style="margin-bottom:-3px;font-size:18px;font-weight:600;">Please wait till verification</p>
+                <a data-dismiss="modal" style="font-size:18px;font-weight:600;color:blue;cursor:pointer;">click here to continue...</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+
+      <!--   <div id="feeAlert" class="modal fade" role="dialog">
+          <div class="modal-dialog"> -->
+
+            <!-- Modal content-->
+           <!--  <div class="modal-content">
+              <div class="modal-header">
+                <p class="modal-title" style="color:red;font-weight:600;font-size:20px;text-align:center;">PayFee Alert</p>
+              </div>
+              <div class="modal-body">
+                <p style="margin-bottom:-3px;font-size:18px;font-weight:600;">You must pay the Fee to access </p>
+                <a data-dismiss="modal" style="font-size:18px;font-weight:600;color:blue;cursor:pointer;">click here to continue...</a>
+              </div>
+            </div> -->
+
+         <!--  </div>
+        </div> -->
+        <!-- <div class="modal-content"> -->
+         <div class="col-xs-12" id=" " style="font-weight: bold"></div>
+                <div class="col-md-12" style="padding-top:40px;">
+                  <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div>
+                  <center><a style="display:none;" id="continue" href="traningfeepay.html">Click here to continue...</a></center>
+                  </div>
+
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
@@ -122,19 +164,19 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="user-profile">
-                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
+                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu" id="name"></span></a>
                         </li>
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">PERSONAL</li>
                         <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="student-details.html">Student Details</a></li>
-                                <li><a href="#">Fee Details</a></li>
-                            </ul>
+                        <li> <a class="waves-effect waves-dark" id="performance" aria-expanded="false" onclick="verifyTrainerperformance()"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                        <li> <a class="waves-effect waves-dark" id="students-det" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                          <ul aria-expanded="false" class="collapse">
+                              <li><a onclick="verifyTrainerstudent()" id="students">Student Details</a></li>
+                             <!--  <li><a href="#" onclick="verifyTrainer()" id="fee">Fee Details</a></li> -->
+                          </ul>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                        <li> <a  class="waves-effect waves-dark"  href="student-attendance.html" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -155,12 +197,13 @@
 
               <div class="row" style="background: #fff;">
 
-                <div class="col-md-12" id="msgadmit" style="font-weight: bold"></div>
+                <div class="col-md-12" style="position:fixed;top:4%" id="msgadmit" style="font-weight: bold"></div>
                 <div class="col-md-12" style="padding-top:20px;">
-                  <!-- <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div>
-                  <center><a style="display:none;" id="continue" href="traningfeepay.html">Click here to continue...</a></center> -->
+                  <!-- <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">You are  Already Registered</div> -->
+                  <div class="alert alert-warning" style="display:none;margin-top:3px;text-align:center;" id="admmsg">verification is in process ! please try after some time.</div>
+                  <!-- <center><a style="display:none;" id="continue" href="dashboard.html">Click here to continue...</a></center> -->
                     <div class="container" id="admissionformcontainer" style="border:1px solid #ececec;">
-                      <form class="form-material"  id="admission" enctype="multipart/form-data" onsubmit="return false" >
+                      <form class="form-material"  id="trainer" enctype="multipart/form-data" onsubmit="return false">
                         <input type="hidden"  id="auth_user_id" name="auth_user">
                         <input type="hidden" id="created_by" name="created_by">
                         <input type="hidden"  id="modified_by" name="modified_by">
@@ -169,188 +212,214 @@
                           <div class="col-md-12" style="padding:20px;">
                             <h5 style="text-align:center;font-weight:600; font-size: 18px;">Personal Details</h5>
                             <hr>
-
+                          <!--    <input style="background: #fff;border: none;outline: none;text-align:center; font-weight:bold; color:#000"  type="text" id="name" class="form-control"  name="sname" disabled="" >
+                                    <input style="background: #fff;border: none;outline: none; margin-top: -7px;text-align:center;"  type="email" id="sessionEmail" class="form-control"  name="semail" disabled="" > -->
                           </div>
                           <div class="col-md-12" >
-
-                            <div class="form-group">
-                              <center class="m-t-20">
-                                <img src="../assets/img/png/user2.png" id="imgupld" width="150" height="150" class="img-circle" style="border:1px solid #ececec;" />
-                                <label style="text-align:left;" class="col-md-12 m-t-40">Upload Photo</label>
-                                <div class="col-md-12">
-                                  <input type="file" name="profile_pic" id="pic" class="form-control" accept="image/png,image/jpg,image/jpeg" multiple="" onchange="readURL(this);" >
-                                  <div class="error_form col-xs-12" id="pic_error_message" style="font-size: 12px; font-weight: bold"> </div>
-                                </div>
-                              </center>
-                            </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Name Of Student</label>
+                                <label class="col-md-12">First Name *</label>
                                 <div class="col-md-12">
-                                    <input  type="text" id="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder="Student name" autocomplete="off"/>
+                                    <input  type="text" id="sname" name="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder=" " readonly>
                                     <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Date of Birth</label>
+                                <label class="col-md-12">Last Name *</label>
+                                <div class="col-md-12">
+                                    <input  type="text" id="sname" name="sname"  class="form-control"  name="sname" title="only alphbates and space is required (use only one space between two word)" placeholder=" " readonly>
+                                    <div class="error_form col-md-6" id="sname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">Date of Birth *</label>
                               <div class="col-md-12">
-                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder="date" >
+                                  <input type="date" name="dob" id="dob" class="form-control" aria-describedby="dob" placeholder=" " >
                                   <div class="error_form col-md-12" id="dob_error_message" style="font-size: 12px; font-weight: bold"></div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-12">
-                            <div class="form-group" >
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-12">Gender *</label>
+                                <div class="custom-control custom-radio custom-control-inline" style="margin-left: 5px">
+                                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked >
+                                  <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline2">Female</label>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Qualification *</label>
                               <div class="col-md-12">
-                                <label for="name" name="hobbies" id="hobi">Hobbies</label><br>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Robotics" id="rbt"> Robotics</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Sports" id="sprts"> Sports</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Dance" id="dnc"> Dance</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Music" id="msc"> Music</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Crafts" id="cft"> Crafts</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Drawing" id="dwg"> Drawing</label>
-                                <label class="checkbox-inline" style="margin-left: 15px"><input name="chk[]" class="ckb" type="checkbox" value="Others" id="oth"> Others</label>
-                                <div class="error_form col-xs-6" id="hobi_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
-                            </div>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="col-md-12">Father's Name</label>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Headline</label>
                               <div class="col-md-12">
-                                  <input type="text" id="fname" class="form-control" name="father_name" title="only alphbates and space is required (use only one space between two word)" placeholder="Father's Name" autocomplete="off"/>
-                                  <div class="error_form col-md-12" id="fname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
-                            </div>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="col-md-12">Mother's Name</label>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="col-md-12">Biography</label>
                               <div class="col-md-12">
-                                  <input type="text" id="mname" class="form-control" name="mother_name" title="only alphbates and space is required (use only one space between two word)" placeholder="Mother's Name" autocomplete="off"/>
-                                  <div class="error_form col-md-12" id="mname_error_message" style="font-size: 12px; font-weight: bold"> </div>
+                                  <input  type="text" id="quali"  class="form-control"  name="qualification" title="only alphbates and space is required (use only one space between two word)" placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-md-6" id="quali_error_message" style="font-size: 12px; font-weight: bold"> </div>
                               </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12" style="padding:20px;">
+                          <h5 style="text-align:center;font-weight:600; font-size: 18px;">Contact Details</h5>
+                          <hr>
+                        </div>
+                        <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Email </label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="semail" class="form-control"  placeholder=" " readonly>
+                                 <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Mobile no *</label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="scontact" class="form-control"  placeholder=" " >
+                                 <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                             <label class="col-md-12">Landline no *</label>
+                             <div class="col-md-12">
+                                 <input type="text" name="" id="scontact" class="form-control"  placeholder=" " readonly>
+                                 <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                             <label class="col-md-12">Center</label>
+                             <div class="col-md-12">
+                                 <input type="text" id="sname" name="sname"  class="form-control"  name="sname" title="" placeholder=" ">
+                               <div class="error_form col-md-12" id="center_error_message" style="font-size: 12px; font-weight: bold"></div>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Flat / HouseNo / Floor / Building *</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr1" id="add1t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add1t_error_message" style="font-size: 12px; font-weight: bold"></div>
                             </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group col-md-12" >
-                              <label for="name">Father's Occupation / Mother's Occupation</label>
-                              <input type="text" id="occp" class="form-control"  name="mf_occupation" title="only alphbates and space is required (use only one space between two word)" placeholder="Occupation" autocomplete="off"/>
-                              <div class="error_form col-md-12" id="occupation_error_message" style="font-size: 12px; font-weight: bold";> </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Street *</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr2" id="add2t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add2t_error_message" style="font-size: 12px; font-weight: bold"></div>
                             </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">Area</label>
+                            <div class="col-md-12">
+                                <input type="text" name="addr2" id="add2t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                <div class="error_form col-xs-12" id="add2t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">Landmark *</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="addr3" id="add3t" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="add3t_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
                           </div>
-                          <div class="col-md-12" style="padding:20px;">
-                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Contact Details</h5>
-                            <hr>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="col-md-12">City *</label>
+                              <div class="col-md-12">
+                                  <input type="text" name="pr_city" id="cityt" class="form-control"  placeholder=" " autocomplete="off"/>
+                                  <div class="error_form col-xs-12" id="cityt_error_message" style="font-size: 12px; font-weight: bold"></div>
+                              </div>
                           </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-12">State *</label>
+                            <div class="col-md-12">
+                                <select type="text" name="pr_state" id="statet" class="form-control"  placeholder="West Bengal" autocomplete="off">
+                                  <option>---- Please Select ----</option>
+                                  <option value="Andra Pradesh">Andra Pradesh</option>
+                                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                  <option value="Assam">Assam</option>
+                                  <option value="Bihar">Bihar</option>
+                                  <option value="Chhattisgarh">Chhattisgarh</option>
+                                  <option value="Goa">Goa</option>
+                                  <option value="Gujarat">Gujarat</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                  <option value="Jharkhand">Jharkhand</option>
+                                  <option value="Karnataka">Karnataka</option>
+                                  <option value="Kerala">Kerala</option>
+                                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Manipur">Manipur</option>
+                                  <option value="Meghalaya">Meghalaya</option>
+                                  <option value="Mizoram">Mizoram</option>
+                                  <option value="Nagaland">Nagaland</option>
+                                  <option value="Orissa">Orissa</option>
+                                  <option value="Punjab">Punjab</option>
+                                  <option value="Rajasthan">Rajasthan</option>
+                                  <option value="Sikkim">Sikkim</option>
+                                  <option valu="Tamil Nadu">Tamil Nadu</option>
+                                  <option value="Tripura">Tripura</option>
+                                  <option value="Uttaranchal">Uttaranchal</option>
+                                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                  <option value="West Bengal">West Bengal</option>
+                                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                  <option value="Chandigarh">Chandigarh</option>
+                                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                  <option value="Daman and Diu">Daman and Diu</option>
+                                  <option value="Delhi">Delhi</option>
+                                  <option value="Lakshadeep">Lakshadeep</option>
+                                  <option value="Pondicherry">Pondicherry</option>
+                                </select>
+                                <div class="error_form col-xs-12" id="statet_error_message" style="font-size: 12px; font-weight: bold"></div>
+                            </div>
+                        </div>
+                      </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Email</label>
+                                <label class="col-md-12">Country *</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="" id="semail" class="form-control"  placeholder="email" autocomplete="off"/>
-                                    <div class="error_form col-md-12" id="email_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Contact no</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="" id="scontact" class="form-control"  placeholder="contact" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="contact_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Flat / HouseNo / Floor / Building</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="st_addr1" id="add1" class="form-control"  placeholder="426" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add1_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Street</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="st_addr2" id="add2" class="form-control"  placeholder="Ganguly" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add2_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Landmark</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="st_addr3" id="add3" class="form-control"  placeholder="Forum Rangoli" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="add3_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">City</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="city" id="city" class="form-control"  placeholder="Kolkata" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="city_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">State</label>
-                                <div class="col-md-12">
-                                    <select type="text" name="state" id="state" class="form-control"  placeholder="West Bengal" autocomplete="off">
-                                      <option>---- Please Select ----</option>
-                                      <option value="Andra Pradesh">Andra Pradesh</option>
-                                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                      <option value="Assam">Assam</option>
-                                      <option value="Bihar">Bihar</option>
-                                      <option value="Chhattisgarh">Chhattisgarh</option>
-                                      <option value="Goa">Goa</option>
-                                      <option value="Gujarat">Gujarat</option>
-                                      <option value="Haryana">Haryana</option>
-                                      <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                      <option value="Jharkhand">Jharkhand</option>
-                                      <option value="Karnataka">Karnataka</option>
-                                      <option value="Kerala">Kerala</option>
-                                      <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                      <option value="Maharashtra">Maharashtra</option>
-                                      <option value="Manipur">Manipur</option>
-                                      <option value="Meghalaya">Meghalaya</option>
-                                      <option value="Mizoram">Mizoram</option>
-                                      <option value="Nagaland">Nagaland</option>
-                                      <option value="Orissa">Orissa</option>
-                                      <option value="Punjab">Punjab</option>
-                                      <option value="Rajasthan">Rajasthan</option>
-                                      <option value="Sikkim">Sikkim</option>
-                                      <option valu="Tamil Nadu">Tamil Nadu</option>
-                                      <option value="Tripura">Tripura</option>
-                                      <option value="Uttaranchal">Uttaranchal</option>
-                                      <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                      <option value="West Bengal">West Bengal</option>
-                                      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                      <option value="Chandigarh">Chandigarh</option>
-                                      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                                      <option value="Daman and Diu">Daman and Diu</option>
-                                      <option value="Delhi">Delhi</option>
-                                      <option value="Lakshadeep">Lakshadeep</option>
-                                      <option value="Pondicherry">Pondicherry</option>
-                                    </select>
-                                    <div class="error_form col-xs-12" id="state_error_message" style="font-size: 12px; font-weight: bold"></div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-12">Country</label>
-                                <div class="col-md-12">
-                                  <select type="text" name="country" id="country" class="form-control"  placeholder="India" autocomplete="off">
+                                  <select type="text" name="pr_country" id="countryt" class="form-control"  placeholder=" " autocomplete="off">
                                     <option>---- Please Select ----</option>
                                     <!--  <option value="Afghanistan">Afghanistan</option>
                                      <option value="Albania">Albania</option>
@@ -551,136 +620,75 @@
                                      <option value="Zambia">Zambia</option>
                                      <option value="Zimbabwe">Zimbabwe</option> -->
                                   </select>
-                                  <div class="error_form col-xs-12" id="country_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                  <div class="error_form col-xs-12" id="countryt_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Zip</label>
+                                <label class="col-md-12">Zip *</label>
                                 <div class="col-md-12">
-                                    <input type="pin" name="pin" id="zip" class="form-control"  placeholder="" />
+                                    <input type="pin" name="pin" id="zipt" class="form-control"  placeholder="" />
                                     <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Name Of School/ College</label>
+                                <label class="col-md-12">Proof of Address</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="school_name" id="school" class="form-control"  placeholder="st.xavies" autocomplete="off"/>
-                                    <div class="error_form col-xs-12" id="sc_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="file" name="pin" id="zipt" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Standard</label>
+                                <label class="col-md-12">Proof of Identity</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="standard" id="std" class="form-control"  placeholder="5th">
-                                    <option>---- Please Select ----</option>
-                                    <option value="1st">1st</option>
-                                    <option value="2nd">2nd</option>
-                                    <option value="3rd">3rd</option>
-                                    <option value="4th">4th</option>
-                                    <option value="5th">5th</option>
-                                    <option value="6th">6th</option>
-                                    <option value="7th">7th</option>
-                                    <option value="8th">8th</option>
-                                    <option value="9th">9th</option>
-                                    <option value="10th">10th</option>
-                                    <option value="11th">11th</option>
-                                    <option value="12th">12th</option>
-                                    <option value="Graduation">Graduation</option>
-                                    <option value="Post Graduation">Post Graduation</option>
-                                  </select>
-                                    <div class="error_form col-md-12" id="standard_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="file" name="pin" id="zipt" class="form-control"  placeholder="" />
+                                    <div class="error_form col-xs-12" id="zip_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-12" style="padding:20px;">
-                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Admission Details</h5>
+                            <h5 style="text-align:center;font-weight:600; font-size: 18px;">Social Links</h5>
                             <hr>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-6" >
                             <div class="form-group">
-                                <label class="col-md-12">Level</label>
+                                <label class="col-md-12">Website Link</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="level" id="lvl" class="form-control"  placeholder="Level 5">
-                                    <option>---- Please Select ----</option>
-                                    <option value="LEVEL_1">LEVEL 1</option>
-                                    <option value="LEVEL_2">LEVEL 2</option>
-                                    <option value="LEVEL_3">LEVEL 3</option>
-                                    <option value="LEVEL_4">LEVEL 4</option>
-                                    <option value="LEVEL_5">LEVEL 5</option>
-                                  </select>
-                                    <div class="error_form col-md-12" id="level_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="text" name="corr_addr1" id="add1" class="form-control"  placeholder=" " autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add1_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Center</label>
+                                <label class="col-md-12">Facebook Link</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="center" id="center" class="form-control"  placeholder="Howrah">
-                                    <option>---- Please Select ----</option>
-                                     <option value="Howrah">Howrah</option>
-                                     <option value="Baner_Pune">Baner, Pune</option>
-                                     <option value="Hadapsar_Pune">Hadapsar, Pune</option>
-                                     <option value="Wakad_Pune">Wakad, Pune</option>
-                                      <option value="Gurugram">Gurugram</option>
-                                  </select>
-                                    <div class="error_form col-md-12" id="center_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="text" name="corr_addr2" id="add2" class="form-control"  placeholder=" " autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add2_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-12">Class Type</label>
+                                <label class="col-md-12">Twitter Link</label>
                                 <div class="col-md-12">
-                                  <select type="text" name="class_type" id="class" class="form-control"  placeholder="Regular Class">
-                                    <option>---- Please Select ----</option>
-                                    <option value="Online_Class">Online Class</option>
-                                    <option value="Regular_Class">Regular Class</option>
-                                  </select>
-                                    <div class="error_form col-md-12" id="standard_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                    <input type="text" name="corr_addr3" id="add3" class="form-control"  placeholder="" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="add3_error_message" style="font-size: 12px; font-weight: bold"></div>
                                 </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="col-md-12">Date Of Admission</label>
-                              <div class="col-md-12">
-                                  <input type="date" name="date_of_admission" id="doa" class="form-control" aria-describedby="doa" placeholder="date" >
-                                  <div class="error_form col-xs-12" id="doa_error_message" style="font-size: 12px; font-weight: bold";></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="col-md-12">Why do you want to learn Robotics? (To be answered by student)</label>
-                              <div class="col-md-12">
-                                  <input type="text" name="why_robotics_by_child" id="why1" class="form-control"  placeholder=" " autocomplete="off"/ >
-                                  <div class="error_form col-xs-12" id="why1_error_message" style="font-size: 12px; font-weight: bold"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="col-md-12">Why do you want your child to learn Robotics? </label>
-                              <div class="col-md-12">
-                                  <input type="text" name="why_robotics_by_parents" id="why2" class="form-control"  placeholder=" " autocomplete="off"/>
-                                  <div class="error_form col-xs-12" id="why2_error_message" style="font-size: 12px; font-weight: bold";></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="col-md-12">What are your expectations from this Robotics course?</label>
-                              <div class="col-md-12">
-                                  <input type="text" name="expectations" id="why3" class="form-control"  placeholder="" autocomplete="off"/>
-                                  <div class="error_form col-xs-12" id="why3_error_message" style="font-size: 12px; font-weight: bold";></div>
-                              </div>
+                                <label class="col-md-12">LinkedIn Link</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="tp_city" id="city" class="form-control"  placeholder="" autocomplete="off"/>
+                                    <div class="error_form col-xs-12" id="city_error_message" style="font-size: 12px; font-weight: bold"></div>
+                                </div>
                             </div>
                           </div>
                           <div class="col-md-12">
@@ -690,12 +698,29 @@
                               <h6 style="margin-bottom: -10px;">Please wait....</h6></center>
                           </div>
                           <center>
-                            <button type="button" id="update" class="btn btn-primary" ; style="margin-top: 50px;margin-bottom: 10px;">Submit</button>
+                            <button type="button" id="submitt" class="btn btn-primary" ; style="margin-top: 50px;margin-bottom: 10px;">Submit</button>
                           </center>
                           </div>
-                        </div>
+                       <!--  </div> -->
                       </form>
                     </div>
+                </div>
+
+
+                <div id="vryfymsg" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header"> <p class="modal-title" style="color:red;font-weight:600;font-size:20px;text-align:center;">Alert</p>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <p style="font-size:18px;font-weight:600;" id="verifymsg"></p>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
 
                     <div id="changepwd" class="modal fade" role="dialog">
@@ -713,7 +738,7 @@
                                   <form id="changepasswordform">
                                     <div class="col-xs-12" id="passwordedit"></div>
                                     <div class="col-md-12">
-                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder="User Id" />
+                                        <input type="hidden" id="id" class="form-control"  name="id" placeholder=" " />
                                     </div>
                                   <div class="col-md-12">
                                       <input type="password" id="password" class="form-control"  name="oldpwd" placeholder="Old Password" />
@@ -797,6 +822,11 @@
 		reader.readAsDataURL(input.files[0]);
 	}
 }
+</script>
+    <script type="text/javascript">
+    $(window).on('load', function() {
+	$('#feeAlert').modal('show');
+});
 </script>
 </body>
 

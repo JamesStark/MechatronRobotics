@@ -95,22 +95,22 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="user-profile">
-                            <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu">Baburao Patil </span></a>
-                        </li>
-                        <li class="nav-devider"></li>
-                        <li class="nav-small-cap">PERSONAL</li>
-                        <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="performance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="student-details.html">Student Details</a></li>
-                                <li><a href="#">Fee Details</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="student-attendance.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
-                    </ul>
+                  <ul id="sidebarnav">
+                      <li class="user-profile">
+                          <a class="waves-effect waves-dark" href="profile.html" aria-expanded="false"><img src="../assets/img/png/user.png" alt="user" /><span class="hide-menu" id="name"></span></a>
+                      </li>
+                      <li class="nav-devider"></li>
+                      <li class="nav-small-cap">PERSONAL</li>
+                      <li> <a class="waves-effect waves-dark" href="dashboard.html" aria-expanded="false"><i style="font-size:22px;" class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a></li>
+                      <li> <a class="waves-effect waves-dark" id="performance" aria-expanded="false" onclick="verifyTrainerperformance()"><i style="font-size:22px;" class="fas fa-trophy"></i><span class="hide-menu">Performance</span></a></li>
+                      <li> <a class="waves-effect waves-dark" aria-expanded="false"><i style="font-size:22px;" class="fas fa-users"></i><span class="hide-menu">Students</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#" onclick="verifyTrainerstudent()" id="students">Student Details</a></li>
+                           <!--  <li><a href="#" onclick="verifyTrainer()" id="fee">Fee Details</a></li> -->
+                        </ul>
+                      </li>
+                      <li> <a  class="waves-effect waves-dark"  href="student-attendance.html" id="attendance" onclick="verifyTrainerattendance()" aria-expanded="false"><i style="font-size:22px;" class="fas fa-notes-medical"></i><span class="hide-menu">Attendence</span></a></li>
+                  </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -136,7 +136,7 @@
                     <h3 class="text-themecolor">Student Attendence</h3>
                 </div><div class="col-md-4"></div>
                 <div class="col-md-3">
-                  <a href="franchise-student-attendance.html">
+                  <a href="trainer-student-attendance.html">
                     <button type="button" class="btn btn-danger form-control" name="button" style="color:#fff;font-weight:600;">Add Attendance</button>
                   </a>
                 </div>
@@ -182,7 +182,7 @@
                                             <th>Level 4</th>
                                             <th>84%</th>
                                             <th>
-                                              <a href="#">view attendence</a>
+                                              <a href="attendance-detail.html">view attendence</a>
                                             </th>
                                           </tr>
                                           <tr>
@@ -192,7 +192,7 @@
                                             <th>Level 3</th>
                                             <th>78%</th>
                                             <th>
-                                              <a href="#">view attendence</a>
+                                              <a href="attendance-detail.html">view attendence</a>
                                             </th>
                                           </tr>
                                           <tr>
@@ -202,7 +202,7 @@
                                             <th>Level 3</th>
                                             <th>92%</th>
                                             <th>
-                                              <a href="#">view attendence</a>
+                                              <a href="attendance-detail.html">view attendence</a>
                                             </th>
                                           </tr>
                                           <tr>
@@ -212,7 +212,7 @@
                                             <th>Level 1</th>
                                             <th>88%</th>
                                             <th>
-                                              <a href="#">view attendence</a>
+                                              <a href="attendance-detail.html">view attendence</a>
                                             </th>
                                           </tr>
                                         </tbody>

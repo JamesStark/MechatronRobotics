@@ -1,14 +1,14 @@
 $(document).ready(function() {
-	$('#fname').keypress(function(e) {
+	$('#father_name').keypress(function(e) {
 		var regex = new RegExp('^[a-zA-Z ]+$');
 		var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
 		if (regex.test(str)) {
 			return true;
 		} else {
 			e.preventDefault();
-			$('#fname_error_message')
+			$('#father_name_error_message')
 				.addClass('alert alert-danger')
-				.text('You inseted numeric values!')
+				.text('You inserted numeric values!')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -17,16 +17,16 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	$('#mname').keypress(function(e) {
+	$('#mother_name').keypress(function(e) {
 		var regex = new RegExp('^[a-zA-Z ]+$');
 		var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
 		if (regex.test(str)) {
 			return true;
 		} else {
 			e.preventDefault();
-			$('#mname_error_message')
+			$('#mother_name_error_message')
 				.addClass('alert alert-danger')
-				.text('You inseted numeric values!')
+				.text('You inserted numeric values!')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -69,20 +69,45 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#update').click(function() {
-		//$(".spinner").show();
-		if ($('#user_type ').val() === '') {
-			$('#msgadmit')
+	$('#scontact').on('blur', function() {
+		if (this.value.length < 10) {
+			// checks the password value length
+			$('contact_error_message')
 				.addClass('alert alert-danger')
-				.text('User type required !')
+				.text('Incorrect contact number !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		} else if ($('#pic').val() === '') {
+			$(this).focus(); // focuses the current field.
+			return false; // stops the execution.
+		}
+	});
+
+	$('#scontact').keypress(function(e) {
+		var regex = new RegExp('^[0-9]+$');
+		var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+		if (regex.test(str)) {
+			return true;
+		} else {
+			e.preventDefault();
+			$('#contact_error_message2')
+				.addClass('alert alert-danger')
+				.text('Contact number only accpet neumeric !')
+				.fadeTo(5000, 3000)
+				.slideUp(300, function() {
+					$(this).removeClass();
+				});
+			$(this).focus(); // focuses the current field.
+			return false;
+		}
+	});
+
+	$('#update').click(function() {
+		if ($('#pic ').val() === '') {
 			$('#pic_error_message')
 				.addClass('alert alert-danger')
-				.text('Profile pic  is required !')
+				.text('Profile Pic is required ! !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -95,51 +120,50 @@ $(document).ready(function() {
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		}
-		/* } else if ($("#hobi").val() === '') {
-            $("#hobi_error_message").addClass('alert alert-danger').text("Hobby is required !").
-            fadeTo(2000, 1500).slideUp(2500, function() {
-                $(this).
-                removeClass();
-            });
-
-            */
-		var ckb = document.getElementsByName('chk[]');
-		var hasChecked = false;
-		for (var i = 0; i < ckb.length; i++) {
-			if (ckb[i].checked) {
-				hasChecked = true;
-				break;
-			}
-		}
-		if (hasChecked == false) {
-			$('#hobi_error_message')
+		} else if ($('#father_name').val() === '') {
+			$('#father_name_error_message2')
 				.addClass('alert alert-danger')
-				.text('Plese select hobby!')
+				.text("Father's Name is required !")
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		} else if ($('#fname').val() === '') {
-			$('#fname_error_message')
-				.addClass('alert alert-danger')
-				.text("Father's name is required !")
-				.fadeTo(5000, 3000)
-				.slideUp(300, function() {
-					$(this).removeClass();
-				});
-		} else if ($('#mname').val() === '') {
-			$('#mname_error_message')
+		} else if ($('#mother_name').val() === '') {
+			$('#mother_name_error_message2')
 				.addClass('alert alert-danger')
 				.text("Mother's name is required !")
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
+			// var ckb = document.getElementsByName('chk[]');
+			// var hasChecked = false;
+			// for (var i = 0; i < ckb.length; i++) {
+			// 	if (ckb[i].checked) {
+			// 		hasChecked = true;
+			// 		break;
+			// 	}
+			// }
+			// if (hasChecked == false) {
+			// 	$('#hobi_error_message')
+			// 		.addClass('alert alert-danger')
+			// 		.text('Plese select hobby!')
+			// 		.fadeTo(5000, 3000)
+			// 		.slideUp(300, function() {
+			// 			$(this).removeClass();
+			// 		});
 		} else if ($('#occp').val() === '') {
 			$('#occupation_error_message')
 				.addClass('alert alert-danger')
 				.text("Father's or Mother's occupation is required !")
+				.fadeTo(5000, 3000)
+				.slideUp(300, function() {
+					$(this).removeClass();
+				});
+		} else if ($('#scontact').val() === '') {
+			$('#contact_error_message3')
+				.addClass('alert alert-danger')
+				.text('Contact number is required !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -160,10 +184,10 @@ $(document).ready(function() {
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		} else if ($('#add3').val() === '') {
-			$('#add3_error_message')
+		} else if ($('#area').val() === '') {
+			$('#area_error_message')
 				.addClass('alert alert-danger')
-				.text('Landmark is required !')
+				.text('Area is required !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -200,18 +224,18 @@ $(document).ready(function() {
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		} else if ($('#school').val() === '') {
-			$('#sc_error_message')
+		} else if ($('#std').val() === '---- Please Select ----') {
+			$('#standard_error_message')
 				.addClass('alert alert-danger')
-				.text('School of College name is required !')
+				.text('Qualification is required !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
 				});
-		} else if ($('#std').val() === '---- Please Select ----') {
-			$('#standard_error_message')
+		} else if ($('#school').val() === '') {
+			$('#sc_error_message')
 				.addClass('alert alert-danger')
-				.text('standard is required !')
+				.text('School of College name is required !')
 				.fadeTo(5000, 3000)
 				.slideUp(300, function() {
 					$(this).removeClass();
@@ -291,6 +315,7 @@ $(document).ready(function() {
 			fd.append('profile_pic', file);
 			fd.append('father_name', document.getElementById('fname').value);
 			fd.append('mother_name', document.getElementById('mname').value);
+			fd.append('parents_occupation', document.getElementById('occp').value);
 			fd.append('hobbies', checkBoxValue);
 			fd.append('dob', document.getElementById('dob').value);
 			fd.append('st_addr1', document.getElementById('add1').value);
@@ -325,7 +350,6 @@ $(document).ready(function() {
 				},
 				success: function(data, textStatus, jqXHR) {
 					if (data.message) {
-						
 						$('.spinner').hide();
 						// $('#msgadmit')
 						// 	.addClass('alert alert-success')
@@ -342,7 +366,7 @@ $(document).ready(function() {
 						localStorage.setItem('center', centerInput);
 						window.location.href = 'traningfeepay.html';
 					} else {
-						$('#update').disabled = false
+						$('#update').disabled = false;
 						$('.spinner').hide();
 						$('#msgadmit')
 							.addClass('alert alert-danger')
@@ -410,10 +434,8 @@ function getCheckBoxValue() {
     })
   });*/
 $(document).ready(function() {
-    $('#logout').click(function(){
-    localStorage.removeItem("storageName");
-    window.location.href = '/../index.html';
-
-    });
-
-    });
+	$('#logout').click(function() {
+		localStorage.removeItem('storageName');
+		window.location.href = '/../index.html';
+	});
+});

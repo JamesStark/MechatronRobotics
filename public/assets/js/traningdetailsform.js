@@ -1,8 +1,8 @@
 function FillForm(f) {
 	if (f.billingtoo.checked == true) {
-		f.tp_addr1.value = f.pr_addr1.value;
-		f.tp_addr2.value = f.pr_addr2.value;
-		f.tp_addr3.value = f.pr_addr3.value;
+		f.corr_addr1.value = f.addr1.value;
+		f.corr_addr2.value = f.addr2.value;
+		f.corr_addr3.value = f.addr3.value;
 		f.tp_city.value = f.pr_city.value;
 		f.tp_state.value = f.pr_state.value;
 		f.tp_country.value = f.pr_country.value;
@@ -26,7 +26,7 @@ function findByEmail(email) {
 		success: function(data) {
 			$('#name').val(data.data.full_name);
 			getUserData(data.data.id);
-			//			getViewProfile(data.data.id);
+			getViewProfile(data.data.id);
 			sessionStorage.setItem('id', data.data.id);
 			localStorage.setItem('name', data.data.full_name);
 			localStorage.setItem('email', data.data.email);
@@ -231,15 +231,6 @@ function getSession() {
 	} else {
 		findByEmail(email);
 		$('#sessionEmail').val(email);
-		if (data.error) {
-			$('#admissionformcontainer').hide();
-			$('#vryfymsg').modal('show');
-		} else if (data.not_reg) {
-			$('#vryfymsg').modal('show');
-			$('#verifymsg').text(data.not_reg);
-		} else {
-			$('#admissionformcontainer').hide();
-		}
 	}
 }
 
@@ -259,8 +250,6 @@ function getUserData(id) {
 		dataType: 'json',
 		cache: false,
 		success: function(data) {
-			// alert('name ; '+data.full_name)
-
 			$('#sname').val(data.full_name);
 			$('#semail').val(data.email);
 			$('#scontact').val(data.contact_no);
@@ -279,11 +268,10 @@ function getUserData(id) {
 		}
 	});
 }
-
 $(document).ready(function() {
 	$('#submitt').click(function() {
-		if ($('#center').val() === '---- Please Select ----') {
-			$('#center_error_message')
+		if ($('#dob').val() === '') {
+			$('#dob_error_message')
 				.addClass('alert alert-danger')
 				.text('Center is required !')
 				.fadeTo(5000, 3000)
@@ -447,18 +435,6 @@ $(document).ready(function() {
 							.slideUp(300, function() {
 								$(this).removeClass();
 							});
-						// $('#loginbox').show();
-						// $('#registerbox').hide()
-						//   if(document.getElementById("user_type").value=='student'){
-						//   var getInput = document.getElementById("emailid1").value;
-						//   localStorage.setItem("storageName", getInput);
-						//   window.location.href="/dashboards/admissionform.html";
-						// }
-						// else if(document.getElementById("user_type").value=='franchise'){
-						//   var getInput = document.getElementById("emailid1").value;
-						//   localStorage.setItem("storageName", getInput);
-						//   window.location.href="/franchise/dashboard.html";
-						// }
 					} else {
 						$('.spinner').hide();
 						$('#msgadmit')
@@ -479,6 +455,7 @@ $(document).ready(function() {
 
 function getViewProfile() {
 	id = sessionStorage.getItem('id');
+
 	VIEW_SERVICE_URL = '/trainer/' + id + '/';
 	var token = secure['token'];
 	$.ajax({
